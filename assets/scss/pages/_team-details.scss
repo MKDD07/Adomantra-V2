@@ -1,0 +1,289 @@
+.team-details {
+  padding: 250px 0px 120px;
+    @media #{$lg} {
+       padding: 150px 0px 120PX;
+    }
+  &__title {
+    color: #000;
+    text-align: center;
+    font-family: Thunder;
+    font-size: 420px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 95.238%;
+    text-transform: uppercase;
+
+    @media #{$xxl} {
+      font-size: 320px;
+    }
+
+    @media #{$xl} {
+      font-size: 233px;
+    }
+
+    @media #{$lg} {
+      font-size: 163px;
+    }
+
+    @media #{$sm} {
+      font-size: 67px;
+    }
+  }
+
+  &__items {
+    &-thumb {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 60px;
+
+      img {
+        border-radius: 20px;
+        max-width: 100%;
+      }
+    }
+
+    &-bottom {
+      padding: 47px 45px;
+      display: flex;
+      justify-content: space-between;
+      border-radius: 10px;
+      background: #FFF;
+      margin-bottom: 110px;
+
+      @media #{$lg} {
+        padding: 30px 35px;
+        margin-bottom: 80px;
+      }
+
+      @media #{$sm} {
+        padding: 20px 25px;
+        margin-bottom: 60px;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+    }
+
+    &-social {
+      &-subtitle {
+        color: #555;
+        font-family: Kanit;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 155.556%;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+
+        @media #{$lg} {
+          font-size: 16px;
+          margin-bottom: 12px;
+        }
+
+        @media #{$sm} {
+          font-size: 14px;
+          margin-bottom: 10px;
+        }
+      }
+
+      &-link {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        @media #{$lg} {
+          gap: 10px;
+        }
+
+        @media #{$sm} {
+          gap: 6px;
+        }
+
+        span {
+          width: 46.386px;
+          height: 46.386px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 16px;
+          font-weight: 400;
+          border-radius: 36px;
+          background: transparent;
+          color: #000;
+          transition: all 0.4s ease-in-out;
+          border: 1px solid #000;
+
+          @media #{$lg} {
+            width: 40px;
+            height: 40px;
+          }
+
+          @media #{$sm} {
+            width: 40px;
+            height: 40px;
+            font-size: 14px;
+          }
+
+          &:hover {
+            border: none;
+            background: #000;
+            color: white;
+          }
+        }
+      }
+    }
+
+    &-role {
+      &-subtitle {
+        color: #555;
+        text-align: center;
+        font-family: Kanit;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 155.556%;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+
+        @media #{$lg} {
+          font-size: 16px;
+          margin-bottom: 12px;
+        }
+      }
+
+      &-title {
+        color: #000;
+        text-align: center;
+        font-family: var(--font_instr);
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 133.333%;
+
+        @media #{$lg} {
+          font-size: 20px;
+          margin-bottom: 12px;
+        }
+
+        @media #{$sm} {
+          font-size: 16px;
+          margin-bottom: 12px;
+        }
+      }
+    }
+
+    &-exp {
+      &-subtitle {
+        color: #555;
+        text-align: center;
+        font-family: Kanit;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 155.556%;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+
+        @media #{$lg} {
+          font-size: 16px;
+          margin-bottom: 12px;
+        }
+      }
+
+      &-title {
+        color: #000;
+        text-align: center;
+        font-family: var(--font_instr);
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 133.333%;
+
+        @media #{$lg} {
+          font-size: 20px;
+          margin-bottom: 12px;
+        }
+
+        @media #{$sm} {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &-content {
+      text-align: center;
+      justify-content: center;
+      justify-items: center;
+
+      &-subtitle {
+        color: #000;
+        text-align: center;
+        font-family: Kanit;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        width: 864px;
+        margin-bottom: 35px;
+
+        @media #{$lg} {
+          font-size: 20px;
+          width: 650px;
+          margin-bottom: 20px;
+        }
+
+        @media #{$sm} {
+          font-size: 17px;
+          width: 300px;
+          margin-bottom: 14px;
+        }
+      }
+
+      &-subtitle2 {
+        color: #000;
+        text-align: center;
+        font-family: Kanit;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        width: 864px;
+        margin-bottom: 35px;
+
+        @media #{$lg} {
+          font-size: 20px;
+          width: 650px;
+          margin-bottom: 20px;
+        }
+
+        @media #{$sm} {
+          font-size: 17px;
+          width: 300px;
+          margin-bottom: 14px;
+        }
+      }
+
+      &-subtitle3 {
+        color: #000;
+        text-align: center;
+        font-family: Kanit;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        width: 864px;
+
+        @media #{$lg} {
+          font-size: 20px;
+          width: 650px;
+          margin-bottom: 20px;
+        }
+
+        @media #{$sm} {
+          font-size: 17px;
+          width: 300px;
+          margin-bottom: 14px;
+        }
+      }
+    }
+  }
+}

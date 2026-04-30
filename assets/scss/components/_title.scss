@@ -1,0 +1,32 @@
+.blog-section {
+    &__headding-wrap {
+        margin: 0 auto;
+        max-width: 1042px;
+        text-align: center;
+        padding-bottom: 119px;
+
+        @media #{$xl} {
+            padding-bottom: 50px;
+        }
+    }
+
+    &__title {
+        font-weight: 400;
+        font-size: 50px;
+        line-height: 60px;
+        text-align: center;
+        color: var(--white);
+        margin-bottom: 65px;
+        font-family: var(--font_instr);
+
+        @media #{$xl} {
+            font-size: 22px;
+            line-height: 30px;
+        }
+
+        @media #{$xs} {
+            padding: 15px 0;
+            margin-bottom: 25px;
+        }
+    }
+}

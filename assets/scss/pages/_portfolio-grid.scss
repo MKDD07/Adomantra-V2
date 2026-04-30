@@ -1,0 +1,112 @@
+/* === portfolio-grid (portfolio-grid) === */
+.portfolio-page {
+  background: var(--gray-three);
+  &__top {
+    padding: 30px 45px;
+    border-radius: 10px;
+    background: #FFF;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 120px;
+    @media #{$lg} {
+      padding:20px 30px;
+      margin-bottom:100px;
+    }
+    @media #{$sm} {
+      padding:20px 13px;
+       margin-bottom:70px;
+    }
+
+    &-item {
+      &-title {
+        color: #000;
+        font-family: Kanit;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+
+        @media #{$lg} {
+          font-size: 16px;
+        }
+        @media #{$sm} {
+          font-size:14px;
+        }
+      }
+
+      &-title2 {
+        color: #555;
+        font-family: Kanit;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+
+        @media #{$lg} {
+          font-size: 16px;
+        }
+        @media #{$sm} {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  &__card {
+    &-thumb {
+      margin-bottom: 20px;
+
+      @media #{$xl} {
+        margin-bottom: 13px;
+      }
+
+      img {
+        border-radius: 10px;
+        max-width: 100%;
+      }
+    }
+
+    &-content {
+      &-title {
+        margin-bottom: 8px;
+
+        a {
+          color: #000;
+          font-family: var(--font_instr);
+          font-size: 30px;
+          display: block;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 133.333%;
+
+          @media #{$xxl} {
+            font-size: 28px;
+          }
+
+          @media #{$xl} {
+            font-size: 25px;
+          }
+
+          @media #{$lg} {
+            font-size: 22px;
+          }
+        }
+      }
+
+      &-post {
+        display: flex;
+        gap: 20px;
+
+        &-date {
+          color: #555;
+          font-family: Kanit;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 162.5%;
+          list-style: none;
+        }
+      }
+    }
+  }
+}

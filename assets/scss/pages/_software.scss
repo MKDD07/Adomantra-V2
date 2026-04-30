@@ -1,0 +1,2366 @@
+/* === Intro scss (software) === */
+.intro-area4 {
+  padding: 113px 0px 0px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--black);
+  @media #{$xl} {
+    padding: 130px 0px 0px;
+  }
+  &__content {
+    padding: 120px 0px 60px;
+    position: relative;
+    z-index: 5;
+
+    @media #{$xl} {
+      padding: 43px 0px 60px;
+    }
+
+    &-subtitle {
+      padding: 6px 30px;
+      border-radius: 90px;
+      border: 1px solid #000;
+      background: rgba(16, 16, 16, 0);
+      color: #000;
+      font-family: Kanit;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      display: inline-flex;
+      margin-bottom: 22px;
+
+      @media #{$xl} {
+        padding: 6px 20px;
+        font-size: 18px;
+      }
+    }
+
+    &-title {
+      color: #000;
+      font-family: "Instrument Sans";
+      font-size: 90px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 111.111%;
+      text-transform: capitalize;
+      margin-bottom: 60px;
+
+      @media #{$xxl} {
+        font-size: 74px;
+      }
+
+      @media #{$xl} {
+        font-size: 39px;
+      }
+
+      @media #{$sm} {
+        font-size: 33px;
+      }
+    }
+
+    &-items {
+      display: flex;
+      gap: 30px;
+
+      @media #{$xxl} {
+        gap: 20px;
+      }
+
+      @media #{$sm} {
+        flex-wrap: wrap;
+      }
+
+      &-image {
+        img {
+          width: 134px;
+        }
+      }
+
+      &-text {
+        color: #000;
+        font-family: Kanit;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        width: 563px;
+        margin-bottom: 30px;
+
+        @media #{$xxl} {
+          font-size: 18px;
+        }
+      }
+    }
+
+    &-newsletter {
+      position: relative;
+
+      &-box {
+        width: 730px;
+        position: relative;
+        z-index: 5;
+
+        @media #{$xxl} {
+          width: 645px;
+        }
+
+        @media #{$xl} {
+          width: 478px;
+        }
+
+        @media #{$sm} {
+          width: 300px;
+        }
+
+        input {
+          width: 100%;
+          border-radius: 30px;
+          color: #555;
+          font-family: Kanit;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 150%;
+          border-radius: 90px;
+          border: 1px solid #fff;
+          background: #fff;
+          box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.15);
+          padding: 13px 20px;
+
+          @media #{$xl} {
+            padding: 13px 18px;
+            font-size: 18px;
+          }
+
+          @media #{$sm} {
+            font-size: 15px;
+            padding: 13px 15px;
+          }
+        }
+      }
+
+      &-button {
+        position: absolute;
+        z-index: 9;
+        top: 30%;
+        right: 1%;
+
+        @media #{$sm} {
+          right: 4%;
+        }
+
+        &-icon {
+          padding: 10px 41px;
+          border-radius: 90px;
+          background: #febc00;
+          transition: animation 0.2s ease-out;
+
+          @media #{$sm} {
+            padding: 8px 25px;
+          }
+
+          svg {
+            width: 38px;
+
+            @media #{$sm} {
+              width: 20px;
+            }
+          }
+
+          &:hover {
+            background-color: #000;
+            transition: animation 0.2s ease-out;
+
+            svg {
+              color: #fff;
+              filter: brightness(0) saturate(100%) invert(100%) sepia(47%)
+                saturate(202%) hue-rotate(239deg) brightness(111%)
+                contrast(100%);
+              transition: animation 0.2s ease-out;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__info {
+    position: relative;
+    margin-right: -2%;
+
+    &-thumb {
+      position: relative;
+      z-index: 9;
+      margin-right: -160px;
+      @media #{$xl} {
+        margin-right: 0;
+      }
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+
+    &-counter-area {
+      padding: 20px 30px;
+      position: absolute;
+      background: #febc00;
+      bottom: 0%;
+      left: 0%;
+      z-index: 99;
+
+      @media #{$lg} {
+        padding: 15px 20px;
+      }
+
+      &-items {
+        h2 {
+          color: #000;
+          font-family: Kanit;
+          font-size: 50px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 46px;
+          margin-bottom: 10px;
+
+          @media #{$lg} {
+            font-size: 30px;
+            margin-bottom: 6px;
+          }
+        }
+
+        &-text {
+          color: #000;
+          font-family: Kanit;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 162.5%;
+        }
+      }
+    }
+  }
+}
+
+/* === about-area4 scss (software) === */
+.about-area4 {
+  &__items {
+    display: flex;
+    gap: 120px;
+
+    @media #{$xxl} {
+      gap: 30px;
+    }
+
+    @media #{$lg} {
+      flex-wrap: wrap;
+    }
+
+    &-thumb {
+      margin-bottom: 30px;
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &__content {
+    &-subtitle {
+      color: #000;
+      font-family: "Instrument Sans";
+      font-size: 50px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%;
+
+      @media #{$xxl} {
+        font-size: 40px;
+      }
+
+      @media #{$xl} {
+        font-size: 30px;
+      }
+
+      @media #{$lg} {
+        font-size: 22px;
+      }
+
+      @media #{$md} {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+/* === About-feature scss (software) === */
+
+.about-feature {
+  .tab-content {
+    position: relative;
+
+    .about-feature__thumb {
+      position: relative;
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .about-feature__button {
+      position: absolute;
+      right: 4%;
+      top: 70%;
+      z-index: 9;
+
+      @media #{$xl} {
+        right: 16%;
+        top: 70%;
+      }
+    }
+  }
+
+  &-tab-header {
+    position: relative;
+
+    .nav {
+      position: relative;
+      padding-left: 70px;
+      border-left: 2px solid $color-border-two;
+
+      .nav-item {
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 38px;
+
+        @media #{$xl} {
+          margin-bottom: 28px;
+        }
+      }
+
+      .nav-link {
+        position: relative;
+        transition: all 0.3s ease-in-out;
+        text-align: start;
+
+        &:not(:last-child) {
+          margin-bottom: 60px;
+
+          @media #{$xl} {
+            margin-bottom: 28px;
+          }
+        }
+
+        &.active {
+          position: relative;
+          border-radius: 5px;
+
+          &::before {
+            position: absolute;
+            content: "";
+            width: 2px;
+            height: 173px;
+          }
+
+          .title {
+            color: #000;
+            font-family: "Instrument Sans";
+            font-size: 26px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 138.462%;
+            margin-bottom: 25px;
+
+            @media #{$xl} {
+              font-size: 25px;
+              margin-bottom: 14px;
+            }
+
+            @media #{$xs} {
+              font-size: 20px;
+              margin-bottom: 13px;
+            }
+          }
+
+          .subtitle {
+            color: #555;
+            font-family: Kanit;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 155.556%;
+
+            @media #{$xl} {
+              font-size: 16px;
+            }
+          }
+        }
+
+        .title {
+          color: #b5b4b4;
+          font-family: Instrument Sans;
+          font-weight: 600;
+          font-style: SemiBold;
+          font-size: 26px;
+          line-height: 36px;
+          letter-spacing: 0%;
+          margin-bottom: 17px;
+
+          @media #{$xl} {
+            font-size: 25px;
+            margin-bottom: 14px;
+          }
+
+          @media #{$xs} {
+            font-size: 20px;
+            margin-bottom: 13px;
+          }
+        }
+
+        .subtitle {
+          color: #b5b4b4;
+          font-family: Kanit;
+          font-weight: 400;
+          font-style: Regular;
+          font-size: 18px;
+          line-height: 28px;
+          letter-spacing: 0%;
+
+          @media #{$xl} {
+            font-size: 16px;
+          }
+        }
+
+        &.active {
+          position: relative;
+
+          &::before {
+            position: absolute;
+            top: 0;
+            left: -10%;
+            z-index: 2;
+            content: "";
+            width: 2px;
+            height: 173px;
+            background: #febc00;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* === service-area4 scss (software) === */
+.service-area4 {
+  padding: 90px 0px 250px;
+
+  .section-top4 {
+    margin-top: 40px;
+
+    &__subtitle {
+      color: #fff;
+      font-family: Kanit;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 162.5%;
+      text-transform: uppercase;
+    }
+  }
+
+  &__content {
+    margin-top: -30px;
+
+    &-title1 {
+      color: #fff;
+      font-family: "Instrument Sans";
+      font-size: 72px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 113.889%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 20px 0px 30px;
+      margin-bottom: 20px;
+
+      @media #{$xxl} {
+        font-size: 60px;
+      }
+
+      @media #{$xl} {
+        font-size: 32px;
+      }
+
+      @media #{$sm} {
+        font-size: 22px;
+      }
+
+      &:hover {
+        color: #febc00;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-skip-ink: none;
+        text-decoration-thickness: auto;
+        text-underline-offset: auto;
+        text-underline-position: from-font;
+      }
+    }
+
+    &-title2 {
+      color: #fff;
+      text-align: right;
+      font-family: "Instrument Sans";
+      font-size: 72px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 113.889%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 20px 0px 30px;
+      margin-bottom: 20px;
+
+      @media #{$xxl} {
+        font-size: 63px;
+      }
+
+      @media #{$xl} {
+        font-size: 32px;
+      }
+
+      @media #{$sm} {
+        text-align: left;
+        font-size: 22px;
+      }
+
+      &:hover {
+        color: #febc00;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-skip-ink: none;
+        text-decoration-thickness: auto;
+        text-underline-offset: auto;
+        text-underline-position: from-font;
+      }
+    }
+  }
+
+  &__items {
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #1d1d1d;
+    padding: 30px;
+
+    &-thumb {
+      margin-bottom: 30px;
+
+      img {
+        border-radius: 10px;
+      }
+    }
+
+    &-content {
+      &-subtitle {
+        color: #fff;
+        font-family: Kanit;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 155.556%;
+        margin-bottom: 20px;
+      }
+
+      &-info {
+        li {
+          list-style: none;
+          color: #fff;
+          font-family: Kanit;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 155.556%;
+
+          &:not(:last-child) {
+            margin-bottom: 10px;
+          }
+
+          svg {
+            margin-right: 10px;
+            width: 17px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* === project-area4 scss (software) === */
+.project-area4 {
+  background-color: #e9e8e4;
+
+  &__thumb {
+    position: relative;
+    z-index: 9;
+
+    img {
+      border-radius: 10px;
+      max-width: 100%;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    margin-top: -70px;
+
+    @media #{$xl} {
+      margin-top: -40px;
+    }
+
+    @media #{$lg} {
+      margin-top: -21px;
+    }
+
+    &-text {
+      color: rgba(16, 16, 16, 0);
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: #000;
+      font-family: Kanit;
+      font-size: 247px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 100%;
+      text-transform: uppercase;
+
+      @media #{$xxl} {
+        font-size: 193px;
+      }
+
+      @media #{$xl} {
+        font-size: 139px;
+      }
+
+      @media #{$lg} {
+        font-size: 139px;
+      }
+
+      @media #{$md} {
+        font-size: 101px;
+      }
+
+      @media #{$sm} {
+        font-size: 103px;
+      }
+
+      @media #{$xs} {
+        font-size: 55px;
+      }
+    }
+  }
+
+  &__thumb3 {
+    margin-top: -70px;
+
+    @media #{$xl} {
+      margin-top: -44px;
+    }
+
+    @media #{$lg} {
+      margin-top: -24px;
+    }
+
+    img {
+      border-radius: 10px;
+      max-width: 100%;
+    }
+  }
+}
+
+/* === Wcu-Area scss (software) === */
+.wcu-area4 {
+  &-thumb {
+    margin-left: -10%;
+    border-radius: 20px;
+    img {
+      border-radius: 20px;
+      max-width: 100%;
+    }
+  }
+
+  &-content {
+    .section-top4 {
+      margin-bottom: 50px;
+
+      @media #{$lg} {
+        margin-bottom: 20px;
+      }
+
+      &__subtitle {
+        position: relative;
+        color: #000;
+        font-family: Kanit;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+        text-transform: uppercase;
+        display: inline-block;
+        margin-bottom: 20px;
+
+        @media #{$xxl} {
+          margin-bottom: 14px;
+        }
+
+        @media #{$lg} {
+          margin-bottom: 14px;
+        }
+      }
+
+      &__title {
+        color: #000;
+        font-family: "Instrument Sans";
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%;
+
+        @media #{$xxl} {
+          font-size: 40px;
+        }
+
+        @media #{$xl} {
+          font-size: 30px;
+        }
+
+        @media #{$lg} {
+          font-size: 28px;
+        }
+
+        @media #{$sm} {
+          font-size: 25px;
+        }
+      }
+
+      &__text {
+        color: #555;
+        font-family: Kanit;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 155.556%;
+        max-width: 610px;
+      }
+    }
+
+    &__items {
+      &-info {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+
+        &:not(:last-child) {
+          margin-bottom: 25px;
+        }
+
+        &__icon {
+          svg {
+            width: 70px;
+
+            @media #{$xxl} {
+              width: 60px;
+            }
+
+            @media #{$xl} {
+              width: 50px;
+            }
+          }
+        }
+
+        &-content {
+          &-title {
+            color: #000;
+            font-family: "Instrument Sans";
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 133.333%;
+            margin-bottom: 14px;
+
+            @media #{$xxl} {
+              font-size: 25px;
+              margin-bottom: 10px;
+            }
+
+            @media #{$sm} {
+              font-size: 20px;
+            }
+          }
+
+          &-desc {
+            color: #555;
+            font-family: Kanit;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 155.556%;
+            max-width: 524px;
+
+            @media #{$xxl} {
+              font-size: 16px;
+              max-width: 500px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* === Brand scss (software) === */
+
+.brand-area4 {
+  &__image {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    margin: 0 auto;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+/* === Testimonial-area scss (software) === */
+.testimonial-area4 {
+  position: relative;
+  background-color: #e9e8e4;
+
+  .section-top4 {
+    &__subtitle {
+      font-family: Kanit;
+      font-weight: 400;
+      font-style: Regular;
+      font-size: 16px;
+      line-height: 26px;
+      letter-spacing: 0%;
+      text-transform: uppercase;
+
+      @media #{$lg} {
+        font-size: 15px;
+        line-height: 20px;
+      }
+    }
+
+    &__title {
+      font-family: Instrument Sans;
+      font-weight: 600;
+      font-style: SemiBold;
+      font-size: 50px;
+      line-height: 60px;
+      letter-spacing: 0%;
+      text-align: center;
+
+      @media #{$xxl} {
+        font-size: 40px;
+      }
+
+      @media #{$xl} {
+        font-size: 30px;
+        line-height: 50px;
+      }
+
+      @media #{$lg} {
+        font-size: 25px;
+        line-height: 40px;
+      }
+    }
+  }
+
+  &__card {
+    position: relative;
+    padding: 75px 90px;
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    gap: 90px;
+
+    @media #{$xxl} {
+      padding: 55px 50px;
+      gap: 60px;
+    }
+
+    @media #{$xl} {
+      padding: 35px 30px;
+      gap: 30px;
+    }
+
+    @media #{$lg} {
+      padding: 35px 30px;
+      gap: 20px;
+    }
+
+    @media #{$md} {
+      padding: 30px 25px;
+      gap: 10px;
+    }
+
+    @media #{$xs} {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .video-box {
+      .video-buttton {
+        width: 244px;
+        height: 244px;
+        flex-shrink: 0;
+        line-height: 244px;
+        text-align: center;
+        border-radius: 50%;
+        background-color: transparent;
+        display: inline-block;
+        z-index: 6;
+        font-size: 24px;
+        position: relative;
+        z-index: 9;
+
+        @media #{$xl} {
+          width: 144px;
+          height: 144px;
+          line-height: 144px;
+        }
+
+        @media #{$md} {
+          width: 200px;
+          height: 200px;
+          line-height: 200px;
+        }
+
+        .arrow-button {
+          position: absolute;
+          top: 0%;
+          left: 0%;
+          width: 274px;
+          height: 274px;
+          flex-shrink: 0;
+          line-height: 274px;
+          text-align: center;
+
+          @media #{$xl} {
+            width: 140px;
+            height: 140px;
+            line-height: 140px;
+            top: 10%;
+            left: 10%;
+          }
+
+          @media #{$md} {
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            top: 24%;
+            left: 20%;
+          }
+        }
+
+        .text-circle {
+          position: absolute;
+          top: 5%;
+          left: 4%;
+          -webkit-animation: cir36 10s linear infinite;
+          animation: cir36 10s linear infinite;
+
+          @media #{$md} {
+            top: 16%;
+            left: 8%;
+            width: 105px;
+          }
+        }
+      }
+    }
+
+    &-items {
+      &-icon {
+        margin-bottom: 28px;
+      }
+
+      &-content {
+        &-subtitle {
+          color: #000;
+          font-family: "Instrument Sans";
+          font-size: 26px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 153.846%;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+          padding: 20px 10px;
+          width: 800px;
+
+          @media #{$xxl} {
+            width: 600px;
+            font-size: 22px;
+          }
+
+          @media #{$xl} {
+            width: 600px;
+            font-size: 20px;
+          }
+
+          @media #{$lg} {
+            width: 500px;
+            font-size: 18px;
+          }
+
+          @media #{$sm} {
+            width: 500px;
+            font-size: 16px;
+          }
+
+          @media #{$xs} {
+            width: 250px;
+            font-size: 16px;
+          }
+        }
+      }
+
+      &-mentor-items {
+        display: flex;
+
+        &-info {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          margin-top: 30px;
+
+          &-thumb {
+            img {
+              max-width: 100%;
+            }
+          }
+
+          &-content {
+            &-title {
+              color: #000;
+              font-family: Kanit;
+              font-size: 20px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 150%;
+
+              @media #{$xl} {
+                font-size: 18px;
+              }
+            }
+
+            &-subtitle {
+              color: #555;
+              font-family: Kanit;
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 162.5%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__controls {
+    position: absolute;
+    top: 76%;
+    left: 60%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 99;
+
+    @media #{$xl} {
+      bottom: 1%;
+      left: 50%;
+    }
+
+    @media #{$lg} {
+      display: none;
+    }
+
+    &-arrowRight {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #000;
+      border-radius: 60px;
+      border-radius: 60px;
+      background: #000;
+      transition: all 0.4s ease-in-out;
+
+      @media #{$md} {
+        width: 50px;
+        height: 50px;
+      }
+
+      &:hover {
+        background: #febc00;
+        border: 1px solid #febc00;
+      }
+    }
+
+    &-arrowLeft {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #febc00;
+      border-radius: 60px;
+      border-radius: 60px;
+      background: #febc00;
+      transition: all 0.4s ease-in-out;
+
+      @media #{$md} {
+        width: 50px;
+        height: 50px;
+      }
+
+      &:hover {
+        background: #000;
+        border: 1px solid #000;
+
+        svg {
+          color: #fff;
+          filter: brightness(0) saturate(100%) invert(100%) sepia(0%)
+            saturate(7500%) hue-rotate(44deg) brightness(100%) contrast(105%);
+        }
+      }
+    }
+  }
+
+  &__content {
+    padding: 60px 40px;
+    border-radius: 10px;
+    background: #febc00;
+    text-align: center;
+
+    @media #{$xxl} {
+      padding: 43px 40px;
+    }
+
+    @media #{$xl} {
+      padding: 43px 30px;
+    }
+
+    @media #{$lg} {
+      padding: 39px 25px;
+    }
+
+    &-title {
+      color: #000;
+      text-align: center;
+      font-family: "Instrument Sans";
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 127.778%;
+      text-decoration-line: underline;
+      text-decoration-style: solid;
+      text-decoration-skip-ink: none;
+      text-decoration-thickness: auto;
+      text-underline-offset: auto;
+      text-underline-position: from-font;
+      margin-bottom: 70px;
+
+      @media #{$xxl} {
+        font-size: 30px;
+      }
+
+      @media #{$xl} {
+        font-size: 25px;
+        margin-bottom: 70px;
+      }
+
+      @media #{$lg} {
+        font-size: 22px;
+        margin-bottom: 50px;
+      }
+    }
+
+    &-thumb {
+      margin-bottom: 30px;
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    &-subtitle {
+      color: #000;
+      text-align: center;
+      font-family: Kanit;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 155.556%;
+    }
+  }
+}
+
+/* === Video scss (software) === */
+.video-area4 {
+  padding: 120px 0px 200px;
+
+  @media #{$xl} {
+    padding: 110px 0px 120px;
+  }
+
+  @media #{$md} {
+    padding: 100px 0px 120px;
+  }
+
+  &__items {
+    &-title {
+      color: #fff;
+      font-family: "Instrument Sans";
+      font-size: 50px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%;
+      width: 885px;
+      margin-bottom: 60px;
+
+      @media #{$xxl} {
+        font-size: 44px;
+        width: 868px;
+        margin-bottom: 40px;
+      }
+
+      @media #{$xl} {
+        font-size: 32px;
+        width: 672px;
+        margin-bottom: 40px;
+      }
+
+      @media #{$sm} {
+        font-size: 20px;
+        width: 100%;
+        margin-bottom: 37px;
+      }
+    }
+
+    &-thumb {
+      display: flex;
+      justify-content: end;
+      text-align: end;
+      border-radius: 10px;
+
+      @media #{$lg} {
+        justify-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      img {
+        border-radius: 10px;
+        max-width: 100%;
+      }
+    }
+  }
+
+  &-info {
+    &__counter {
+      &:not(:last-child) {
+        margin-bottom: 50px;
+
+        @media #{$sm} {
+          margin-bottom: 30px;
+        }
+      }
+
+      &-title {
+        color: #febc00;
+        font-family: "Instrument Sans";
+        font-size: 90px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%;
+        margin-bottom: 13px;
+
+        @media #{$xxl} {
+          font-size: 71px;
+        }
+
+        @media #{$xl} {
+          font-size: 57px;
+        }
+
+        @media #{$lg} {
+          font-size: 50px;
+        }
+      }
+
+      &-text {
+        color: #fff;
+        font-family: Kanit;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+
+        @media #{$xxl} {
+          font-size: 18px;
+        }
+
+        @media #{$xl} {
+          font-size: 16px;
+        }
+
+        @media #{$lg} {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  &__content {
+    margin-top: 60px;
+
+    @media #{$md} {
+      margin-top: 40px;
+    }
+
+    &-title {
+      color: #febc00;
+      font-family: Kanit;
+      font-size: 239px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 100%;
+      text-transform: uppercase;
+
+      @media #{$xxl} {
+        font-size: 190px;
+      }
+
+      @media #{$xl} {
+        font-size: 134px;
+      }
+
+      @media #{$lg} {
+        font-size: 134px;
+      }
+
+      @media #{$md} {
+        font-size: 100px;
+      }
+
+      @media #{$sm} {
+        max-width: 100%;
+        font-size: 100px;
+      }
+
+      @media #{$xs} {
+        max-width: 100%;
+        font-size: 47px;
+      }
+    }
+  }
+}
+
+/* === wp-area scss (software) === */
+.wp-area4 {
+  background-color: #e9e8e4;
+
+  .section-top4 {
+    &__subtitle {
+      color: #000;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: #000;
+      font-family: Kanit;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 162.5%;
+      text-transform: uppercase;
+      margin-bottom: 35px;
+    }
+
+    &__title {
+      color: #000;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: #000;
+      font-family: "Instrument Sans";
+      font-size: 46px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%;
+      margin-bottom: 35px;
+
+      @media #{$xxl} {
+        font-size: 40px;
+      }
+
+      @media #{$xl} {
+        font-size: 27px;
+      }
+
+      @media #{$lg} {
+        font-size: 25px;
+      }
+
+      @media #{$md} {
+        font-size: 21px;
+      }
+    }
+
+    &__text {
+      color: #555;
+      font-family: var(--font_kanit);
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 28px;
+
+      @media #{$xxl} {
+        font-size: 17px;
+      }
+
+      @media #{$xl} {
+        font-size: 15px;
+      }
+    }
+  }
+
+  &-wrapper {
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 5px;
+
+    @media #{$xl} {
+      padding: 40px;
+    }
+
+    &__progress-wrap {
+      &-pro-items {
+        &:not(:last-child) {
+          margin-bottom: 30px;
+        }
+
+        .pro-head {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .title {
+            color: var(--black);
+            font-family: var(--font_kanit);
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: 0%;
+
+            @media #{$xl} {
+              font-size: 16px;
+            }
+          }
+
+          .point {
+            text-transform: capitalize;
+            color: #000;
+            text-align: right;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: #000;
+            font-family: Kanit;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 155.556%;
+
+            @media #{$xl} {
+              font-size: 16px;
+            }
+          }
+        }
+
+        .progress {
+          border-radius: 90px;
+          border: 1px solid #000;
+          background: #e9e8e4;
+          justify-content: flex-start;
+          align-items: center;
+          position: relative;
+          display: flex;
+          height: 10px;
+          width: 100%;
+          margin-bottom: 20px;
+
+          @media #{$xl} {
+            margin-bottom: 16px;
+          }
+        }
+
+        .progress-value {
+          animation: load 3s normal forwards;
+          border-radius: 90px;
+          border: 1px solid #000;
+          background: #febc00;
+          height: 10px;
+          width: 0;
+        }
+
+        .style-one {
+          animation: load1 3s normal forwards;
+        }
+
+        .style-three {
+          animation: load3 3s normal forwards;
+        }
+
+        .style-four {
+          animation: load4 3s normal forwards;
+        }
+
+        .style-five {
+          animation: load5 3s normal forwards;
+        }
+
+        @keyframes load1 {
+          0% {
+            width: 0;
+          }
+
+          100% {
+            width: 93%;
+          }
+        }
+
+        @keyframes load3 {
+          0% {
+            width: 0;
+          }
+
+          100% {
+            width: 90%;
+          }
+        }
+
+        @keyframes load4 {
+          0% {
+            width: 0;
+          }
+
+          100% {
+            width: 87%;
+          }
+        }
+
+        @keyframes load5 {
+          0% {
+            width: 0;
+          }
+
+          100% {
+            width: 60%;
+          }
+        }
+      }
+    }
+  }
+
+  &__items {
+    position: relative;
+    max-width: 100%;
+    height: 100%;
+    &-thumb {
+      max-width: 100%;
+      height: 100%;
+      img {
+        max-width: 100%;
+        height: 100%;
+      }
+    }
+
+    .rr-btn-button4 {
+      position: absolute;
+      bottom: 40px;
+      right: 40px;
+      z-index: 1;
+    }
+  }
+}
+
+/* === Pricing scss (software) === */
+.pricing-area4 {
+  .section-top4 {
+    &__subtitle {
+      text-align: center;
+    }
+
+    &__title {
+      color: #000;
+      text-align: center;
+      font-family: "Instrument Sans";
+      font-size: 50px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%;
+
+      @media #{$xxl} {
+        font-size: 40px;
+      }
+
+      @media #{$xl} {
+        font-size: 30px;
+      }
+
+      @media #{$sm} {
+        font-size: 26px;
+      }
+    }
+  }
+
+  &__items {
+    position: relative;
+    padding: 40px;
+    border-radius: 10px;
+    background-color: #000;
+    transition: all 0.4s ease-in-out;
+
+    @media #{$xxl} {
+      padding: 20px 20px;
+    }
+
+    &-header {
+      padding: 30px 20px;
+      border-radius: 10px;
+      border: 1px dashed #000;
+      background: #fff;
+      text-align: center;
+      margin-bottom: 20px;
+
+      @media #{$xxl} {
+        padding: 20px 15px;
+      }
+
+      &-subtitle {
+        color: #000;
+        text-align: center;
+        font-family: "Instrument Sans";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 150%;
+      }
+
+      &-title {
+        color: #000;
+        text-align: center;
+        font-family: "Instrument Sans";
+        font-size: 70px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 114.286%;
+        margin-top: 10px;
+
+        @media #{$xxl} {
+          font-size: 50px;
+        }
+
+        @media #{$xl} {
+          font-size: 40px;
+        }
+
+        @media #{$sm} {
+          font-size: 30px;
+          margin-top: 0px;
+        }
+
+        sub {
+          color: #000;
+          font-family: "Instrument Sans";
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 80px;
+        }
+      }
+    }
+
+    &-info {
+      &-list {
+        li {
+          padding: 10px 0px 14px 130px;
+          display: block;
+          color: #fff;
+          font-family: Kanit;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 155.556%;
+          text-transform: lowercase;
+          list-style: none;
+
+          @media #{$xxl} {
+            padding: 10px 0px 14px 10px;
+          }
+
+          @media #{$sm} {
+            font-size: 17px;
+          }
+
+          &:not(:last-child) {
+            border-bottom: 1px dashed #fff;
+          }
+
+          .icon {
+            svg {
+              width: 20px;
+            }
+          }
+        }
+      }
+    }
+
+    &-button {
+      &-pricing-btn {
+        display: inline-block;
+        background-color: transparent;
+        color: #fff;
+        display: inline-block;
+        font-family: Kanit;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 14px 100px;
+        border-radius: 0;
+        text-transform: capitalize;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        line-height: 1;
+        width: 100%;
+        border-radius: 96px;
+        border: 1px dashed #fff;
+        text-align: center;
+        line-height: 155.556%;
+
+        @media #{$xxl} {
+          padding: 14px 30px;
+        }
+
+        @media #{$sm} {
+          font-size: 16px;
+        }
+
+        &:hover {
+          background-color: #fff;
+          color: #000;
+        }
+      }
+    }
+
+    &.active {
+      background-color: #febc00;
+      transition: all 0.4s ease-in-out;
+
+      &-info {
+        &-list {
+          li {
+            color: #000 !important;
+            font-family: Kanit;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 155.556%;
+
+            &:not(:last-child) {
+              border-bottom: 1px dashed #fff;
+            }
+
+            .icon {
+              svg {
+                width: 20px;
+              }
+            }
+          }
+        }
+      }
+
+      &-button {
+        &-pricing-btn {
+          display: inline-block;
+          background: #fff;
+          color: #fff;
+          display: inline-block;
+          font-family: Kanit;
+          font-size: 18px;
+          font-weight: 500;
+          padding: 14px 100px;
+          border-radius: 0;
+          text-transform: capitalize;
+          transition: all 0.3s ease-in-out;
+          position: relative;
+          line-height: 1;
+          width: 100%;
+          border-radius: 96px;
+          border: 1px dashed #fff;
+          text-align: center;
+          line-height: 155.556%;
+
+          &:hover {
+            background-color: #000;
+            color: #000;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      transform: translateY(-10px);
+      border-color: transparent;
+    }
+  }
+}
+
+/* === Blog scss (software) === */
+
+.blog-area4 {
+  background: #e9e8e4;
+
+  .section-top4 {
+    &__title {
+      font-family: Instrument Sans;
+      font-weight: 600;
+      font-style: SemiBold;
+      font-size: 50px;
+      line-height: 60px;
+      letter-spacing: 0%;
+
+      @media #{$xxl} {
+        font-size: 40px;
+      }
+
+      @media #{$xl} {
+        font-size: 30px;
+      }
+
+      @media #{$lg} {
+        font-size: 22px;
+        line-height: 30px;
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: end;
+
+    @media #{$xl} {
+      flex-wrap: wrap;
+      justify-content: start;
+      margin-top: -60px;
+    }
+
+    @media #{$lg} {
+      margin-top: -60px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__card {
+    display: flex;
+    align-items: end;
+
+    @media #{$xs} {
+      flex-wrap: wrap;
+    }
+
+    &-content {
+      padding: 60px 30px 20px;
+      border-radius: 10px;
+      background: #fff;
+
+      @media #{$xl} {
+        padding: 40px 20px 20px;
+      }
+
+      &-list {
+        display: flex;
+        gap: 13px;
+        margin-bottom: 30px;
+
+        li {
+          list-style: none;
+        }
+      }
+
+      &-title {
+        color: #000;
+        font-family: "Instrument Sans";
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 127.778%;
+        width: 421px;
+        margin-bottom: 38px;
+
+        @media #{$xxl} {
+          margin-bottom: 25px;
+          font-size: 26px;
+        }
+
+        @media #{$md} {
+          width: 321px;
+          font-size: 20px;
+        }
+
+        @media #{$xs} {
+          font-size: 20px;
+          width: 271px;
+        }
+      }
+
+      &-subtitle {
+        color: #555;
+        font-family: Kanit;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 155.556%;
+        width: 421px;
+        margin-bottom: 108px;
+
+        @media #{$xxl} {
+          margin-bottom: 100px;
+          font-size: 17px;
+        }
+
+        @media #{$xl} {
+          margin-bottom: 100px;
+          font-size: 16px;
+        }
+
+        @media #{$xs} {
+          width: 271px;
+        }
+      }
+
+      &-link {
+        border-radius: 90px;
+        background: #000;
+        width: 56px;
+        height: 56px;
+        line-height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #000;
+        background: #000;
+        transition: all 0.4s ease-in-out;
+
+        svg {
+          width: 24px;
+        }
+
+        @media #{$xl} {
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+        }
+      }
+    }
+
+    &-thumb {
+      img {
+        border-radius: 10px;
+        max-width: 100%;
+      }
+    }
+  }
+
+  &-wrapper {
+    &-controls {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      z-index: 99;
+      margin-top: 50px;
+
+      &__arrowRight {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #000;
+        border-radius: 60px;
+        border-radius: 60px;
+        background: #000;
+        transition: all 0.4s ease-in-out;
+
+        svg {
+          width: 20px;
+        }
+
+        @media #{$lg} {
+          width: 40px;
+          height: 40px;
+        }
+
+        &:hover {
+          background: #febc00;
+          border: 1px solid #febc00;
+        }
+      }
+
+      &__arrowLeft {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #febc00;
+        border-radius: 60px;
+        border-radius: 60px;
+        background: #febc00;
+        transition: all 0.4s ease-in-out;
+
+        svg {
+          width: 20px;
+        }
+
+        @media #{$lg} {
+          width: 40px;
+          height: 40px;
+        }
+
+        &:hover {
+          background: #000;
+          border: 1px solid #000;
+
+          svg {
+            color: #fff;
+            filter: brightness(0) saturate(100%) invert(100%) sepia(0%)
+              saturate(7500%) hue-rotate(44deg) brightness(100%) contrast(105%);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* === Marque scss (software) === */
+.marque-section4 {
+  padding: 90px 0px 100px;
+  border-radius: 30px 30px 0 0;
+  background: var(--black);
+  position: relative;
+  white-space: nowrap;
+  z-index: 9;
+
+  @media #{$xxl} {
+    padding: 60px 0px 90px;
+  }
+
+  @media #{$xl} {
+    padding: 40px 0px 50px;
+  }
+
+  @media #{$lg} {
+    padding: 20px 0px 50px;
+  }
+}
+
+.text-slider-1 {
+  height: 100px;
+  color: #febc00;
+  font-family: "Instrument Sans";
+  font-size: 90px;
+  font-style: normal;
+  text-align: center;
+  font-weight: 700;
+  line-height: 111.111%;
+  text-transform: uppercase;
+
+  @media #{$xxl} {
+    font-size: 60px;
+  }
+
+  @media #{$xl} {
+    font-size: 50px;
+  }
+
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  img {
+    margin-bottom: 10px;
+    margin-right: -20px;
+  }
+}
+
+.text-slider-2 {
+  height: 100px;
+  // color: #FEBC00;
+  color: #fff;
+  font-family: "Instrument Sans";
+  text-align: center;
+  font-size: 90px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100px;
+  text-transform: uppercase;
+
+  @media #{$xxl} {
+    font-size: 60px;
+  }
+
+  @media #{$xl} {
+    font-size: 50px;
+  }
+
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  img {
+    margin-bottom: 10px;
+    margin-right: -20px;
+  }
+}
+
+.marquee-inner {
+  position: absolute;
+  display: inline-flex;
+  width: 200%;
+}
+
+.marquee-list {
+  float: left;
+  width: 50%;
+}
+
+.marquee-item {
+  float: left;
+  transition: animation 0.2s ease-out;
+}
+
+.marquee-inner.to-left {
+  animation: marqueeLeft 25s linear infinite;
+}
+
+@keyframes marqueeLeft {
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: -100%;
+  }
+}
+
+.marquee-inner.to-right {
+  animation: marqueeRight 25s linear infinite;
+}
+
+@keyframes marqueeRight {
+  0% {
+    right: 0;
+  }
+
+  100% {
+    right: -100%;
+  }
+}
+
+/* === footer scss (software) === */
+.footer-area4 {
+  background: var(--black);
+
+  &-main {
+    padding: 80px 0px;
+
+    @media #{$xxl} {
+      padding: 30px 0px;
+    }
+
+    @media #{$xl} {
+      padding: 20px 0px;
+    }
+  }
+
+  &-widget {
+    &__title {
+      color: #fff;
+      font-family: "Instrument Sans";
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 141.667%;
+      margin-bottom: 30px;
+
+      @media #{$xl} {
+        margin-bottom: 20px;
+      }
+
+      @media #{$lg} {
+        font-size: 20px;
+      }
+    }
+
+    &__text {
+      width: 393px;
+      color: #999;
+      font-family: Kanit;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 155.556%;
+      margin-bottom: 25px;
+
+      @media #{$lg} {
+        font-size: 16px;
+        width: 322px;
+        margin-bottom: 15px;
+      }
+
+      @media #{$sm} {
+        font-size: 16px;
+        width: 286px;
+        margin-bottom: 15px;
+      }
+    }
+
+    &__social {
+      &-link {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        span {
+          width: 46.386px;
+          height: 46.386px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 16px;
+          font-weight: 400;
+          border-radius: 36px;
+          background: transparent;
+          color: var(--white);
+          transition: all 0.4s ease-in-out;
+          border: 1px solid var(--white);
+
+          &:hover {
+            border: none;
+            background: #febc00;
+            color: var(--black);
+          }
+        }
+      }
+    }
+
+    &__nav {
+      &-link {
+        display: block;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 250%;
+        transition: all 0.4s ease-in-out;
+
+        @media #{$lg} {
+          font-size: 14px;
+        }
+
+        &:hover {
+          color: #ff6e00;
+        }
+      }
+    }
+
+    &__contact {
+      &-link {
+        display: block;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 187.5%;
+        transition: all 0.4s ease-in-out;
+
+        &:hover {
+          color: #ff6e00;
+        }
+      }
+    }
+
+    &__newsletter {
+      &-box {
+        width: 448px;
+        position: relative;
+        z-index: 5;
+
+        @media #{$lg} {
+          width: 332px;
+        }
+
+        @media #{$xs} {
+          width: 284px;
+        }
+
+        input {
+          width: 100%;
+          border-radius: 30px;
+          color: #999;
+          font-family: Kanit;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 155.556%;
+          border-radius: 90px;
+          border: 1px solid rgba(255, 255, 255, 0.1) !important;
+          background: rgba(255, 255, 255, 0.02);
+          backdrop-filter: blur(7.5px);
+          padding: 14px 20px;
+          width: 100%;
+          border: 0;
+
+          @media #{$lg} {
+            padding: 12px 15px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  &-bottom {
+    &__wrapper {
+      padding: 60px 0 35px;
+
+      @media #{$xxl} {
+        padding: 30px 0 25px;
+      }
+
+      @media #{$xl} {
+        padding: 20px 0 20px;
+      }
+    }
+
+    &__copyright {
+      text-align: center;
+      color: #fff;
+      font-family: Kanit;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 155.556%;
+
+      @media #{$lg} {
+        font-size: 16px;
+      }
+    }
+  }
+}

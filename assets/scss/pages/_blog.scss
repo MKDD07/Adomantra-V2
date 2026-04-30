@@ -1,0 +1,203 @@
+// blog-section-5 css
+.blog-section-5 {
+    .row {
+        column-gap: 60px;
+    }
+
+    &__wrapper {
+        background: var(--black);
+    }
+
+    &__btn {
+        .rr-btn-green {
+            padding: 23px 58px;
+            border-radius: 90px;
+
+            @media #{$xs} {
+                padding: 16px 30px;
+            }
+        }
+    }
+
+    &__wrap {
+        gap: 60px;
+        display: grid;
+        grid-template-columns: auto auto auto;
+
+        @media #{$xl} {
+            gap: 30px;
+        }
+
+        @media #{$md} {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media #{$sm} {
+            gap: 15px;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media #{$xs} {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item {
+        border-radius: 10px;
+        background: var(--white);
+        padding: 43px 30px 35px 30px;
+        transition: all 0.4s ease-in-out;
+        @media #{$xl} {
+            padding: 43px 15px 35px 15px;
+        }
+        &:hover {
+            .blog-section-5 {
+                &__icon {
+                    a {
+                        color: var(--black);
+                        background: var(--yellow);
+                    }
+                }
+            }
+        }
+    }
+
+    &__thumb {
+        position: relative;
+        border-radius: 10px;
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+            clip-path: polygon(68% 0, 68% 15%, 100% 15%, 100% 100%, 0 100%, 0 0);
+        }
+    }
+
+    &__meta {
+        gap: 73px;
+        display: flex;
+        padding-left: 12px;
+        align-items: center;
+    }
+
+    &__catagory {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28px;
+        position: relative;
+        color: var(--black);
+        font-family: var(--font_kanit);
+
+        &::before {
+            content: "";
+            top: 12px;
+            width: 6px;
+            left: -13px;
+            height: 6px;
+            display: block;
+            position: absolute;
+            border-radius: 100%;
+            background: var(--black);
+        }
+    }
+
+    &__time {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28px;
+        color: var(--black);
+        position: relative;
+        font-family: var(--font_kanit);
+
+        &::before {
+            content: "";
+            top: 14px;
+            left: -50px;
+            width: 30px;
+            height: 1px;
+            display: block;
+            position: absolute;
+            border-radius: 100%;
+            background: var(--black);
+        }
+    }
+
+    &__title {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 40px;
+        color: var(--black);
+        padding: 37px 0 33px 0;
+        font-family: var(--font_instr);
+        transition: all 0.3s ease-in-out;
+
+        br {
+            @media #{$xl} {
+                display: none;
+            }
+        }
+
+        @media #{$xl} {
+            font-size: 20px;
+            line-height: 33px;
+            padding: 24px 0 24px 0;
+        }
+
+        @media #{$xs} {
+            font-size: 17px;
+            line-height: 26px;
+        }
+
+        &:hover {
+            color: var(--secondary);
+        }
+    }
+
+    &__icon {
+        margin-top: 35px;
+
+        a {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            color: var(--white);
+            border-radius: 100%;
+            align-items: center;
+            justify-content: center;
+            background: var(--black);
+            transform: rotate(-45deg);
+
+            @media #{$lg} {
+                width: 46px;
+                height: 46px;
+            }
+        }
+    }
+
+    &__date {
+        top: 6px;
+        right: 33px;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28px;
+        color: var(--black);
+        position: absolute;
+        font-family: var(--font_kanit);
+
+        @media #{$xl} {
+            top: 0;
+            right: 8px;
+            font-size: 16px;
+        }
+
+        @media #{$lg} {
+            font-size: 14px;
+        }
+
+        @media #{$sm} {
+            grid-template-columns: repeat(2, 1fr);
+            right: 0;
+        }
+    }
+}

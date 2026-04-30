@@ -1,0 +1,245 @@
+.portfolio-list {
+  &__card {
+    position: relative;
+    overflow: hidden;
+
+    &-thumb {
+      position: relative;
+      transition: all 0.4s ease-in-out;
+
+      img {
+        border-radius: 10px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-info {
+      display: flex;
+      justify-content: space-between;
+    }
+    &-content {
+      position: absolute;
+      left: 25%;
+      bottom: 0%;
+      transform: translate(-50%, -50%);
+      transition: all 0.4s ease-in-out;
+      padding: 40px 34px;
+      border-radius: 10px;
+      background: #FFF;
+      gap: 200px;
+      display: flex;
+      justify-content: space-between;
+      z-index: 9;
+      transition: all 0.4s ease-in-out;
+      visibility: hidden;
+      opacity: 0;
+
+      @media #{$xxl} {
+        left: 31%;
+      }
+
+      @media #{$xl} {
+        padding: 30px 30px;
+        gap: 100px;
+      }
+
+      @media #{$lg} {
+        padding: 24px 20px;
+        gap: 60px;
+      }
+
+      @media #{$md} {
+        padding: 20px 16px;
+        gap: 20px;
+        left: 35%;
+      }
+
+      @media #{$sm} {
+        padding: 16px 16px;
+        gap: 10px;
+        left: 35%;
+      }
+
+      &-post {
+        &-date {
+          color: #000;
+          font-family: Kanit;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 155.556%;
+          list-style: none;
+
+          @media #{$lg} {
+            font-size: 15px;
+          }
+
+          @media #{$md} {
+            font-size: 14px;
+          }
+
+          @media #{$sm} {
+            font-size: 12px;
+          }
+        }
+      }
+
+      &-items {
+        position: relative;
+
+        &::before {
+          position: absolute;
+          content: "";
+          background: #000;
+          width: 170px;
+          height: 1px;
+          right: 104%;
+          top: 16%;
+
+          @media #{$xl} {
+            width: 80px;
+          }
+
+          @media #{$lg} {
+            width: 50px;
+          }
+
+          @media #{$md} {
+            display: none;
+          }
+        }
+
+        &-title {
+          a {
+            color: #000;
+            font-family: var(--font_instr);
+            font-size: 36px;
+            display: block;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 127.778%;
+
+            @media #{$xl} {
+              font-size: 30px;
+            }
+
+            @media #{$lg} {
+              font-size: 20px;
+            }
+
+            @media #{$md} {
+              font-size: 16px;
+            }
+
+            @media #{$sm} {
+              font-size: 8px;
+            }
+          }
+        }
+
+        &-subtitle {
+          color: #000;
+          font-family: Kanit;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 155.556%;
+          margin-top: 6px;
+
+          @media #{$xl} {
+            font-size: 16px;
+          }
+
+          @media #{$lg} {
+            font-size: 14px;
+          }
+
+          @media #{$md} {
+            font-size: 13px;
+          }
+
+          @media #{$sm} {
+            font-size: 8px;
+          }
+        }
+      }
+    }
+
+    &-link {
+      position: absolute;
+      right: 0%;
+      bottom: 0%;
+      transform: translate(-50%, -50%);
+      transition: all 0.4s ease-in-out;
+      visibility: hidden;
+      opacity: 0;
+
+      @media #{$sm} {
+        right: -7%;
+        bottom: -15%;
+      }
+
+      &-list {
+        width: 179px;
+        height: 179px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #FFFFFF;
+        border-radius: 50%;
+        z-index: 9;
+        color: #000;
+        font-family: var(--font_instr);
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 141.667%;
+
+        @media #{$xxl} {
+          width: 150px;
+          height: 150px;
+          font-size: 20px;
+        }
+
+        @media #{$xl} {
+          width: 120px;
+          height: 120px;
+          font-size: 17px;
+        }
+
+        @media #{$lg} {
+          width: 100px;
+          height: 100px;
+          font-size: 16px;
+        }
+
+        @media #{$md} {
+          width: 70px;
+          height: 70px;
+          font-size: 9px;
+        }
+      }
+    }
+
+    &:hover {
+      .portfolio-list {
+        &__card {
+          &-content {
+            transition: all 0.4s ease-in-out;
+            visibility: visible;
+            opacity: 1;
+          }
+
+          &-link {
+            transition: all 0.4s ease-in-out;
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+  }
+}

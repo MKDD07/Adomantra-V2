@@ -1,0 +1,417 @@
+/* === Team-page (team-page) === */
+.team-page {
+  &__title {
+    color: #000;
+    font-family: Thunder;
+    font-size: 420px;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+    line-height: 95.238%;
+    text-transform: uppercase;
+
+    @media #{$xxl} {
+      font-size: 318px;
+    }
+    @media #{$xl} {
+      font-size: 222px;
+    }
+    @media #{$lg} {
+      font-size: 165px;
+    }
+    @media #{$md} {
+      font-size: 150px;
+    }
+    @media #{$sm} {
+      font-size: 127px;
+    }
+  }
+
+  &__card {
+    position: relative;
+
+    &-title {
+      position: relative;
+      color: #000;
+      font-family: Kanit;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 116.667%;
+      text-transform: uppercase;
+
+      @media #{$xxl} {
+        font-size: 22px;
+      }
+
+      @media #{$xl} {
+        font-size: 20px;
+      }
+
+      &::before {
+        position: absolute;
+        content: "";
+        background: #000;
+        width: 90px;
+        height: 1px;
+        top: 44%;
+        right: 40%;
+
+        @media #{$xxl} {
+          right: 15%;
+        }
+
+        @media #{$xl} {
+          right: 8%;
+          width: 70px;
+        }
+      }
+    }
+
+    &-content {
+      &-title {
+        color: #000;
+        font-family: Kanit;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 155.556%;
+        margin-bottom: 22px;
+
+        @media #{$xl} {
+          font-size: 16px;
+          margin-bottom: 18px;
+        }
+
+        @media #{$md} {
+          font-size: 14px;
+          margin-bottom: 16px;
+        }
+      }
+
+      &-name {
+        color: #000;
+        font-family: var(--font_instr);
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 141.667%;
+        margin-bottom: 7px;
+
+        @media #{$xl} {
+          font-size: 20px;
+          margin-bottom: 5px;
+        }
+        @media #{$md} {
+          font-size: 16px;
+        }
+      }
+
+      &-dsc {
+        color: #504242;
+        font-family: Kanit;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 155.556%;
+        margin-bottom: 30px;
+
+        @media #{$xl} {
+          font-size: 17px;
+          margin-bottom: 20px;
+        }
+        @media #{$md} {
+          font-size: 16px;
+          margin-bottom: 15px;
+        }
+      }
+
+      &-list {
+        display: flex;
+        gap: 20px;
+
+        @media #{$xl} {
+          gap: 10px;
+        }
+
+        &-items {
+          padding: 10px 20px;
+          display: inline-block;
+          border-radius: 90px;
+          border: 1px solid #fff;
+          background: #fff;
+          list-style: none;
+          color: #000;
+          font-family: Kanit;
+          font-size: 15px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 133.333%;
+
+          @media #{$xl} {
+            font-size: 13px;
+            padding: 8px 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* === Team-achievement (team-page) === */
+.team-section {
+  &__card {
+    position: relative;
+    overflow: hidden;
+
+    &-thumb {
+      position: relative;
+      transition: all 0.4s ease-in-out;
+      margin-bottom: 27px;
+      border-radius: 20px;
+
+      @media #{$xl} {
+        margin-bottom: 20px;
+      }
+
+      img {
+        border-radius: 20px;
+        max-width: 100%;
+      }
+    }
+
+    &-items {
+      position: absolute;
+      left: 50%;
+      top: 40%;
+      transition: all 0.4s ease-in-out;
+      visibility: hidden;
+      opacity: 0;
+
+      &-list {
+        display: inline-flex;
+        transform: rotate(-90deg);
+        gap: 9px;
+
+        li {
+          height: 30px;
+          padding: 3px 20px;
+          align-items: center;
+          flex-shrink: 0;
+          list-style: none;
+          border-radius: 90px;
+          border: 1px solid #fff;
+          background: rgba(255, 255, 255, 0);
+          color: #fff;
+          font-family: Kanit;
+          font-size: 15px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 173.333%;
+
+          &:hover {
+            background: var(--white);
+            color: var(--primary);
+          }
+        }
+      }
+    }
+
+    &-content {
+      &-title {
+        margin-bottom: 8px;
+
+        &-name {
+          color: #000;
+          font-family: var(--font_instr);
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 141.667%;
+
+          @media #{$xxl} {
+            font-size: 22px;
+          }
+
+          @media #{$xl} {
+            font-size: 20px;
+          }
+
+          @media #{$lg} {
+            font-size: 18px;
+          }
+        }
+      }
+
+      &-subtitle {
+        color: #555;
+        font-family: Kanit;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 155.556%;
+
+        @media #{$lg} {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &:hover {
+      .team-section {
+        &__card {
+          &-items {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* === Team-achievement (team-page) === */
+
+.team-achievement {
+  &__card {
+    padding: 40px 60px;
+    border-radius: 10px;
+    background: #fff;
+
+    @media #{$xxl} {
+      padding: 30px 30px;
+    }
+
+    &-title {
+      color: #000;
+      font-family: var(--font_instr);
+      font-size: 120px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 100%;
+      margin-bottom: 20px;
+
+      @media #{$xxl} {
+        font-size: 100px;
+      }
+
+      @media #{$xl} {
+        font-size: 76px;
+      }
+
+      @media #{$lg} {
+        font-size: 70px;
+      }
+
+      @media #{$md} {
+        font-size: 50px;
+      }
+    }
+
+    &-text {
+      color: #000;
+      text-align: right;
+      font-family: var(--font_instr);
+      font-size: 29px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 133.333%;
+
+      @media #{$xxl} {
+        font-size: 25px;
+      }
+
+      @media #{$xl} {
+        font-size: 18px;
+      }
+
+      @media #{$lg} {
+        font-size: 16px;
+      }
+
+      @media #{$md} {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+.team-vision {
+  background: var(--primary);
+  padding: 120px 0 520px;
+  @media #{$xxl} {
+    padding: 120px 0 320px;
+  }
+  @media #{$sm} {
+    padding: 120px 0 200px;
+  }
+
+  &__thumb {
+    margin-top: -412px;
+    @media #{$xxl} {
+      margin-top: -200px;
+    }
+    @media #{$sm} {
+      margin-top: -100px;
+    }
+    &-img {
+      border-radius: 16px;
+
+      img {
+        border-radius: 16px;
+      }
+    }
+  }
+
+  &__title {
+    color: var(--white);
+    font-family: var(--font_instr);
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 60px;
+    padding-right: 50px;
+    @media #{$xxl} {
+      margin-bottom: 30px;
+      font-size: 40px;
+    }
+  }
+
+  &__content {
+  }
+
+  &__item {
+    margin-bottom: 70px;
+    padding-left: 60px;
+
+    @media #{$xxl} {
+      margin-bottom: 30px;
+      padding-left: 30px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:first-child {
+      border-left: 1px solid var(--white);
+    }
+    &-title {
+      color: var(--white);
+      font-family: var(--font_instr);
+      font-weight: 600;
+      font-size: 26px;
+      line-height: 36px;
+      margin-bottom: 25px;
+      @media #{$xxl} {
+        margin-bottom: 10px;
+      }
+    }
+    &-text {
+      color: $color-muted;
+      font-family: var(--font_instr);
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 36px;
+      letter-spacing: 0%;
+    }
+  }
+}

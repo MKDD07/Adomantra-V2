@@ -1,0 +1,340 @@
+.contact-area {
+  position: relative;
+  padding: 120px 0 0;
+  overflow: hidden;
+
+  /* Decorative dark background strip (positioned behind form) */
+  &__bg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(5, 5, 5, 1) 0%,
+      rgba(16, 16, 16, 0.95) 100%
+    );
+    mix-blend-mode: normal;
+    z-index: 1;
+    /* subtle texture simulated via radial-gradients */
+    background-image: radial-gradient(
+        circle at 10% 20%,
+        rgba(255, 255, 255, 0.02),
+        transparent 10%
+      ),
+      radial-gradient(
+        circle at 80% 80%,
+        rgba(255, 255, 255, 0.02),
+        transparent 12%
+      ),
+      linear-gradient(180deg, rgba(8, 8, 8, 1), rgba(16, 16, 16, 1));
+    filter: blur(0.2px);
+  }
+
+  /* Info row cards (top white boxes) */
+  &__info-row {
+    position: relative;
+    z-index: 3;
+    padding-bottom: 120px;
+    background-color: #f0f2f4;
+
+
+    .contact-info-card {
+      border-radius: 8px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+      border: 1px solid rgba(16, 24, 40, 0.03);
+      min-height: 88px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      &__title {
+        font-family: var(--font_instr);
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 34px;
+        color: $color-primary;
+        margin: 0 0 10px;
+      }
+
+      &__text {
+        color: $color-secondary;
+        font-family: var(--font_kanit);
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 28px;
+      }
+
+      &__social {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .social-circle {
+        display: inline-flex;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: $card-bg;
+        border: 1px solid $color-border-two;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: $color-primary;
+        font-weight: 700;
+        box-shadow: 0 4px 12px rgba(16, 24, 40, 0.04);
+        transition: transform 0.12s ease, background 0.12s ease;
+
+        &:hover {
+          transform: translateY(-3px);
+          background: $color-green;
+          color: $color-black;
+        }
+      }
+    }
+  }
+
+  /* Heading */
+  &__heading {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 800;
+    color: $card-bg;
+    letter-spacing: 0.4px;
+    font-family: var(--font_instr);
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 82px;
+    text-align: center;
+    margin-bottom: 120px;
+  }
+
+  /* Form Card (dark) */
+  .contact-form-card {
+    padding: 90px 60px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 4;
+    margin-top: 8px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: 0 12px 40px rgba(3, 3, 3, 0.45);
+    backdrop-filter: blur(25px);
+  }
+
+  .contact-form {
+    position: relative;
+    color: $card-bg;
+
+    &__top {
+      margin-bottom: 18px;
+      .contact-form__input {
+        width: 100%;
+        padding: 12px 14px;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        color: $card-bg;
+        outline: none;
+        font-size: 14px;
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.55);
+        }
+        &:focus {
+          border-bottom-color: rgba(255, 255, 255, 0.22);
+        }
+      }
+    }
+
+    &__middle {
+      margin: 22px 0;
+      .contact-form__textarea {
+        width: 100%;
+        min-height: 120px;
+        padding: 18px 14px;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        color: $card-bg;
+        outline: none;
+        font-size: 14px;
+        resize: vertical;
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.55);
+        }
+        &:focus {
+          border-bottom-color: rgba(255, 255, 255, 0.22);
+        }
+      }
+    }
+
+    &__footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 60px;
+      position: relative;
+    }
+
+    /* Circular SEND button */
+    .contact-form__send {
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      background: $card-bg;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+      cursor: pointer;
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+      position: relative;
+      z-index: 6;
+      padding: 0;
+
+      &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+      }
+
+      &-text {
+        color: $color-primary;
+        font-family: var(--font_kanit);
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+        width: 166px;
+        height: 166px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  /* Responsive adjustments */
+  @media #{$lg} {
+    padding: 40px 0 72px;
+
+    &__bg {
+      top: 200px;
+      height: 480px;
+    }
+
+    &__heading {
+      font-size: 32px;
+    }
+  }
+
+  @media #{$md} {
+    padding: 28px 0 56px;
+
+    &__bg {
+      top: 160px;
+      height: 420px;
+    }
+
+    &__heading {
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+
+    .contact-form-card {
+      padding: 22px;
+    }
+
+    .contact-form {
+      &__top {
+        margin-bottom: 12px;
+      }
+      &__middle {
+        margin: 16px 0;
+      }
+      .contact-form__send {
+        width: 78px;
+        height: 78px;
+      }
+    }
+  }
+
+  @media #{$sm} {
+    padding: 20px 0 48px;
+
+    &__info-row {
+      .contact-info-card {
+        min-height: auto;
+        padding: 14px;
+      }
+    }
+
+    &__heading {
+      font-size: 22px;
+      margin: 12px 0 14px;
+      color: $color-primary; /* on small screens show dark heading for contrast */
+    }
+
+    .contact-form-card {
+      padding: 18px;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.72);
+    }
+
+    .contact-form {
+      &__top .contact-form__input {
+        padding: 10px 12px;
+        font-size: 13px;
+      }
+      &__middle .contact-form__textarea {
+        padding: 12px;
+        min-height: 90px;
+        font-size: 13px;
+      }
+      .contact-form__send {
+        width: 64px;
+        height: 64px;
+      }
+    }
+
+    &__bg {
+      top: 280px;
+      height: 360px;
+    }
+  }
+
+  @media #{$xs} {
+    padding: 16px 0 40px;
+
+    .contact-form__send {
+      width: 58px;
+      height: 58px;
+    }
+    .contact-form__input,
+    .contact-form__textarea {
+      font-size: 13px;
+    }
+    &__heading {
+      font-size: 20px;
+    }
+    &__bg {
+      top: 240px;
+      height: 300px;
+    }
+  }
+}
+
+
+.map-box {
+  iframe {
+    border: 0;
+    width: 100%;
+    height: 650px;
+  }
+}

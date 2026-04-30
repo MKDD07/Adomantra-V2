@@ -1,0 +1,2204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Royal Enfield – Pure Motorcycling</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <script>
+        function autoInputFont(input, min = 12, max = 40) {
+            const mirror = document.createElement('span');
+            mirror.style.cssText = `
+        position:absolute;
+        visibility:hidden;
+        white-space:pre;
+        font:inherit;
+    `;
+            document.body.appendChild(mirror);
+
+            const resize = () => {
+                mirror.textContent = input.value || input.placeholder;
+
+                const inputWidth = input.offsetWidth;
+                const textWidth = mirror.offsetWidth;
+
+                // Scale font down as text grows wider than the input
+                const ratio = inputWidth / Math.max(textWidth, 1);
+                const size = Math.min(Math.max(ratio * max, min), max);
+
+                input.style.setProperty('--fs', size + 'px');
+            };
+
+            input.addEventListener('input', resize);
+            resize();
+        }
+    </script>
+    <style>
+        :root {
+            --gold: #fff;
+            --gold-lt: #E2C870;
+            --gold-dk: #da291c;
+            --maroon: #8B1A1A;
+            --cream: #F5EDD6;
+            --black: #080604;
+            --dark: #100E0A;
+            --panel: #161208;
+            --gunmetal: #1E1C18;
+            --smoke: #9A9488;
+            --border: rgba(201, 168, 76, 0.18);
+            --f1: 'Montserrat', sans-serif;
+            --f2: 'Libre Baskerville', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent
+        }
+
+        html,
+        body {
+            background: #000;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: var(--f1);
+            overflow-x: hidden
+        }
+
+        /* ═══ SHELL ═══ */
+        .shell {
+            width: 100%;
+            max-width: 576px;
+            background: var(--black);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column
+        }
+
+        * Hero Title */ .hero-title {
+            position: absolute;
+            bottom: 18px;
+            left: 20px;
+            z-index: 5;
+        }
+
+        .hero-title .pre {
+            font-size: 9px;
+            letter-spacing: 5px;
+            color: var(--gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 2px;
+            opacity: 0;
+            animation: fadeUp 0.6s ease 0.5s forwards;
+        }
+
+        .hero-title h1 {
+            font-size: clamp(36px, 10vw, 54px);
+            font-weight: 900;
+            color: var(--cream);
+            line-height: 0.9;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            opacity: 0;
+            animation: fadeUp 0.7s ease 0.7s forwards;
+        }
+
+        .hero-title h1 em {
+            font-style: normal;
+            color: var(--gold);
+            display: block;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* ═══ GRAIN ═══ */
+        .grain {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: .035;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")
+        }
+
+        /* ═══ HERO VIDEO ═══ */
+        .hero {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background: #000;
+            height: auto;
+        }
+
+        .hero video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block
+        }
+
+        .hero-fog {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(8, 6, 4, .45) 0%, transparent 40%, rgba(8, 6, 4, .95) 100%);
+            pointer-events: none
+        }
+
+        /* Badge */
+        .badge {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1px
+        }
+
+        .badge-ring {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 1.5px solid var(--gold);
+            background: rgba(8, 6, 4, .72);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1px
+        }
+
+        .badge-ring span:first-child {
+            font-size: 5.5px;
+            letter-spacing: 2.5px;
+            color: var(--gold);
+            font-weight: 700;
+            text-transform: uppercase
+        }
+
+        .badge-ring span:last-child {
+            font-size: 8.5px;
+            letter-spacing: 1.5px;
+            color: var(--cream);
+            font-weight: 600;
+            text-transform: uppercase
+        }
+
+        /* Hero text */
+        .hero-text {
+            position: absolute;
+            bottom: 16px;
+            left: 18px;
+            z-index: 5
+        }
+
+        .hero-eyebrow {
+            display: block;
+            font-size: 8px;
+            letter-spacing: 5px;
+            color: var(--gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 3px;
+            opacity: 0;
+            transform: translateY(8px);
+            animation: upIn .5s ease .3s forwards
+        }
+
+        .hero-name {
+            font-size: clamp(30px, 9vw, 46px);
+            font-weight: 900;
+            color: var(--cream);
+            line-height: .92;
+            text-transform: uppercase;
+            letter-spacing: -1.5px;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: upIn .6s ease .5s forwards
+        }
+
+        .hero-name em {
+            font-style: normal;
+            color: var(--gold);
+            display: block
+        }
+
+        .hero-sub {
+            font-size: 10px;
+            color: rgba(245, 237, 214, .6);
+            font-weight: 400;
+            margin-top: 5px;
+            letter-spacing: .5px;
+            opacity: 0;
+            animation: upIn .5s ease .7s forwards
+        }
+
+        @keyframes upIn {
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        /* ═══ BIKE TABS ═══ */
+        .bike-tabs {
+            display: flex;
+            border-bottom: 1px solid var(--border);
+            background: var(--dark);
+            position: sticky;
+            top: 0;
+            z-index: 100
+        }
+
+        .tab {
+            flex: 1;
+            padding: 10px 4px;
+            text-align: center;
+            cursor: pointer;
+            transition: all .25s;
+            border-bottom: 2px solid transparent;
+            position: relative
+        }
+
+        .tab span {
+            font-size: 8.5px;
+            letter-spacing: 1.5px;
+            color: var(--smoke);
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: color .25s;
+            display: block
+        }
+
+        .tab small {
+            font-size: 7px;
+            color: rgba(154, 148, 136, .5);
+            letter-spacing: .5px;
+            margin-top: 1px;
+            display: block;
+            transition: color .25s
+        }
+
+        .tab.active {
+            border-bottom-color: var(--gold)
+        }
+
+        .tab.active span {
+            color: var(--gold)
+        }
+
+        .tab.active small {
+            color: rgba(201, 168, 76, .6)
+        }
+
+        .tab::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width .3s ease
+        }
+
+        .tab.active::after {
+            width: 80%
+        }
+
+        /* ═══ MAIN CONTENT ═══ */
+        .bike-content {
+            display: none;
+            flex-direction: column
+        }
+
+        .bike-content.active {
+            display: flex
+        }
+
+        /* ═══ GOLD RULE ═══ */
+        .rule {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px
+        }
+
+        .rule .line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold-dk), transparent)
+        }
+
+        .rule .diamond {
+            width: 5px;
+            height: 5px;
+            background: var(--gold);
+            transform: rotate(45deg);
+            flex-shrink: 0
+        }
+
+        /* ═══ TAGLINE ═══ */
+        .tagline {
+            padding: 4px 18px 12px;
+            text-align: center
+        }
+
+        .tagline p {
+            font-family: var(--f2);
+            font-style: italic;
+            font-size: 12px;
+            color: var(--smoke);
+            line-height: 1.6
+        }
+
+        .tagline p em {
+            color: var(--gold);
+            font-style: normal;
+            font-size: 9px;
+            font-family: var(--f1);
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            display: block;
+            margin-top: 4px
+        }
+
+        /* ═══ MARQUEE ═══ */
+        .marquee {
+            overflow: hidden;
+            padding: 8px 0;
+            background: var(--maroon);
+            border-top: 1px solid rgba(201, 168, 76, .25);
+            border-bottom: 1px solid rgba(201, 168, 76, .25)
+        }
+
+        .mq-inner {
+            display: flex;
+            white-space: nowrap;
+            animation: scrollL 20s linear infinite
+        }
+
+        .mq-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0 14px;
+            flex-shrink: 0
+        }
+
+        .mq-item span {
+            font-size: 8.5px;
+            letter-spacing: 3px;
+            color: var(--cream);
+            text-transform: uppercase;
+            font-weight: 600
+        }
+
+        .mq-item .dot {
+            width: 3px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 50%
+        }
+
+        @keyframes scrollL {
+            0% {
+                transform: translateX(0)
+            }
+
+            100% {
+                transform: translateX(-50%)
+            }
+        }
+
+        /* ═══ COLOUR SECTION ═══ */
+        .colour-section {
+            background: var(--panel);
+            padding: 16px 18px;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border)
+        }
+
+        .sec-label {
+            font-size: 7.5px;
+            letter-spacing: 4px;
+            color: var(--gold-dk);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 10px
+        }
+
+        .colour-viewer {
+            position: relative;
+            width: 100%;
+            padding-top: 52%;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 12px
+        }
+
+        .cv-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity .5s ease;
+        }
+
+        .cv-img.active {
+            opacity: 1
+        }
+
+        .cv-badge {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 3px 9px;
+            border-radius: 2px;
+            z-index: -1;
+            text-align: center;
+            text-wrap: nowrap;
+        }
+
+        .cv-badge span {
+            font-size: 72px;
+            text-align: center;
+            text-wrap: wrap;
+            letter-spacing: 2px;
+            color: var(--gold);
+            text-transform: uppercase;
+            font-weight: 600
+        }
+
+        .swatches {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap
+        }
+
+        .sw {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: transparent;
+            border: 1px solid rgba(201, 168, 76, .18);
+            border-radius: 3px;
+            padding: 6px 9px;
+            cursor: pointer;
+            transition: all .2s ease;
+            flex: 1;
+            min-width: 100px
+        }
+
+        .sw.active {
+            border-color: var(--gold);
+            background: rgba(201, 168, 76, .07)
+        }
+
+        .sw-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(255, 255, 255, .15);
+            flex-shrink: 0
+        }
+
+        .sw span {
+            font-size: 8px;
+            letter-spacing: .8px;
+            color: var(--smoke);
+            text-transform: uppercase;
+            font-weight: 600;
+            line-height: 1.2
+        }
+
+        .sw.active span {
+            color: var(--gold)
+        }
+
+        /* ═══ SPECS ═══ */
+        .specs-section {
+            padding: 16px 18px
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 10px
+        }
+
+        .spec-cell {
+            background: var(--panel);
+            padding: 13px 14px;
+            position: relative
+        }
+
+        .spec-cell::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 14px;
+            width: 18px;
+            height: 1px;
+            background: var(--gold-dk)
+        }
+
+        .spec-num {
+            font-size: clamp(22px, 6vw, 28px);
+            font-weight: 900;
+            color: var(--cream);
+            line-height: 1;
+            letter-spacing: -1px
+        }
+
+        .spec-unit {
+            font-size: 10px;
+            font-weight: 400;
+            color: var(--gold);
+            margin-left: 1px
+        }
+
+        .spec-label {
+            font-size: 7px;
+            letter-spacing: 2px;
+            color: var(--smoke);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-top: 4px
+        }
+
+        /* ═══ FEATURES SCROLL ═══ */
+        .feat-section {
+            padding: 16px 0 16px 18px
+        }
+
+        .feat-track-w {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none
+        }
+
+        .feat-track-w::-webkit-scrollbar {
+            display: none
+        }
+
+        .feat-track {
+            display: flex;
+            gap: 10px;
+            padding-right: 18px
+        }
+
+        .feat-card {
+            flex-shrink: 0;
+            width: 148px;
+            background: var(--gunmetal);
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: border-color .25s
+        }
+
+        .feat-card:active {
+            border-color: var(--gold)
+        }
+
+        .feat-img {
+            width: 100%;
+            height: 90px;
+            object-fit: cover;
+            display: block;
+            background: #1a1614
+        }
+
+        .feat-body {
+            padding: 9px 10px 11px
+        }
+
+        .feat-tag {
+            font-size: 6.5px;
+            letter-spacing: 2.5px;
+            color: var(--gold);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 3px
+        }
+
+        .feat-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--cream);
+            line-height: 1.3;
+            margin-bottom: 4px
+        }
+
+        .feat-desc {
+            font-size: 9px;
+            color: var(--smoke);
+            line-height: 1.5
+        }
+
+        /* ═══ PERF BARS ═══ */
+        .perf-section {
+            padding: 0 18px 16px
+        }
+
+        .pb-row {
+            margin-bottom: 12px
+        }
+
+        .pb-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px
+        }
+
+        .pb-top span:first-child {
+            font-size: 8px;
+            letter-spacing: 2px;
+            color: var(--smoke);
+            text-transform: uppercase;
+            font-weight: 600
+        }
+
+        .pb-top span:last-child {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--gold)
+        }
+
+        .pb-track {
+            height: 2px;
+            background: rgba(255, 255, 255, .07);
+            border-radius: 2px;
+            overflow: hidden
+        }
+
+        .pb-fill {
+            height: 100%;
+            border-radius: 2px;
+            background: linear-gradient(to right, var(--gold-dk), var(--gold));
+            width: 0;
+            transition: width 1s cubic-bezier(.4, 0, .2, 1)
+        }
+
+        /* ═══ HIGHLIGHTS / PILLS ═══ */
+        .pills {
+            padding: 0 18px 14px;
+            display: flex;
+            gap: 7px;
+            flex-wrap: wrap
+        }
+
+        .pill {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            border: 1px solid rgba(201, 168, 76, .25);
+            background: rgba(201, 168, 76, .04)
+        }
+
+        .pill-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--gold);
+            animation: pulse 1.8s ease infinite;
+            flex-shrink: 0
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1)
+            }
+
+            50% {
+                opacity: .35;
+                transform: scale(.65)
+            }
+        }
+
+        .pill span {
+            font-size: 8px;
+            letter-spacing: 1.5px;
+            color: var(--smoke);
+            text-transform: uppercase;
+            font-weight: 600
+        }
+
+        /* ═══ TESTIMONIAL ═══ */
+        .testi {
+            padding: 0 18px 16px
+        }
+
+        .testi-inner {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 16px 18px;
+            position: relative;
+            overflow: hidden
+        }
+
+        .testi-inner::before {
+            content: '"';
+            position: absolute;
+            top: -14px;
+            left: 10px;
+            font-size: 90px;
+            color: var(--gold-dk);
+            opacity: .18;
+            font-family: var(--f2);
+            line-height: 1;
+            pointer-events: none
+        }
+
+        .testi-text {
+            font-family: var(--f2);
+            font-style: italic;
+            font-size: 12px;
+            color: var(--cream);
+            line-height: 1.75;
+            margin-bottom: 11px;
+            position: relative;
+            z-index: 1
+        }
+
+        .testi-author {
+            display: flex;
+            align-items: center;
+            gap: 9px
+        }
+
+        .av {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--maroon);
+            border: 1.5px solid var(--gold-dk);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: var(--cream);
+            font-weight: 700;
+            flex-shrink: 0
+        }
+
+        .av-info .name {
+            font-size: 9.5px;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: .8px;
+            text-transform: uppercase
+        }
+
+        .av-info .role {
+            font-size: 8px;
+            color: var(--smoke);
+            margin-top: 1px
+        }
+
+        .stars {
+            margin-left: auto;
+            color: var(--gold);
+            font-size: 11px;
+            letter-spacing: 1px
+        }
+
+        /* ═══ CTA FOOTER ═══ */
+        .cta-footer {
+            padding: 30px 15px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            max-width: 576px;
+            z-index: 999;
+            background: var(--black);
+        }
+
+        .price-wrap {
+            flex: 1
+        }
+
+        .price-from {
+            font-size: 7px;
+            letter-spacing: 2px;
+            color: var(--gold-dk);
+            text-transform: uppercase;
+            font-weight: 600
+        }
+
+        .price-amount {
+            font-size: clamp(20px, 5.5vw, 26px);
+            font-weight: 900;
+            color: var(--cream);
+            line-height: 1;
+            letter-spacing: -.5px;
+            display: inline-block;
+        }
+
+        @keyframes pricePop {
+            0% {
+                transform: scale(1) translateY(0);
+                color: var(--gold);
+            }
+
+            50% {
+                transform: scale(1.1) translateY(-2px);
+                color: #fff;
+            }
+
+            100% {
+                transform: scale(1) translateY(0);
+                color: var(--cream);
+            }
+        }
+
+        .price-pop {
+            animation: pricePop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .price-amount sub {
+            font-size: 10px;
+            font-weight: 400;
+            color: var(--smoke);
+            vertical-align: baseline;
+            margin-left: 2px;
+            display: inline-block;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            padding: 11px 13px;
+            font-size: 8px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 3px;
+            cursor: pointer;
+            font-family: var(--f1);
+            white-space: nowrap;
+            transition: all .2s
+        }
+
+        .btn-outline:active {
+            background: rgba(201, 168, 76, .1)
+        }
+
+        .btn-solid {
+            background: var(--gold);
+            color: var(--black);
+            font-family: var(--f1);
+            font-size: 8px;
+            font-weight: 800;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            border: none;
+            padding: 12px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all .2s;
+            text-decoration: none;
+            display: inline-block
+        }
+
+        .btn-solid:active {
+            background: var(--cream)
+        }
+
+        /* ═══ REVEAL ═══ */
+        .rev {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity .6s ease, transform .6s ease
+        }
+
+        .rev.vis {
+            opacity: 1;
+            transform: translateY(0)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grain"></div>
+    <div class="shell" style="position: relative; padding-bottom: 80px;">
+        <div class="cta-footer rev">
+            <div class="price-wrap">
+                <div class="price-from">Starting From</div>
+                <div class="price-amount" id="main-price-display">₹1.82L<sub>ex-showroom</sub></div>
+            </div>
+            <button class="btn-outline" onclick="alert('Book a test ride at your nearest Royal Enfield dealer!')">Test
+                Ride</button>
+            <a class="btn-solid" id="main-explore-btn"
+                href="https://www.royalenfield.com/in/en/motorcycles/classic-350/" target="_blank">Explore</a>
+        </div>
+        <!-- ── HERO ── -->
+
+        <div class="hero">
+            <video autoplay loop muted playsinline>
+                <source
+                    src="https://www.royalenfield.com/content/dam/royal-enfield/motorcycles/new-classic-350/videos/classic-350-polo-homepage-banner-db.mp4"
+                    type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+
+            <div class="re-badge">
+                <div class="re-badge-inner">
+                    <span>SINCE</span>
+                    <span>1901</span>
+                </div>
+            </div>
+
+            <div class="hero-title" style="position: absolute; bottom: 18px; left: 20px; z-index: 5;">
+                <span style="color: white;" class="pre">Stay Classic</span>
+                <img src="https://www.royalenfield.com/content/dam/RE-Platform-Revamp/re-revamp-commons/logo.webp"
+                    style="width: 240px;">
+            </div>
+        </div>
+
+        <!-- ── TABS ── -->
+        <div class="bike-tabs">
+            <div class="tab active" onclick="selectBike('classic')" id="tab-classic">
+                <span>Classic</span><small>350</small>
+            </div>
+            <div class="tab" onclick="selectBike('meteor')" id="tab-meteor">
+                <span>Meteor</span><small>350</small>
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════
+       CLASSIC 350
+  ══════════════════════════════════ -->
+        <div class="bike-content active" id="content-classic">
+
+            <div class="rule">
+                <div class="line"></div>
+                <div class="diamond"></div>
+                <div class="line"></div>
+            </div>
+            <div class="tagline rev">
+                <p>Inspired by the legendary 1948 G2 Bullet — the longest-lived motorcycle design in
+                    history.<em>Heritage ·
+                        Redditch · Signals · Dark · Chrome</em></p>
+            </div>
+
+            <div class="marquee">
+                <div class="mq-inner">
+                    <div class="mq-item"><span>Since 1901</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Classic 350</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>J-Series Engine</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Made Like A Gun</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Goes Like A Bullet</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Tripper Nav</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Since 1901</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Classic 350</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>J-Series Engine</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Made Like A Gun</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Goes Like A Bullet</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Tripper Nav</span>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Colour Picker -->
+            <div class="colour-section rev">
+                <div class="sec-label">Choose Colour</div>
+
+                <div class="colour-viewer">
+                    <!-- 0 — Halcyon Black -->
+                    <img class="cv-img active"
+                        src="https://www.royalenfield.com/content/dam/royal-enfield/motorcycles/new-classic-350/studio-shots/360/gun-grey/01.png"
+                        alt="Gun Grey">
+
+                    <!-- 1 — Madras Red -->
+                    <img class="cv-img"
+                        src="https://www.royalenfield.com/content/dam/royal-enfield/motorcycles/new-classic-350/studio-shots/360/madras-red/01.png"
+                        alt="Madras Red">
+
+                    <!-- 2 — Medallion Bronze -->
+                    <img class="cv-img"
+                        src="https://www.royalenfield.com/content/dam/royal-enfield/motorcycles/new-classic-350/studio-shots/360/medallion-bronze/01.png"
+                        alt="Medallion Bronze">
+
+                    <!-- 3 — Stealth Black -->
+                    <img class="cv-img"
+                        src="https://www.royalenfield.com/content/dam/royal-enfield/motorcycles/new-classic-350/studio-shots/360/stealth-black/stealth-black-000.png"
+                        alt="Stealth Black">
+
+                    <!-- 4 — Jodhpur Blue -->
+                    <img class="cv-img"
+                        src="https://www.royalenfield.com/content/dam/royal-enfield/motorcycles/new-classic-350/studio-shots/360/jodhpur-blue/01.png"
+                        alt="Jodhpur Blue">
+
+                    <div class="cv-badge">
+                        <span id="classic-color-name">Gun Grey</span>
+                    </div>
+                </div>
+
+                <div class="swatches">
+
+                    <button class="sw active" onclick="pickColour('classic',0,'Gun Grey',this)">
+                        <div class="sw-dot" style="background:#636363;border-color:#636363"></div>
+                        <span>Gun Grey</span>
+                    </button>
+
+                    <button class="sw" onclick="pickColour('classic',1,'Madras Red',this)">
+                        <div class="sw-dot" style="background:#8B1A1A"></div>
+                        <span>Madras Red</span>
+                    </button>
+
+                    <button class="sw" onclick="pickColour('classic',2,'Medallion Bronze',this)">
+                        <div class="sw-dot" style="background:#8B6914"></div>
+                        <span>Medallion Bronze</span>
+                    </button>
+
+                    <button class="sw" onclick="pickColour('classic',3,'Stealth Black',this)">
+                        <div class="sw-dot" style="background:#111;border-color:#2a2a2a"></div>
+                        <span>Stealth Black</span>
+                    </button>
+
+                    <button class="sw" onclick="pickColour('classic',4,'Jodhpur Blue',this)">
+                        <div class="sw-dot" style="background:#1E3A5F"></div>
+                        <span>Jodhpur Blue</span>
+                    </button>
+
+                </div>
+            </div>
+
+            <!-- Specs -->
+            <div class="specs-section rev">
+                <div class="sec-label">Numbers That Matter</div>
+                <div class="specs-grid">
+
+                    <div class="spec-cell">
+                        <div class="spec-num">349<span class="spec-unit">cc</span></div>
+                        <div class="spec-label">Single-Cylinder, 4-Stroke, Air-Oil Cooled</div>
+                    </div>
+
+                    <div class="spec-cell">
+                        <div class="spec-num">20.2<span class="spec-unit">bhp</span></div>
+                        <div class="spec-label">Max Power @ 6100 rpm</div>
+                    </div>
+
+                    <div class="spec-cell">
+                        <div class="spec-num">27<span class="spec-unit">Nm</span></div>
+                        <div class="spec-label">Max Torque @ 4000 rpm</div>
+                    </div>
+
+                    <div class="spec-cell">
+                        <div class="spec-num">13<span class="spec-unit">L</span></div>
+                        <div class="spec-label">Fuel Tank Capacity</div>
+                    </div>
+
+                    <div class="spec-cell">
+                        <div class="spec-num">195<span class="spec-unit">kg</span></div>
+                        <div class="spec-label">Kerb Weight</div>
+                    </div>
+
+                    <div class="spec-cell">
+                        <div class="spec-num">805<span class="spec-unit">mm</span></div>
+                        <div class="spec-label">Seat Height</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="feat-section rev">
+                <div class="sec-label" style="padding-left:0;margin-bottom:10px">Built For The Beyond</div>
+
+                <div class="feat-track-w">
+                    <div class="feat-track">
+
+                        <div class="feat-card">
+                            <img class="feat-img"
+                                src="https://www.royalenfield.com/content/dam/royal-enfield/india/rides/events/motoverse-2025/motoverse-ride.webp"
+                                alt="Motoverse">
+                            <div class="feat-body">
+                                <div class="feat-tag">Festival</div>
+                                <div class="feat-title">Motoverse Energy</div>
+                                <div class="feat-desc">
+                                    High-octane celebration of speed, culture and community fueling the spirit of
+                                    adventure.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="feat-card">
+                            <img class="feat-img"
+                                src="https://www.royalenfield.com/content/dam/royal-enfield-revamp/home/new/irides/webp/tours-desktop.webp"
+                                alt="Tours">
+                            <div class="feat-body">
+                                <div class="feat-tag">Exploration</div>
+                                <div class="feat-title">Extreme Tours</div>
+                                <div class="feat-desc">
+                                    Engineered journeys through extreme terrains for the ultimate riding challenge.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="feat-card">
+                            <img class="feat-img"
+                                src="https://www.royalenfield.com/content/dam/royal-enfield-revamp/home/new/irides/webp/rentals-ride-home.webp"
+                                alt="Rentals">
+                            <div class="feat-body">
+                                <div class="feat-tag">Access</div>
+                                <div class="feat-title">Anywhere Rentals</div>
+                                <div class="feat-desc">
+                                    Freedom to ride anywhere, anytime, with instant motorcycle access.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="feat-card">
+                            <img class="feat-img"
+                                src="https://www.royalenfield.com/content/dam/royal-enfield-revamp/home/new/irides/webp/rides-new.webp"
+                                alt="Rides and Events">
+                            <div class="feat-body">
+                                <div class="feat-tag">Experiences</div>
+                                <div class="feat-title">Epic Rides</div>
+                                <div class="feat-desc">
+                                    Terrain-tested riding programs designed to push limits beyond roads.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Perf Bars -->
+            <div class="perf-section rev">
+                <div class="sec-label" style="margin-bottom:14px">Ride Profile</div>
+                <div class="pb-row">
+                    <div class="pb-top"><span>Heritage Appeal</span><span>98%</span></div>
+                    <div class="pb-track">
+                        <div class="pb-fill" data-w="98"></div>
+                    </div>
+                </div>
+                <div class="pb-row">
+                    <div class="pb-top"><span>City Comfort</span><span>86%</span></div>
+                    <div class="pb-track">
+                        <div class="pb-fill" data-w="86"></div>
+                    </div>
+                </div>
+                <div class="pb-row">
+                    <div class="pb-top"><span>Highway Cruising</span><span>78%</span></div>
+                    <div class="pb-track">
+                        <div class="pb-fill" data-w="78"></div>
+                    </div>
+                </div>
+                <div class="pb-row">
+                    <div class="pb-top"><span>Build Quality</span><span>91%</span></div>
+                    <div class="pb-track">
+                        <div class="pb-fill" data-w="91"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pills -->
+            <div class="pills rev">
+                <div class="pill">
+                    <div class="pill-dot"></div><span>9 Colour Options</span>
+                </div>
+                <div class="pill">
+                    <div class="pill-dot" style="animation-delay:.4s"></div><span>EMI from ₹3,299/mo</span>
+                </div>
+                <div class="pill">
+                    <div class="pill-dot" style="animation-delay:.8s"></div><span>5-Speed Gearbox</span>
+                </div>
+                <div class="pill">
+                    <div class="pill-dot" style="animation-delay:1.2s"></div><span>Slipper Clutch</span>
+                </div>
+            </div>
+
+            <!-- Testimonial -->
+            <div class="testi rev">
+                <div class="testi-inner">
+                    <p class="testi-text">There's nothing quite like the thump of a Classic 350 on a mountain road at
+                        dawn. It's
+                        not transport — it's a ritual.</p>
+                    <div class="testi-author">
+                        <div class="av">R</div>
+                        <div class="av-info">
+                            <div class="name">Rohan Mehta</div>
+                            <div class="role">Classic 350 Owner · Leh–Manali Rider</div>
+                        </div>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+
+
+        </div><!-- /classic -->
+
+
+        <!-- ══════════════════════════════════
+       METEOR 350
+  ══════════════════════════════════ -->
+        <div class="bike-content" id="content-meteor">
+
+            <div class="rule">
+                <div class="line"></div>
+                <div class="diamond"></div>
+                <div class="line"></div>
+            </div>
+            <div class="tagline rev">
+                <p>Born to cruise. The Meteor 350 delivers relaxed touring ergonomics with 90% torque available at just
+                    1800
+                    rpm.<em>Fireball · Supernova · Stellar</em></p>
+            </div>
+
+            <div class="marquee">
+                <div class="mq-inner">
+                    <div class="mq-item"><span>Meteor 350</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Cruiser DNA</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Tripper Nav</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Low End Torque</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Highway Born</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Pure Motorcycling</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Meteor 350</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Cruiser DNA</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Tripper Nav</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Low End Torque</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Highway Born</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Pure Motorcycling</span>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="colour-section rev">
+                <div class="sec-label">Choose Colour</div>
+                <div class="colour-viewer">
+                    <img class="cv-img active"
+                        src="https://www.royalenfield.com/content/dam/royal-enfield/motorcycles/meteor/campaign/pdp/retro-green.png"
+                        alt="Retro Green">
+                    <img class="cv-img"
+                        src="https://www.royalenfield.com/content/dam/royal-enfield/motorcycles/meteor/campaign/pdp/aurora-red.png"
+                        alt="Aurora Red">
+                    <img class="cv-img"
+                        src="https://www.royalenfield.com/content/dam/royal-enfield/motorcycles/meteor/campaign/pdp/halycon-green.png"
+                        alt="Halcyon Green">
+                    <div class="cv-badge"><span id="meteor-color-name">Fireball</span></div>
+                </div>
+                <div class="swatches">
+                    <button class="sw active" onclick="pickColour('meteor',0,'Retro Green',this)">
+                        <div class="sw-dot" style="background:#2d78c8"></div><span>Retro Green</span>
+                    </button>
+                    <button class="sw" onclick="pickColour('meteor',1,'Aurora Red',this)">
+                        <div class="sw-dot" style="background:#ef4444"></div><span>Aurora Red</span>
+                    </button>
+                    <button class="sw" onclick="pickColour('meteor',2,'Halcyon Green',this)">
+                        <div class="sw-dot" style="background:#1c1c1c"></div><span>Halcyon Black</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="specs-section rev">
+                <div class="sec-label">Numbers That Matter</div>
+                <div class="specs-grid">
+
+                    <div class="spec-cell">
+                        <div class="spec-num">349<span class="spec-unit">cc</span></div>
+                        <div class="spec-label">Single-Cylinder, Air-Oil Cooled</div>
+                    </div>
+
+                    <div class="spec-cell">
+                        <div class="spec-num">20.2<span class="spec-unit">bhp</span></div>
+                        <div class="spec-label">Max Power @ 6100 rpm</div>
+                    </div>
+
+                    <div class="spec-cell">
+                        <div class="spec-num">27<span class="spec-unit">Nm</span></div>
+                        <div class="spec-label">Max Torque @ 4000 rpm</div>
+                    </div>
+
+                    <div class="spec-cell">
+                        <div class="spec-num">15<span class="spec-unit">L</span></div>
+                        <div class="spec-label">Fuel Tank Capacity</div>
+                    </div>
+
+                    <div class="spec-cell">
+                        <div class="spec-num">191<span class="spec-unit">kg</span></div>
+                        <div class="spec-label">Kerb Weight</div>
+                    </div>
+
+                    <div class="spec-cell">
+                        <div class="spec-num">765<span class="spec-unit">mm</span></div>
+                        <div class="spec-label">Seat Height</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="feat-section rev">
+                <div class="sec-label" style="padding-left:0;margin-bottom:10px">Crafted Details</div>
+
+                <div class="feat-track-w">
+                    <div class="feat-track">
+
+                        <div class="feat-card">
+                            <img class="feat-img"
+                                src="https://www.royalenfield.com/content/dam/royal-enfield-revamp/home/new/irides/webp/rides-new.webp"
+                                alt="Rides and Events">
+                            <div class="feat-body">
+                                <div class="feat-tag">Experiences</div>
+                                <div class="feat-title">Rides & Events</div>
+                                <div class="feat-desc">
+                                    Curated riding experiences and community-driven events across breathtaking terrains.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="feat-card">
+                            <img class="feat-img"
+                                src="https://www.royalenfield.com/content/dam/royal-enfield-revamp/home/new/irides/webp/rentals-ride-home.webp"
+                                alt="Rentals">
+                            <div class="feat-body">
+                                <div class="feat-tag">Access</div>
+                                <div class="feat-title">Bike Rentals</div>
+                                <div class="feat-desc">
+                                    Flexible rentals across major cities — ride anywhere, anytime, without ownership.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="feat-card">
+                            <img class="feat-img"
+                                src="https://www.royalenfield.com/content/dam/royal-enfield/india/rides/events/motoverse-2025/motoverse-ride.webp"
+                                alt="Motoverse">
+                            <div class="feat-body">
+                                <div class="feat-tag">Festival</div>
+                                <div class="feat-title">Motoverse</div>
+                                <div class="feat-desc">
+                                    The world’s largest celebration of motorcycling, culture, music and adventure.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="feat-card">
+                            <img class="feat-img"
+                                src="https://www.royalenfield.com/content/dam/royal-enfield-revamp/home/new/irides/webp/tours-desktop.webp"
+                                alt="Tours">
+                            <div class="feat-body">
+                                <div class="feat-tag">Adventure</div>
+                                <div class="feat-title">Global Tours</div>
+                                <div class="feat-desc">
+                                    Professionally guided tours to the most epic riding destinations on the planet.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="perf-section rev">
+                <div class="sec-label" style="margin-bottom:14px">Ride Profile</div>
+                <div class="pb-row">
+                    <div class="pb-top"><span>Highway Cruising</span><span>95%</span></div>
+                    <div class="pb-track">
+                        <div class="pb-fill" data-w="95"></div>
+                    </div>
+                </div>
+                <div class="pb-row">
+                    <div class="pb-top"><span>Ride Comfort</span><span>92%</span></div>
+                    <div class="pb-track">
+                        <div class="pb-fill" data-w="92"></div>
+                    </div>
+                </div>
+                <div class="pb-row">
+                    <div class="pb-top"><span>City Mileage</span><span>88%</span></div>
+                    <div class="pb-track">
+                        <div class="pb-fill" data-w="88"></div>
+                    </div>
+                </div>
+                <div class="pb-row">
+                    <div class="pb-top"><span>Touring Capability</span><span>84%</span></div>
+                    <div class="pb-track">
+                        <div class="pb-fill" data-w="84"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pills rev">
+                <div class="pill">
+                    <div class="pill-dot"></div><span>9 Colour Options</span>
+                </div>
+                <div class="pill">
+                    <div class="pill-dot" style="animation-delay:.4s"></div><span>EMI from ₹3,985/mo</span>
+                </div>
+                <div class="pill">
+                    <div class="pill-dot" style="animation-delay:.8s"></div><span>41 kmpl Mileage</span>
+                </div>
+            </div>
+
+            <div class="testi rev">
+                <div class="testi-inner">
+                    <p class="testi-text">I've done over 4,000 km on my Meteor. Long rides, late evenings, never once
+                        felt tired.
+                        The seat, the ergonomics — it's just perfect.</p>
+                    <div class="testi-author">
+                        <div class="av">A</div>
+                        <div class="av-info">
+                            <div class="name">Arjun Sharma</div>
+                            <div class="role">Meteor 350 Owner · Delhi to Goa Tourer</div>
+                        </div>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div><!-- /meteor -->
+
+
+
+        <!-- ══════════════════════════════════
+       HIMALAYAN 450
+  ══════════════════════════════════ -->
+        <div class="bike-content" id="content-himalayan">
+
+            <div class="rule">
+                <div class="line"></div>
+                <div class="diamond"></div>
+                <div class="line"></div>
+            </div>
+            <div class="tagline rev">
+                <p>Royal Enfield's first liquid-cooled engine. Built for Himalayan altitudes, designed to conquer every
+                    road —
+                    and no road.<em>Sherpa 450 · Liquid Cooled · Adventure</em></p>
+            </div>
+
+            <div class="marquee">
+                <div class="mq-inner">
+                    <div class="mq-item"><span>Himalayan 450</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Sherpa Engine</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Liquid Cooled</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Switchable ABS</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>TFT Display</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Adventure Ready</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Himalayan 450</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Sherpa Engine</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Liquid Cooled</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Switchable ABS</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>TFT Display</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Adventure Ready</span>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="colour-section rev">
+                <div class="sec-label">Choose Colour</div>
+                <div class="colour-viewer">
+                    <img class="cv-img active"
+                        src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&q=80&fit=crop"
+                        alt="Slate Himalayan Salt">
+                    <img class="cv-img"
+                        src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=600&q=80&fit=crop"
+                        alt="Hanle Black">
+                    <img class="cv-img"
+                        src="https://images.unsplash.com/photo-1611241893603-3c359704e0ee?w=600&q=80&fit=crop"
+                        alt="Kamet White">
+                    <div class="cv-badge"><span id="himalayan-color-name">Slate Himalayan Salt</span></div>
+                </div>
+                <div class="swatches">
+                    <button class="sw active" onclick="pickColour('himalayan',0,'Slate Himalayan Salt',this)">
+                        <div class="sw-dot" style="background:#6B7C7A"></div><span>Himalayan Salt</span>
+                    </button>
+                    <button class="sw" onclick="pickColour('himalayan',1,'Hanle Black',this)">
+                        <div class="sw-dot" style="background:#1a1a1a;border-color:#333"></div><span>Hanle Black</span>
+                    </button>
+                    <button class="sw" onclick="pickColour('himalayan',2,'Kamet White',this)">
+                        <div class="sw-dot" style="background:#E8E4DC;border-color:#999"></div><span>Kamet White</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="specs-section rev">
+                <div class="sec-label">Numbers That Matter</div>
+                <div class="specs-grid">
+                    <div class="spec-cell">
+                        <div class="spec-num">452<span class="spec-unit">cc</span></div>
+                        <div class="spec-label">Sherpa Liquid-Cooled</div>
+                    </div>
+                    <div class="spec-cell">
+                        <div class="spec-num">40<span class="spec-unit">bhp</span></div>
+                        <div class="spec-label">Peak Power @ 8000 rpm</div>
+                    </div>
+                    <div class="spec-cell">
+                        <div class="spec-num">40<span class="spec-unit">Nm</span></div>
+                        <div class="spec-label">Peak Torque @ 5500 rpm</div>
+                    </div>
+                    <div class="spec-cell">
+                        <div class="spec-num">17<span class="spec-unit">L</span></div>
+                        <div class="spec-label">Fuel Tank</div>
+                    </div>
+                    <div class="spec-cell">
+                        <div class="spec-num">196<span class="spec-unit">kg</span></div>
+                        <div class="spec-label">Kerb Weight (wet)</div>
+                    </div>
+                    <div class="spec-cell">
+                        <div class="spec-num">825<span class="spec-unit">mm</span></div>
+                        <div class="spec-label">Seat Height</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feat-section rev">
+                <div class="sec-label" style="padding-left:0;margin-bottom:10px">Built For The Beyond</div>
+
+                <div class="feat-track-w">
+                    <div class="feat-track">
+
+                        <div class="feat-card">
+                            <img class="feat-img"
+                                src="https://www.royalenfield.com/content/dam/royal-enfield/india/rides/events/motoverse-2025/motoverse-ride.webp"
+                                alt="Motoverse">
+                            <div class="feat-body">
+                                <div class="feat-tag">Festival</div>
+                                <div class="feat-title">Motoverse Energy</div>
+                                <div class="feat-desc">
+                                    High-octane celebration of speed, culture and community fueling the spirit of
+                                    adventure.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="feat-card">
+                            <img class="feat-img"
+                                src="https://www.royalenfield.com/content/dam/royal-enfield-revamp/home/new/irides/webp/tours-desktop.webp"
+                                alt="Tours">
+                            <div class="feat-body">
+                                <div class="feat-tag">Exploration</div>
+                                <div class="feat-title">Extreme Tours</div>
+                                <div class="feat-desc">
+                                    Engineered journeys through extreme terrains for the ultimate riding challenge.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="feat-card">
+                            <img class="feat-img"
+                                src="https://www.royalenfield.com/content/dam/royal-enfield-revamp/home/new/irides/webp/rentals-ride-home.webp"
+                                alt="Rentals">
+                            <div class="feat-body">
+                                <div class="feat-tag">Access</div>
+                                <div class="feat-title">Anywhere Rentals</div>
+                                <div class="feat-desc">
+                                    Freedom to ride anywhere, anytime, with instant motorcycle access.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="feat-card">
+                            <img class="feat-img"
+                                src="https://www.royalenfield.com/content/dam/royal-enfield-revamp/home/new/irides/webp/rides-new.webp"
+                                alt="Rides and Events">
+                            <div class="feat-body">
+                                <div class="feat-tag">Experiences</div>
+                                <div class="feat-title">Epic Rides</div>
+                                <div class="feat-desc">
+                                    Terrain-tested riding programs designed to push limits beyond roads.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="perf-section rev">
+                <div class="sec-label" style="margin-bottom:14px">Ride Profile</div>
+                <div class="pb-row">
+                    <div class="pb-top"><span>Off-Road Capability</span><span>90%</span></div>
+                    <div class="pb-track">
+                        <div class="pb-fill" data-w="90"></div>
+                    </div>
+                </div>
+                <div class="pb-row">
+                    <div class="pb-top"><span>Highway Performance</span><span>85%</span></div>
+                    <div class="pb-track">
+                        <div class="pb-fill" data-w="85"></div>
+                    </div>
+                </div>
+                <div class="pb-row">
+                    <div class="pb-top"><span>Engine Refinement</span><span>88%</span></div>
+                    <div class="pb-track">
+                        <div class="pb-fill" data-w="88"></div>
+                    </div>
+                </div>
+                <div class="pb-row">
+                    <div class="pb-top"><span>Technology</span><span>93%</span></div>
+                    <div class="pb-track">
+                        <div class="pb-fill" data-w="93"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pills rev">
+                <div class="pill">
+                    <div class="pill-dot"></div><span>6-Speed Gearbox</span>
+                </div>
+                <div class="pill">
+                    <div class="pill-dot" style="animation-delay:.4s"></div><span>2 Ride Modes</span>
+                </div>
+                <div class="pill">
+                    <div class="pill-dot" style="animation-delay:.8s"></div><span>Ride-By-Wire</span>
+                </div>
+                <div class="pill">
+                    <div class="pill-dot" style="animation-delay:1.2s"></div><span>EMI from ₹5,899/mo</span>
+                </div>
+            </div>
+
+            <div class="testi rev">
+                <div class="testi-inner">
+                    <p class="testi-text">Rode the Himalayan 450 from Manali to Khardung La. The liquid-cooled engine
+                        never missed
+                        a beat at 18,000 feet. This machine is extraordinary.</p>
+                    <div class="testi-author">
+                        <div class="av">P</div>
+                        <div class="av-info">
+                            <div class="name">Priya Nair</div>
+                            <div class="role">Himalayan 450 Owner · High-Altitude Adventurer</div>
+                        </div>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /himalayan -->
+
+
+
+        <!-- ══════════════════════════════════
+       INTERCEPTOR 650
+  ══════════════════════════════════ -->
+        <div class="bike-content" id="content-interceptor">
+
+            <div class="rule">
+                <div class="line"></div>
+                <div class="diamond"></div>
+                <div class="line"></div>
+            </div>
+            <div class="tagline rev">
+                <p>The most awarded Royal Enfield in decades. Parallel-twin 648cc — the accessible big-bike experience
+                    with
+                    soul.<em>Orange Crush · Mark 3 · Ravishing Red</em></p>
+            </div>
+
+            <div class="marquee">
+                <div class="mq-inner">
+                    <div class="mq-item"><span>Interceptor 650</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Parallel Twin</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>648cc</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>47 bhp</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Award Winning</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Slipper Clutch</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Interceptor 650</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Parallel Twin</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>648cc</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>47 bhp</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Award Winning</span>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="mq-item"><span>Slipper Clutch</span>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="colour-section rev">
+                <div class="sec-label">Choose Colour</div>
+                <div class="colour-viewer">
+                    <img class="cv-img active"
+                        src="https://images.unsplash.com/photo-1604357209793-fca5dca89f97?w=600&q=80&fit=crop"
+                        alt="Orange Crush">
+                    <img class="cv-img"
+                        src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?w=600&q=80&fit=crop"
+                        alt="Ravishing Red">
+                    <img class="cv-img"
+                        src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop"
+                        alt="Baker Express">
+                    <div class="cv-badge"><span id="interceptor-color-name">Orange Crush</span></div>
+                </div>
+                <div class="swatches">
+                    <button class="sw active" onclick="pickColour('interceptor',0,'Orange Crush',this)">
+                        <div class="sw-dot" style="background:#C45A1A"></div><span>Orange Crush</span>
+                    </button>
+                    <button class="sw" onclick="pickColour('interceptor',1,'Ravishing Red',this)">
+                        <div class="sw-dot" style="background:#8B1A1A"></div><span>Ravishing Red</span>
+                    </button>
+                    <button class="sw" onclick="pickColour('interceptor',2,'Baker Express',this)">
+                        <div class="sw-dot" style="background:#3A3028"></div><span>Baker Express</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="specs-section rev">
+                <div class="sec-label">Numbers That Matter</div>
+                <div class="specs-grid">
+                    <div class="spec-cell">
+                        <div class="spec-num">648<span class="spec-unit">cc</span></div>
+                        <div class="spec-label">Parallel-Twin Engine</div>
+                    </div>
+                    <div class="spec-cell">
+                        <div class="spec-num">47<span class="spec-unit">bhp</span></div>
+                        <div class="spec-label">Peak Power @ 7250 rpm</div>
+                    </div>
+                    <div class="spec-cell">
+                        <div class="spec-num">52<span class="spec-unit">Nm</span></div>
+                        <div class="spec-label">Peak Torque @ 5250 rpm</div>
+                    </div>
+                    <div class="spec-cell">
+                        <div class="spec-num">13.7<span class="spec-unit">L</span></div>
+                        <div class="spec-label">Fuel Tank</div>
+                    </div>
+                    <div class="spec-cell">
+                        <div class="spec-num">202<span class="spec-unit">kg</span></div>
+                        <div class="spec-label">Kerb Weight</div>
+                    </div>
+                    <div class="spec-cell">
+                        <div class="spec-num">804<span class="spec-unit">mm</span></div>
+                        <div class="spec-label">Seat Height</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feat-section rev">
+                <div class="sec-label" style="padding-left:0;margin-bottom:10px">Twin-Cylinder Soul</div>
+                <div class="feat-track-w">
+                    <div class="feat-track">
+                        <div class="feat-card">
+                            <img class="feat-img"
+                                src="https://images.unsplash.com/photo-1604357209793-fca5dca89f97?w=400&q=80&fit=crop"
+                                alt="Twin">
+                            <div class="feat-body">
+                                <div class="feat-tag">Powertrain</div>
+                                <div class="feat-title">648cc Twin</div>
+                                <div class="feat-desc">Parallel-twin with 270° firing order — big-bike feel at an
+                                    accessible price.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feat-card">
+                            <img class="feat-img"
+                                src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?w=400&q=80&fit=crop"
+                                alt="Slipper">
+                            <div class="feat-body">
+                                <div class="feat-tag">Technology</div>
+                                <div class="feat-title">Slipper Clutch</div>
+                                <div class="feat-desc">Assist & slipper clutch for smoother downshifts and confident
+                                    cornering.</div>
+                            </div>
+                        </div>
+                        <div class="feat-card">
+                            <img class="feat-img"
+                                src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=400&q=80&fit=crop"
+                                alt="Design">
+                            <div class="feat-body">
+                                <div class="feat-tag">Heritage</div>
+                                <div class="feat-title">British Inspired</div>
+                                <div class="feat-desc">Inspired by iconic 1960s British parallel-twins — resurrected for
+                                    2024.</div>
+                            </div>
+                        </div>
+                        <div class="feat-card">
+                            <img class="feat-img"
+                                src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&q=80&fit=crop"
+                                alt="Exhaust">
+                            <div class="feat-body">
+                                <div class="feat-tag">Character</div>
+                                <div class="feat-title">Twin Exhausts</div>
+                                <div class="feat-desc">Distinctive parallel exhaust setup — unmistakable twin-cylinder
+                                    soundtrack.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="perf-section rev">
+                <div class="sec-label" style="margin-bottom:14px">Ride Profile</div>
+                <div class="pb-row">
+                    <div class="pb-top"><span>Performance</span><span>90%</span></div>
+                    <div class="pb-track">
+                        <div class="pb-fill" data-w="90"></div>
+                    </div>
+                </div>
+                <div class="pb-row">
+                    <div class="pb-top"><span>Highway Cruising</span><span>94%</span></div>
+                    <div class="pb-track">
+                        <div class="pb-fill" data-w="94"></div>
+                    </div>
+                </div>
+                <div class="pb-row">
+                    <div class="pb-top"><span>Engine Character</span><span>97%</span></div>
+                    <div class="pb-track">
+                        <div class="pb-fill" data-w="97"></div>
+                    </div>
+                </div>
+                <div class="pb-row">
+                    <div class="pb-top"><span>Value for Money</span><span>96%</span></div>
+                    <div class="pb-track">
+                        <div class="pb-fill" data-w="96"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pills rev">
+                <div class="pill">
+                    <div class="pill-dot"></div><span>6-Speed Gearbox</span>
+                </div>
+                <div class="pill">
+                    <div class="pill-dot" style="animation-delay:.4s"></div><span>EMI from ₹6,449/mo</span>
+                </div>
+                <div class="pill">
+                    <div class="pill-dot" style="animation-delay:.8s"></div><span>Dual-Channel ABS</span>
+                </div>
+                <div class="pill">
+                    <div class="pill-dot" style="animation-delay:1.2s"></div><span>Alloy Wheels</span>
+                </div>
+            </div>
+
+            <div class="testi rev">
+                <div class="testi-inner">
+                    <p class="testi-text">Coming from a 300cc, the Interceptor 650 felt like a different universe. The
+                        parallel
+                        twin growl at every throttle blip — completely addictive.</p>
+                    <div class="testi-author">
+                        <div class="av">K</div>
+                        <div class="av-info">
+                            <div class="name">Karan Bose</div>
+                            <div class="role">INT650 Owner · Track Day Enthusiast</div>
+                        </div>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /interceptor -->
+
+
+    </div><!-- /shell -->
+
+    <script>
+        // ─────────────────────────────
+        // BIKE DATA
+        // ─────────────────────────────
+        const BIKES = {
+            classic: {
+                eyebrow: 'Classic Series',
+                name: 'Classic\n350',
+                sub: 'J-Series · Air-Oil Cooled · 5-Speed',
+                heroId: 'h-classic-0',
+                link: 'https://www.royalenfield.com/in/en/motorcycles/classic-350/',
+                prices: ['₹1.82L', '₹1.85L', '₹1.88L', '₹1.92L', '₹1.95L']
+            },
+            meteor: {
+                eyebrow: 'Cruiser Series',
+                name: 'Meteor\n350',
+                sub: 'J-Series · Air-Oil Cooled · 5-Speed',
+                heroId: 'h-meteor-0',
+                link: 'https://www.royalenfield.com/in/en/motorcycles/meteor/',
+                prices: ['₹2.06L', '₹2.11L', '₹2.13L']
+            },
+            himalayan: {
+                eyebrow: 'Adventure Series',
+                name: 'Himalayan\n450',
+                sub: 'Sherpa Engine · Liquid Cooled · 6-Speed',
+                heroId: 'h-himalayan-0',
+                link: 'https://www.royalenfield.com/in/en/motorcycles/himalayan-450/',
+                prices: ['₹2.85L', '₹2.89L', '₹2.98L']
+            },
+            interceptor: {
+                eyebrow: 'Twin Series',
+                name: 'Interceptor\n650',
+                sub: 'Parallel Twin · 648cc · 6-Speed',
+                heroId: 'h-interceptor-0',
+                link: 'https://www.royalenfield.com/in/en/motorcycles/interceptor/',
+                prices: ['₹3.03L', '₹3.11L', '₹3.31L']
+            }
+        };
+
+        let currentBike = 'classic';
+
+        function selectBike(bike) {
+            if (bike === currentBike) return;
+            currentBike = bike;
+
+            // Tabs
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.getElementById('tab-' + bike).classList.add('active');
+
+            // Content
+            document.querySelectorAll('.bike-content').forEach(c => c.classList.remove('active'));
+            document.getElementById('content-' + bike).classList.add('active');
+
+            // Hero image
+            document.querySelectorAll('.hero-img').forEach(i => i.classList.remove('active'));
+            document.getElementById(BIKES[bike].heroId).classList.add('active');
+
+            // Hero text
+            const data = BIKES[bike];
+            const parts = data.name.split('\n');
+            const nameEl = document.getElementById('heroName');
+            document.getElementById('heroEyebrow').textContent = data.eyebrow;
+            nameEl.innerHTML = parts[0] + '<em>' + parts[1] + '</em>';
+            document.getElementById('heroSub').textContent = data.sub;
+
+            // Reset & animate hero text
+            ['heroEyebrow', 'heroName', 'heroSub'].forEach((id, i) => {
+                const el = document.getElementById(id);
+                el.style.animation = 'none';
+                el.style.opacity = '0';
+                requestAnimationFrame(() => {
+                    setTimeout(() => {
+                        el.style.animation = `upIn 0.5s ease ${0.15 + i * 0.15}s forwards`;
+                    }, 20);
+                });
+            });
+
+            // Re-trigger reveal & perf bars in new section
+            setTimeout(() => {
+                const content = document.getElementById('content-' + bike);
+                content.querySelectorAll('.rev').forEach(el => {
+                    el.classList.remove('vis');
+                });
+                content.querySelectorAll('.pb-fill').forEach(el => {
+                    el.style.width = '0';
+                });
+                setTimeout(() => triggerReveal(), 50);
+            }, 100);
+
+            // Update CTA Explore Link and Price based on base price (index 0)
+            const mainPrice = document.getElementById('main-price-display');
+            const priceLabel = document.querySelector('.price-from');
+            if (mainPrice) {
+                mainPrice.innerHTML = BIKES[bike].prices[0] + '<sub>ex-showroom</sub>';
+                if (priceLabel) priceLabel.textContent = 'Starting From';
+
+                mainPrice.classList.remove('price-pop');
+                void mainPrice.offsetWidth; // trigger reflow
+                mainPrice.classList.add('price-pop');
+            }
+            const mainExplore = document.getElementById('main-explore-btn');
+            if (mainExplore) {
+                mainExplore.href = BIKES[bike].link;
+            }
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ─────────────────────────────
+        // COLOUR PICKER
+        // ─────────────────────────────
+        function pickColour(bike, idx, name, btn) {
+            const section = document.getElementById('content-' + bike);
+            const imgs = section.querySelectorAll('.cv-img');
+            const sws = section.querySelectorAll('.sw');
+            const nameEl = section.querySelector('.cv-badge span');
+
+            imgs.forEach((img, i) => img.classList.toggle('active', i === idx));
+            sws.forEach((sw, i) => sw.classList.toggle('active', i === idx));
+            nameEl.textContent = name;
+
+            // Sync hero image
+            const heroImg = document.getElementById('h-' + bike + '-' + idx);
+            if (heroImg) {
+                document.querySelectorAll('.hero-img').forEach(i => i.classList.remove('active'));
+                heroImg.classList.add('active');
+            }
+
+            // Update Price dynamically
+            const mainPrice = document.getElementById('main-price-display');
+            const priceLabel = document.querySelector('.price-from');
+            if (mainPrice && BIKES[bike] && BIKES[bike].prices && BIKES[bike].prices[idx]) {
+                mainPrice.innerHTML = BIKES[bike].prices[idx] + '<sub>ex-showroom</sub>';
+                if (priceLabel) priceLabel.textContent = 'Price';
+
+                mainPrice.classList.remove('price-pop');
+                void mainPrice.offsetWidth; // trigger reflow
+                mainPrice.classList.add('price-pop');
+            }
+        }
+
+        // ─────────────────────────────
+        // SCROLL REVEAL
+        // ─────────────────────────────
+        function triggerReveal() {
+            const revObs = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('vis');
+                        revObs.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            document.querySelectorAll('.rev').forEach(el => revObs.observe(el));
+        }
+
+        // ─────────────────────────────
+        // PERF BARS
+        // ─────────────────────────────
+        const barObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.style.width = e.target.dataset.w + '%';
+                    barObs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        function observeBars() {
+            document.querySelectorAll('.pb-fill').forEach(b => barObs.observe(b));
+        }
+
+        // ─────────────────────────────
+        // INIT
+        // ─────────────────────────────
+        document.addEventListener('DOMContentLoaded', () => {
+            triggerReveal();
+            observeBars();
+        });
+    </script>
+</body>
+
+</html>

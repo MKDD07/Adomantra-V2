@@ -1,0 +1,403 @@
+.project {
+  background-color: #F0F2F4;
+
+  &__card {
+    position: relative;
+    padding: 30px 40px;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+
+    @media #{$xxl} {
+      padding: 25px 30px;
+    }
+
+    @media #{$xl} {
+      padding: 25px 25px;
+    }
+
+    @media #{$lg} {
+      padding: 25px 23px;
+    }
+
+    &-title {
+      font-family: Instrument Sans;
+      font-weight: 600;
+      font-style: SemiBold;
+      font-size: 30px;
+      line-height: 40px;
+      letter-spacing: 0%;
+      text-decoration: underline;
+      text-decoration-style: solid;
+      text-decoration-offset: 0%;
+      text-decoration-thickness: 0%;
+      text-decoration-skip-ink: auto;
+
+      @media #{$xxl} {
+        font-size: 26px;
+      }
+
+      @media #{$xl} {
+        font-size: 23px;
+        line-height: 30px;
+      }
+
+      @media #{$lg} {
+        font-size: 22px;
+        line-height: 30px;
+      }
+
+      @media #{$xs} {
+        font-size: 20px;
+      }
+    }
+
+    &-subtitle {
+      color: #000000;
+      font-family: Kanit;
+      font-weight: 400;
+      font-style: Regular;
+      font-size: 18px;
+      line-height: 28px;
+      letter-spacing: 0%;
+      visibility: hidden;
+      opacity: 0;
+
+      @media #{$xl} {
+        font-size: 17px;
+      }
+
+      @media #{$lg} {
+        font-size: 16px;
+      }
+    }
+
+    &-button {
+      position: relative;
+      font-size: 24px;
+      color: #000;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 141.667%;
+      display: flex;
+      padding: 13px 17px 12px 16px;
+      border-radius: 4px 4px 0 0;
+      background: transparent;
+      justify-content: end;
+
+      @media #{$xxl} {
+        font-size: 22px;
+      }
+
+      @media #{$xl} {
+        font-size: 20px;
+      }
+
+      @media #{$lg} {
+        font-size: 18px;
+      }
+
+      @media #{$md} {
+        font-size: 17px;
+      }
+
+      &::after {
+        content: "-";
+        background: transparent;
+        font-weight: 500;
+        transition: all 0.3s ease-in-out !important;
+        padding: 14px 14px;
+        border-radius: 30px;
+        border: 1px solid #000;
+        background: rgba(217, 217, 217, 0);
+        width: 12px;
+        height: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--white);
+        color: var(--black);
+        border-radius: 50%;
+        transition: all 0.3s;
+      }
+
+      &:not(.collapsed)::after {
+        content: "+";
+        background: transparent;
+        font-weight: 500;
+        transition: all 0.3s ease-in-out !important;
+        padding: 14px 14px;
+        border-radius: 30px;
+        border: 1px solid #000;
+        background: rgba(217, 217, 217, 0);
+        width: 12px;
+        height: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: var(--white);
+        color: var(--black);
+        border-radius: 50%;
+        transition: all 0.3s;
+      }
+    }
+
+    &:hover {
+      .project {
+        &__card {
+          background-color: #41F681 !important;
+          transition: all 0.4s ease-in-out;
+
+          &-title {
+            visibility: hidden;
+            opacity: 0;
+          }
+
+          &-subtitle {
+            visibility: visible;
+            opacity: 1;
+          }
+
+          &-button {
+            position: relative;
+            font-size: 24px;
+            color: #000;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 141.667%;
+            display: flex;
+            padding: 13px 17px 12px 16px;
+            border-radius: 4px 4px 0 0;
+            background: transparent;
+            justify-content: end;
+
+            @media #{$xxl} {
+              font-size: 22px;
+            }
+
+            @media #{$xl} {
+              font-size: 20px;
+            }
+
+            @media #{$lg} {
+              font-size: 18px;
+            }
+
+            @media #{$md} {
+              font-size: 17px;
+            }
+
+            &:not(.collapsed)::after {
+              content: "-";
+              background: transparent;
+              font-weight: 500;
+              transition: all 0.3s ease-in-out !important;
+              padding: 14px 14px;
+              border-radius: 30px;
+              border: 1px solid #000;
+              background: rgba(217, 217, 217, 0);
+              width: 12px;
+              height: 12px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: var(--white);
+              color: var(--black);
+              border-radius: 50%;
+              transition: all 0.3s;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+// Faq  Section   S T A R T
+.faq1 {
+  background-color: #FFFFFF;
+
+  &__top-section {
+    &-title {
+      color: #000;
+      text-align: center;
+      font-family: "Instrument Sans";
+      font-size: 50px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%;
+      margin-bottom: 30px;
+
+      @media #{$xl} {
+        font-size: 40px;
+        margin-bottom: 25px;
+      }
+
+      @media #{$lg} {
+        font-size: 30px;
+        margin-bottom: 25px;
+      }
+
+      @media #{$xs} {
+        font-size: 23px;
+      }
+    }
+  }
+}
+
+.accordion {
+  .global-accordion-item {
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 4px 10px 15px 0 rgba(0, 0, 0, 0.20);
+    margin-bottom: 16px;
+    overflow: hidden;
+
+    .global-accordion {
+      &-header {
+        margin: 0;
+        overflow: hidden;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+      }
+
+      &-button {
+        position: relative;
+        font-family: "Instrument Sans";
+        font-size: 24px;
+        color: #000;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 141.667%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 13px 17px 12px 16px;
+        border-radius: 4px 4px 0 0;
+        background: #FFF;
+
+        @media #{$xxl} {
+          font-size: 22px;
+        }
+
+        @media #{$xl} {
+          font-size: 20px;
+        }
+
+        @media #{$lg} {
+          font-size: 18px;
+        }
+
+        @media #{$md} {
+          font-size: 17px;
+        }
+
+        &::after {
+          content: "+";
+          background: transparent;
+          font-weight: 500;
+          transition: all 0.3s ease-in-out !important;
+          padding: 14px 14px;
+          border-radius: 30px;
+          border: 1px solid #000;
+          background: rgba(217, 217, 217, 0);
+          width: 12px;
+          height: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: var(--white);
+          color: var(--black);
+          border-radius: 50%;
+          transition: all 0.3s;
+        }
+
+        &:not(.collapsed)::after {
+          content: "-";
+          background: transparent;
+          font-weight: 500;
+          transition: all 0.3s ease-in-out !important;
+          padding: 14px 14px;
+          border-radius: 30px;
+          border: 1px solid #000;
+          background: rgba(217, 217, 217, 0);
+          width: 12px;
+          height: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: var(--white);
+          color: var(--black);
+          border-radius: 50%;
+          transition: all 0.3s;
+        }
+
+        &.collapsed {
+          padding: 20px 30px 20px 30px;
+          color: #000;
+          font-family: "Instrument Sans";
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 141.667%;
+          overflow: hidden;
+
+          @media #{$xxl} {
+            font-size: 22px;
+          }
+
+          @media #{$xl} {
+            font-size: 20px;
+          }
+
+          @media #{$lg} {
+            font-size: 18px;
+          }
+
+          @media #{$md} {
+            font-size: 17px;
+          }
+        }
+      }
+
+      &-body {
+        padding: 20px 30px 18px 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px;
+        padding-top: 15px;
+        padding-bottom: 20px;
+        border-radius: 4px;
+        box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.12);
+
+        p {
+          color: #555;
+          font-family: Kanit;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 155.556%;
+
+          @media #{$xl} {
+            font-size: 17px;
+          }
+
+          @media #{$lg} {
+            font-size: 16px;
+          }
+        }
+      }
+
+      &-collapse {
+        &.show {
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}
