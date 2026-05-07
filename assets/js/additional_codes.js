@@ -1,6 +1,18 @@
 (function () {
   'use strict';
 
+  function syncCardHeight() {
+    var cards = document.querySelectorAll('.features-card, .features-item');
+    if (!cards.length) return;
+    var max = 0;
+    cards.forEach(function (c) {
+      c.style.height = 'auto';
+      var h = c.offsetHeight;
+      if (h > max) max = h;
+    });
+    cards.forEach(function (c) { c.style.height = max + 'px'; });
+  }
+
   function initSwipers() {
     /* INNER SWIPERS (4) */
     var innerSwipers = [];
