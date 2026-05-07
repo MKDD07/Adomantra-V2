@@ -108,7 +108,7 @@
   <!-- Dependencies CSS Files (Trexa Template) -->
   <link rel="stylesheet" href="assets/vandor/bootstrap/bootstrap.min.css" />
   <link rel="stylesheet" href="assets/vandor/fontawesome/fontawesome-pro.min.css" />
-  <link rel="stylesheet" href="assets/vandor/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
   <link rel="stylesheet" href="assets/vandor/menu/meanmenu.min.css" />
   <link rel="stylesheet" href="assets/vandor/popup/magnific-popup.css" />
   <link rel="stylesheet" href="assets/vandor/nice-select/nice-select.css" />
@@ -1405,31 +1405,82 @@
     </div>
   </div>
   </div>
+  <!-- =========================================================
+     1. CORE LIBRARIES
+========================================================= -->
 
-  <!-- Dependencies JS Files -->
-  <script src="assets/vandor/jquery/jquery.js"></script>
-  <script src="assets/vandor/bootstrap/bootstrap.bundle.min.js"></script>
-  <script src="assets/vandor/popup/jquery.magnific-popup.min.js"></script>
-  <script src="assets/vandor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vandor/gsap/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/Flip.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/Draggable.min.js"></script>
-  <script src="https://assets.codepen.io/16327/MorphSVGPlugin3.min.js"></script>
-  <script src="https://unpkg.com/gsap@3/dist/EasePack.min.js"></script>
-  <script src="https://unpkg.com/gsap@3/dist/GSDevTools.min.js"></script>
+  <!-- jQuery (latest stable 3.7.x) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <!-- Bootstrap 5.3.x (stable) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+
+
+
+  <!-- =========================================================
+     2. UI PLUGINS & PHYSICS
+========================================================= -->
+
+  <!-- Swiper (latest stable 11.x) -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+  <!-- Magnific Popup -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+  <!-- Odometer -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script>
+
+  <!-- Waypoints -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.waypoints/4.0.1/jquery.waypoints.min.js"></script>
+
+  <!-- Nice Select -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+
+  <!-- WOW.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+  <!-- Matter.js Physics Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.20.0/matter.min.js"></script>
+
+
+
+  <!-- =========================================================
+     3. GSAP ANIMATION SUITE (Stable 3.12.x)
+========================================================= -->
+
+  <!-- GSAP Core -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <!-- GSAP Plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+
+  <!-- Scramble Text Plugin (JSDelivr) -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrambleTextPlugin.min.js"></script>
+
+
+
+  <!-- =========================================================
+     4. LOCAL / PREMIUM VENDOR ASSETS
+========================================================= -->
+
   <script src="assets/vandor/gsap/ScrollSmoother.min.js"></script>
-  <script src="assets/vandor/gsap/ScrollTrigger.min.js"></script>
   <script src="assets/vandor/gsap/SplitText.min.js"></script>
-  <script src="assets/js/ScrambleTextPlugin3.min.js"></script>
   <script src="assets/vandor/gsap/SplitType.js"></script>
-  <script src="assets/vandor/gsap/customEase.js"></script>
-  <script src="assets/vandor/odometer/odometer.min.js"></script>
-  <script src="assets/vandor/odometer/waypoints.min.js"></script>
+
   <script src="assets/vandor/menu/jquery.meanmenu.min.js"></script>
   <script src="assets/vandor/backtop/backToTop.js"></script>
-  <script src="assets/vandor/nice-select/nice-select.js"></script>
-  <script src="assets/vandor/wow/wow.min.js"></script>
-  <!-- Template Main JS File -->
+  <script src="assets/vandor/matter/throwable.js"></script>
+
+
+
+  <!-- =========================================================
+     5. PROJECT LOGIC
+========================================================= -->
+
   <script src="assets/vandor/common-js/common.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/digital-marketing-agency.js"></script>
@@ -1441,11 +1492,9 @@
   <script src="assets/js/pexels_services.js"></script>
   <script src="assets/js/news_config.js"></script>
   <script src="assets/js/mohit.js"></script>
+  <script src="assets/js/mohit-second-script.js"></script>
   <script src="assets/js/faq.js"></script>
-  <!-- Adomantra AI Chatbot (Groq) -->
   <script src="assets/js/chatbot.js"></script>
-  <script src="assets/vandor/matter/matter.js"></script>
-  <script src="assets/vandor/matter/throwable.js"></script>
   <script>
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
       gsap.registerPlugin(ScrollTrigger);
