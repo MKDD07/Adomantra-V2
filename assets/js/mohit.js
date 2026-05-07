@@ -311,7 +311,7 @@ if (document.querySelectorAll(".approach-area-container").length > 0) {
         ease: "power2.out",
         scrollTrigger: {
             trigger: ".approach-wrapper-box",
-            start: "top 10%",
+            start: "top top",
             end: "bottom 40%",
             toggleActions: "play none none reverse",
         }
@@ -428,28 +428,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (scrollTop <= 0) {
             // ✅ At very top — sit just below announcement bar
-            if (header) {
-                header.style.top = announcementHeight + "px";
-                header.style.transform = "translateY(0)";
-            }
+            header.style.top = announcementHeight + "px";
+            header.style.transform = "translateY(0)";
         } else if (scrollTop < announcementHeight) {
             // ✅ Partially scrolled — follow announcement bar up
-            if (header) {
-                header.style.top = (announcementHeight - scrollTop) + "px";
-                header.style.transform = "translateY(0)";
-            }
+            header.style.top = (announcementHeight - scrollTop) + "px";
+            header.style.transform = "translateY(0)";
         } else {
             // ✅ Announcement bar fully scrolled past — header sticks at top (0px)
-            if (header) {
-                header.style.top = "0px";
+            header.style.top = "0px";
 
-                if (scrollTop > lastScrollTop) {
-                    // Scrolling down — hide header
-                    header.style.transform = "translateY(-120%)";
-                } else {
-                    // Scrolling up — show header
-                    header.style.transform = "translateY(0)";
-                }
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down — hide header
+                header.style.transform = "translateY(-120%)";
+            } else {
+                // Scrolling up — show header
+                header.style.transform = "translateY(0)";
             }
         }
 
@@ -555,10 +549,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 console.clear();
 
-if (typeof gsap !== 'undefined') {
-    if (typeof ScrollTrigger !== 'undefined') gsap.registerPlugin(ScrollTrigger);
-    if (typeof Flip !== 'undefined') gsap.registerPlugin(Flip);
-}
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(Flip);
 
 let flipCtx;
 
