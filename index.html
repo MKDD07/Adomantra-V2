@@ -1502,6 +1502,9 @@
   <!-- ── Index Blog Section: Dynamic news feed via news_config.js ── -->
   <script>
     (async function initIndexBlog() {
+      // Fetch a single portrait thumbnail from Pexels
+      async function fetchPortraitThumb(query) {
+        try {
           var safeQ = encodeURIComponent(query.split(' ').slice(0, 3).join(' '));
           var res = await fetch('/api/pexels?query=' + safeQ + '&per_page=1&orientation=portrait');
           var data = await res.json();
