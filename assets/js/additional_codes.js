@@ -70,8 +70,10 @@
     syncCardHeight();
 
     if (window.ResizeObserver) {
-      new ResizeObserver(syncCardHeight)
-        .observe(document.getElementById('services-col-left'));
+      var obsTarget = document.getElementById('services-col-left');
+      if (obsTarget) {
+        new ResizeObserver(syncCardHeight).observe(obsTarget);
+      }
     }
     window.addEventListener('resize', syncCardHeight);
   }
