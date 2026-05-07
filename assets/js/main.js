@@ -1240,8 +1240,5 @@
       gsap.set(zoomThumb, { clearProps: "all" });
       // If you want to do a small fallback animation instead of disabling, add it here
     },
-
   });
-
-})
-  (jQuery);
+})(jQuery);

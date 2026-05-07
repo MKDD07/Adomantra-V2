@@ -4,7 +4,7 @@
  */
 
 const PEXELS_API_CONFIG = {
-    apiKey: 'y6WP5reQNH7abdL2uzdLTyV8pq0kMmF3CHf7ZNkiHo98DXIvORUOBSfi',
+    proxyUrl: '/api/pexels',
     fallbackImage: 'assets/imgs/service/services-card/service_0001.jpg'
 };
 
@@ -29,24 +29,18 @@ async function fetchPexelsImage(query, randomize = false) {
     }
 
     // 2. Fetch from Pexels if not in cache
-    if (!PEXELS_API_CONFIG.apiKey || PEXELS_API_CONFIG.apiKey === 'PASTE_YOUR_PEXELS_API_KEY_HERE') {
-        return PEXELS_API_CONFIG.fallbackImage;
-    }
-
     const perPage = randomize ? 15 : 1;
-    const url = `https://api.pexels.com/v1/search?query=${encodeURIComponent(query)}&per_page=${perPage}`;
+    const url = `${PEXELS_API_CONFIG.proxyUrl}?query=${encodeURIComponent(query)}&per_page=${perPage}`;
 
     try {
-        const response = await fetch(url, {
-            headers: { Authorization: PEXELS_API_CONFIG.apiKey }
-        });
+        const response = await fetch(url);
         const data = await response.json();
 
         if (data.photos && data.photos.length > 0) {
-            const photo = randomize 
+            const photo = randomize
                 ? data.photos[Math.floor(Math.random() * data.photos.length)]
                 : data.photos[0];
-            
+
             const imageUrl = photo.src.original;
 
             // 3. Store in cache for next time
@@ -91,7 +85,19 @@ function initPexelsServices() {
 
         // Build a promise chain per category
         $.each(categories, function (catIndex, category) {
-            var description = categoryData[category] || categoryData['General Services'];
+            var categoryHtml = category; // Fallback to plain text
+            var description = categoryData['General Services'] || '';
+
+            // Search for the category in categoryData keys (allowing for HTML tags like <r>)
+            $.each(categoryData, function (key, val) {
+                var plainKey = key.replace(/<[^>]*>/g, ''); // Strip HTML to match
+                if (plainKey === category) {
+                    categoryHtml = key; // Use the HTML version for title
+                    description = val;  // Use the description
+                    return false; // Break $.each
+                }
+            });
+
             var slidePromises = [];
 
             $.each(grouped[category], function (_, service) {
@@ -116,7 +122,7 @@ function initPexelsServices() {
 
                     var slideHtml =
                         '<div class="swiper-slide h-auto">' +
-                        '<div class="project-area7__card section-item rr-ov-hidden features-item h-100" style="padding:0!important;margin:0;">' +
+                        '<div class="project-area7__card section-item overflow-hidden features-card h-100" style="padding:0!important;margin:0;">' +
                         '<div class="project-area7__card-content">' +
                         '<div class="project-area7__card-year"><i class="' + service.icon + '"></i></div>' +
                         '<a href="service-details.html?id=' + service.id + '" class="project-area7__card-title">' + service.title + '</a>' +
@@ -144,18 +150,17 @@ function initPexelsServices() {
                     '<div class="category-section mb-5 wow fadeInUp" data-wow-delay="' + delay + 's">' +
                     '<div class="row align-items-end mb-4">' +
                     '<div class="col-lg-8">' +
-                    '<h3 class="category-title mb-2" style="border-left:5px solid var(--primary-color);padding-left:15px">' + category + '</h3>' +
+                    '<h3 class="category-title mb-2" style="border-left:5px solid var(--primary-color);padding-left:15px">' + categoryHtml + '</h3>' +
                     '<p class="category-desc text-muted mb-0" style="max-width:600px;padding-left:15px;">' + description + '</p>' +
                     '</div>' +
                     '<div class="col-lg-4 d-flex justify-content-end gap-3 pb-2">' +
                     '<div class="inner-nav-btn prev-' + catIndex + '"><i class="fa-solid fa-chevron-left"></i></div>' +
                     '<div class="inner-nav-btn next-' + catIndex + '"><i class="fa-solid fa-chevron-right"></i></div>' +
                     '</div></div>' +
-                    '<div class="swiper category-swiper-' + catIndex + ' rr-ov-hidden" style="padding:20px 0;">' +
+                    '<div class="swiper category-swiper-' + catIndex + ' overflow-hidden" style="padding:20px 0;">' +
                     '<div class="swiper-wrapper">' + slidesHtml + '</div>' +
                     '<div class="swiper-pagination pagination-' + catIndex + ' mt-4"></div>' +
                     '</div>' +
-                    '<div class="line-divider mt-4 mb-5" style="height:1px;background:#eee;width:100%;"></div>' +
                     '</div>';
 
                 catDeferred.resolve({ catIndex: catIndex, html: catHtml, slideCount: grouped[category].length });
@@ -288,9 +293,7 @@ async function initTestimonialFaces() {
     if ($faces.length === 0) return;
 
     try {
-        const response = await fetch('https://api.pexels.com/v1/search?query=human face portrait business person&per_page=20', {
-            headers: { Authorization: PEXELS_API_CONFIG.apiKey }
-        });
+        const response = await fetch(`${PEXELS_API_CONFIG.proxyUrl}?query=human face portrait business person&per_page=20`);
         const data = await response.json();
         const photos = data.photos || [];
 
@@ -326,9 +329,8 @@ function initAchievementBackground() {
     var query = 'dark abstract gradient background blue grey';
 
     $.ajax({
-        url: 'https://api.pexels.com/v1/search?query=' + encodeURIComponent(query) + '&per_page=15',
-        type: 'GET',
-        headers: { Authorization: PEXELS_API_CONFIG.apiKey }
+        url: `${PEXELS_API_CONFIG.proxyUrl}?query=` + encodeURIComponent(query) + '&per_page=15',
+        type: 'GET'
     }).then(function (data) {
         var photos = data.photos || [];
         if (photos.length > 0) {
@@ -423,4 +425,11 @@ $(function () {
     // 6. Generic Pexels loader
     initGenericPexelsImages();
 
+});
+
+// Listen for dynamically loaded components
+document.addEventListener('componentsLoaded', function () {
+    console.log('🔄 Components loaded, re-initializing Pexels images...');
+    initGenericPexelsImages();
+    initManualPexelsImages(); // Also check for manual boxes in loaded components
 });

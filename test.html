@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adomantra Hero Section</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600&family=Kanit:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000000;
+      color: #ffffff;
+    }
+
+    .ado-container {
+      width: 100%;
+      padding-right: 1rem;
+      padding-left: 1rem;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    @media (min-width: 1800px) {
+      .ado-container {
+        max-width: 1800px;
+      }
+    }
+
+    .ado-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 0.75rem;
+    }
+
+    .ado-grid-left {
+      grid-column: span 8;
+    }
+
+    @media (max-width: 1440px) {
+      .ado-grid {
+        grid-template-columns: repeat(6, 1fr);
+      }
+      .ado-grid-left {
+        grid-column: span 4;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .ado-grid-left {
+        grid-column: span 8;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .ado-grid-left {
+        grid-column: span 12;
+      }
+    }
+
+    .ado-hero {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 3rem;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .ado-hero__bg-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1070px;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    @media (max-width: 1440px) {
+      .ado-hero__bg-video {
+        height: 992px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .ado-hero__bg-video {
+        height: 700px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .ado-hero__bg-video {
+        height: 600px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .ado-hero__bg-video {
+        height: 620px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .ado-hero__bg-video {
+        height: 650px;
+      }
+    }
+
+    .ado-hero__wrapper {
+      position: relative;
+      padding-top: 120px;
+      width: 100%;
+    }
+
+    @media (min-width: 1440px) {
+      .ado-hero__wrapper {
+        padding-top: 240px;
+      }
+    }
+
+    @media (max-width: 1400px) {
+      .ado-hero__wrapper {
+        padding-top: 100px;
+      }
+    }
+
+    .ado-hero__content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 96px;
+    }
+
+    @media (max-width: 1919px) {
+      .ado-hero__content {
+        gap: 100px;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .ado-hero__content {
+        gap: 32px;
+      }
+    }
+
+    .ado-hero__showreel {
+      padding: 8px;
+      padding-top: 12px;
+      border-radius: 6px;
+      display: inline-block;
+      background-color: #ffffff;
+    }
+
+    @media (max-width: 1399px) {
+      .ado-hero__showreel {
+        display: none;
+      }
+    }
+
+    .ado-hero__showreel-label {
+      margin-bottom: 12px;
+    }
+
+    .ado-hero__showreel-label span {
+      font-size: 18px;
+      line-height: 28px;
+      color: #000000;
+      text-transform: uppercase;
+      font-family: "Kanit", sans-serif;
+      margin-right: 15px;
+    }
+
+    .ado-hero__showreel-thumb video {
+      border-radius: 6px;
+      width: 404px;
+      display: block;
+    }
+
+    .ado-hero__shape-bars {
+      margin-bottom: 30px;
+    }
+
+    .ado-hero__shape-bars span {
+      width: 4px;
+      height: 20px;
+      display: inline-block;
+      border: 1px solid #ffffff;
+    }
+
+    .ado-hero__shape-bars span:last-of-type {
+      width: 15px;
+    }
+
+    .ado-hero__desc {
+      font-size: 20px;
+      max-width: 363px;
+      line-height: 30px;
+      color: #ffffff;
+      font-family: "Instrument Sans", sans-serif;
+      display: none;
+    }
+
+    @media (max-width: 767px) {
+      .ado-hero__desc {
+        display: block;
+      }
+    }
+
+    .ado-hero__title {
+      font-size: 72px;
+      font-weight: 600;
+      margin-top: 45px;
+      max-width: 1400px;
+      line-height: 1.3;
+      color: #ffffff;
+      font-family: "Instrument Sans", sans-serif;
+    }
+
+    @media (max-width: 1199px) {
+      .ado-hero__title {
+        font-size: 100px;
+        line-height: 110px;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .ado-hero__title {
+        font-size: 70px;
+        line-height: 90px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .ado-hero__title {
+        font-size: 60px;
+        line-height: 70px;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .ado-hero__title {
+        font-size: 45px;
+        line-height: 60px;
+      }
+    }
+
+    .ado-hero__title span {
+      color: #1257A2;
+    }
+  </style>
+</head>
+<body>
+  <section class="ado-hero">
+    <video class="ado-hero__bg-video" autoplay muted loop playsinline>
+      <source src="https://videos.pexels.com/video-files/36392564/15433122_3840_2160_30fps.mp4" type="video/mp4">
+    </video>
+    <div class="ado-hero__wrapper">
+      <div class="ado-container ado-grid">
+        <div class="ado-grid-left">
+          <div class="ado-hero__content">
+            <div class="ado-hero__showreel">
+              <div class="ado-hero__showreel-label">
+                <span>Showreel/2025</span>
+                <span>01:20:00</span>
+              </div>
+              <div class="ado-hero__showreel-thumb">
+                <video src="https://www.adomantra.com/asstes/video/firstcut.mp4" width="404" autoplay muted loop playsinline></video>
+              </div>
+            </div>
+            <div class="ado-hero__right">
+              <div class="ado-hero__shape-bars">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <p class="ado-hero__desc">
+                At Adomantra, we drive digital transformation — delivering cutting-edge advertising technology, media solutions, and global scale.
+              </p>
+            </div>
+          </div>
+          <h1 class="ado-hero__title">
+            Redefining Media with<br> <span>Digital</span> Innovation
+          </h1>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

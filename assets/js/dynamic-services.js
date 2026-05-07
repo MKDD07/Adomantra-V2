@@ -340,9 +340,9 @@
     testimonials.forEach((tm, index) => {
       const html = `
            <div class="swiper-slide">
-          <div class="features-item mb-4 wow fadeInUp">
+          <div class="features-card mb-4 wow fadeInUp">
             <div class="testimonial-area4__card-items">
-            <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center justify-content-between mb-3">
                             <div class="testimonial-area4__card-items-mentor-items d-flex">
                 <div class="testimonial-area4__card-items-mentor-items-info">
                   <div class="testimonial-area4__card-items-mentor-items-info-thumb">
@@ -353,12 +353,12 @@
                     <img src="assets/imgs/social/testimonials/google.svg" alt="Google review" aria-label="Google review">
                   </div>
                   <div class="testimonial-area4__card-items-mentor-items-info-content">
-                    <h5 class="testimonial-area4__card-items-mentor-items-info-content-title">${tm.name}</h5>
+                    <h3 class="testimonial-area4__card-items-mentor-items-info-content-title">${tm.name}</h3>
                     <p class="testimonial-area4__card-items-mentor-items-info-content-subtitle">${tm.position}</p>
                   </div>
                 </div>           
               </div>
-              <div class="testimonial-area4__card-items-icon d-flex gap-1 mb-2">
+              <div class="testimonial-area4__card-items-icon d-flex gap-1 mb-2 mt-4">
                 <!-- Dynamic Stars (Random 4 or 5) -->
                 ${Array.from({ length: 5 }).map((_, i) => {
         const rating = tm.rating || (index % 3 === 0 ? 4 : 5); // Use JSON rating or a deterministic variation

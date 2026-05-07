@@ -50,6 +50,8 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://www.adomantra.com/public/uploads/favicon.png" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/all.min.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
@@ -112,10 +114,9 @@
   <link rel="stylesheet" href="assets/vandor/nice-select/nice-select.css" />
   <link rel="stylesheet" href="assets/vandor/wow/animate.css" />
   <link rel="stylesheet" href="assets/vandor/odometer/odometer-theme-default.css" />
-  <link rel="stylesheet" href="assets/css/additional_codes.css" />
 
   <!-- Template Main CSS File -->
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 
 <body>
@@ -126,64 +127,151 @@
 
     <div class="loader-wrap-heading">
       <div class="load-text">
-        <img src="assets/imgs/logo/logo-white.svg">
+        <img src="assets/imgs/logo/logo-white.svg" alt="Adomantra Logo" aria-label="Adomantra">
       </div>
     </div>
   </div>
-  </div>
+
   <!-- Sroll to top -->
   <div class="progress-wrap">
     <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
       <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
     </svg>
   </div>
-  <div data-id="header" data-src="htm/header.html"></div>
 
   <!-- side toggle start -->
   <aside class="fix">
-    <div class="side-info">
-      <div class="side-info-content">
-        <div class="offset-widget offset-header">
-          <div class="offset-logo">
-            <a href="index.html">
-              <img class="show-light" src="assets/imgs/logo/dark-logo.png" alt="site logo" />
-            </a>
-          </div>
-          <button id="side-info-close" class="side-info-close">
+    <div class="ado-sideinfo">
+      <div class="ado-sideinfo__panel">
+
+        <!-- HEADER -->
+        <div class="ado-sideinfo__header">
+          <a href="index.html" class="ado-sideinfo__logo">
+            <img src="assets/imgs/logo/logo.svg" alt="Adomantra Logo" />
+          </a>
+
+          <button id="side-info-close" class="ado-sideinfo__close">
             <i class="fas fa-times"></i>
           </button>
         </div>
-        <div class="mobile-menu d-xl-none fix"></div>
-        <div class="offset-button">
-          <a href="contact.html" class="rr-btn">
+
+        <!-- MENU SLOT -->
+        <div class="ado-sideinfo__menu d-xl-none fix"></div>
+
+        <!-- CTA -->
+        <div class="ado-sideinfo__cta">
+          <a href="javascript:void(0)" class="rr-btn contact-drawer-trigger">
             <span class="btn-wrap">
-              <span class="text-one">Let's Talk</span>
-              <span class="text-two">Let's Talk</span>
+              <span class="text-one">Let’s Talk</span>
+              <span class="text-two">Let’s Talk</span>
             </span>
           </a>
         </div>
-        <div class="offset-widget-box">
-          <h2 class="title">Contact US</h2>
-          <div class="contact-meta">
-            <div class="contact-item">
-              <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
-              <span class="text">3891 Ranchview Dr. Richardson</span>
+
+        <!-- CONTACT -->
+        <section class="features-item shadow-card">
+          <h3 class="ado-sideinfo__title">Contact Us</h3>
+
+          <div class="ado-contact">
+
+            <div class="ado-contact__item">
+              <i class="fa-solid fa-location-dot"></i>
+              <p>Plot No. 48, Tower 1, 3rd Floor, Rama Road, New Delhi, 110015</p>
             </div>
-            <div class="contact-item">
-              <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-              <span class="text"><a href="mailto:hello@Archidex.com">hello@Archidex.com</a></span>
+
+            <div class="ado-contact__item">
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:connect@adomantra.com">connect@adomantra.com</a>
             </div>
-            <div class="contact-item">
-              <span class="icon"><i class="fa-solid fa-phone"></i></span>
-              <span class="text"><a href="tel:(505)555-0125">(505) 555-0125</a></span>
+
+            <div class="ado-contact__item ado-contact__item--stack">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <a href="tel:+919650706427">+91 965 070 6427</a>
+                <a href="tel:+919311669643">+91 931 166 9643</a>
+              </div>
             </div>
+
           </div>
-        </div>
+        </section>
+
+        <!-- SOCIAL -->
+        <section class="ado-sideinfo__social">
+          <h4 class="ado-sideinfo__subtitle">Follow Us</h4>
+
+          <div class="ado-social">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </section>
+
       </div>
-    </div>
   </aside>
   <div class="offcanvas-overlay"></div>
   <!-- side toggle end -->
+
+  <!-- Contact Drawer Start -->
+  <div class="contact-drawer-overlay"></div>
+  <aside class="contact-drawer">
+    <div class="contact-drawer-close">
+      <button id="closeDrawer" aria-label="Close button"><i class="fa-light fa-xmark"></i></button>
+    </div>
+    <div class="contact-drawer-content h-100">
+      <div class="features-card position-relative overflow-y-auto">
+        <div class="mb-4">
+          <div class="mb-2 h2" style="color: #1a202c; font-size: 28px; font-weight: bold;">Ready to get started?</div>
+          <p class="text-secondary small">Fill out the form below and we'll reach out within 24 hours.</p>
+        </div>
+
+        <form class="row g-3">
+          <div class="col-12">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-control custom-field" placeholder="Name" required>
+          </div>
+
+          <div class="col-12">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-control custom-field" placeholder="Email ID" required>
+          </div>
+
+          <div class="col-12">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" class="form-control custom-field" placeholder="+91 999-999-9999">
+          </div>
+
+          <div class="col-12  f-col">
+            <label class="form-label">Service Required</label>
+            <select class="form-select custom-field w-100" required>
+              <option selected disabled>Select a service</option>
+              <option>CTV Advertising</option>
+              <option>Performance Marketing</option>
+              <option>SEO Services</option>
+              <option>Social Media Marketing</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Tell us about your query</label>
+            <textarea class="form-control custom-field" rows="3" placeholder="How can we help you?"></textarea>
+          </div>
+
+          <div class="col-12 mt-4">
+            <button type="submit" class="rr-btn w-100 border-0">
+              <span class="btn-wrap">
+                <span class="text-one">Get Free Consultation</span>
+                <span class="text-two">Get Free Consultation</span>
+              </span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </aside>
+  <!-- Contact Drawer End -->
+  <!-- Header area start -->
+  <header data-id="header" data-src="htm/header.html"></header>
 
   <div class="has-smooth" id="has_smooth"></div>
   <div id="smooth-wrapper">
@@ -235,8 +323,8 @@
         </section>
 
         <div class="container rr-container-1800 ">
-          <div class="position-relative d-flex align-items-center flex-column flex-lg-row gap-4">
-            <div class="flex-shrink-0 section-bg">
+          <div class="position-relative d-fl f-aic fl-column fl-lg-row gap-4">
+            <div class="fl-shrink-0 section-bg">
               <img src="assets/imgs/blog/blog_001.png" class="" style="width: 400px; mix-blend-mode: darken;">
             </div>
             <div class="text-container col-12 col-lg-6">
@@ -251,11 +339,11 @@
           <div class="line-new-design"></div>
           <!--===== achievement Section    S T A R T =====-->
           <section class="section-spacing">
-            <div class="features-item rr-ov-hidden section-spacing"
+            <div class="features-item overflow-hidden section-spacing"
               style="background-image: url('assets/imgs/home-6/achievement/achievement-bg.jpg'); background-size: cover; background-position: center;">
 
               <div class="container">
-                <div class="achievement-area6-wrapper rr-ov-hidden d-flex justify-content-between flex-wrap gap-5">
+                <div class="achievement-area6-wrapper overflow-hidden d-fl f-jcsb fl-wrap gap-5">
 
                   <div class="achievement-area6__items">
                     <div class="achievement-area6__items-year">
@@ -293,7 +381,7 @@
           </section>
           <!-- Project area start -->
           <div class="container rr-container-1800">
-            <div class="row align-items-center">
+            <div class="row f-aic">
 
               <!-- LEFT (now main heading - inverse) -->
               <div class="col-lg-9 col-12 order-2 order-lg-1">
@@ -326,7 +414,7 @@
               </div>
               <div class="row gy-4 gy-xl-0">
                 <div class="col-xl-12" id="featured-blog-projects">
-                  <div class="project-area7__card section-item rr-ov-hidden">
+                  <div class="project-area7__card section-item overflow-hidden">
                     <div class="project-area7__card-content">
                       <div class="project-area7__card-year">2025</div>
                       <a href="#" class="project-area7__card-title">Real-Time Threat Defense Solutions</a>
@@ -345,7 +433,7 @@
                       <a href="#" class="project-area7__card-btn">See Details</a>
                     </div>
                   </div>
-                  <div class="project-area7__card section-item rr-ov-hidden">
+                  <div class="project-area7__card section-item overflow-hidden">
                     <div class="project-area7__card-content">
                       <div class="project-area7__card-year">2025</div>
                       <a href="#" class="project-area7__card-title">Real-Time Threat Defense Solutions</a>
@@ -364,7 +452,7 @@
                       <a href="#" class="project-area7__card-btn">See Details</a>
                     </div>
                   </div>
-                  <div class="project-area7__card section-item rr-ov-hidden">
+                  <div class="project-area7__card section-item overflow-hidden">
                     <div class="project-area7__card-content">
                       <div class="project-area7__card-year">2025</div>
                       <a href="#" class="project-area7__card-title">Real-Time Threat Defense Solutions</a>
@@ -391,13 +479,13 @@
           <!--===== CTA Section S T A R T =====-->
           <section id="cta-section" class="py-5">
             <div class=" container">
-              <div class="row g-4 align-items-stretch position-relative">
+              <div class="row g-4 f-aist position-relative">
                 <!--===== All Services Swiper Section S T A R T =====-->
-                <section class="service-2__area rr-ov-hidden" id="all-services-section">
+                <section class="service-2__area overflow-hidden" id="all-services-section">
                   <div class="container rr-container-1800">
-                    <div class="row gy-5 align-items-end justify-content-between mb-5">
+                    <div class="row gy-5 f-aie f-jcsb mb-5">
                       <div class="col-lg-8">
-                        <div class="text-center text-lg-start d-flex align-items-start flex-column">
+                        <div class="text-center text-lg-start d-fl f-ais fl-column">
                           <span class="section__subtitle wow fadeInUp" data-wow-delay=".2s"><span></span>Our
                             Capabilities</span>
                           <h2 class="title wow mt-4 mb-4 fadeInUp" data-wow-delay="0.3s">Empowering Brands With
@@ -408,7 +496,7 @@
                         </div>
                       </div>
                       <div class="col-lg-4">
-                        <div class="d-flex align-items-center justify-content-center justify-content-lg-end gap-3">
+                        <div class="d-fl f-aic f-jcc justify-content-lg-end gap-3">
                           <button class="inner-nav-btn" id="all-services-prev" aria-label="Previous slide">
                             <i class="fa-solid fa-angle-left"></i>
                           </button>
@@ -461,7 +549,7 @@
                         <input type="tel" class="form-control custom-field" placeholder="+91 999-999-9999">
                       </div>
 
-                      <div class="col-12 d-flex flex-column">
+                      <div class="col-12 d-fl fl-column">
                         <label class="form-label">Service Required</label>
                         <select class="form-select custom-field" required>
                           <option selected disabled>Select a service</option>

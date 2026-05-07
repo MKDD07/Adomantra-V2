@@ -94,12 +94,11 @@ document.addEventListener('DOMContentLoaded', function () {
             return `
                 <div class="global-accordion-item">
                     <div class="global-accordion-header" id="${headerId}">
-                        <button class="faq-button w-100 d-flex justify-content-between fsz-2 ${collapsedClass} style" 
+                        <button class="faq-button border-bottom-lightgray-500 w-100 d-flex justify-content-between ${collapsedClass} style" 
                              data-bs-toggle="collapse" 
                              data-bs-target="#${collapseId}" 
                              aria-expanded="${expanded}" 
-                             aria-controls="${collapseId}"
-                             style="padding:20px">
+                             aria-controls="${collapseId}">
                              ${faq.question} 
                              <span class="faq-icon">
                                 <i class="fa-solid fa-chevron-down"></i>

@@ -9,9 +9,8 @@
   /* ─────────────────────────────────────────
      CONFIG
   ───────────────────────────────────────── */
-  const GROQ_API_KEY = 'YOUR_GROQ_API_KEY';
-  const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
-  const MODEL = 'llama-3.3-70b-versatile';
+  const GROQ_API_URL = '/api/groq';
+  const MODEL = 'openai/gpt-oss-120b';
   const SYSTEM_PROMPT = `You are the official AI assistant for Adomantra (adomantra.com) — an award-winning digital advertising agency based in New Delhi, India.
 
 Your role: Answer and request for what may i help your and from your side question asked by client should be small and natural tone and not always talk about adomantra's only questions related to Adomantra's services, team, achievements, contact info, and digital marketing topics they specialise in and dont use "**".
@@ -79,388 +78,34 @@ Rules:
 - Keep answers SHORT (2–4 sentences max).
 - Only answer Adomantra or digital-marketing related queries.
 - Be friendly, professional, and brand-aligned.
-- For contact/sales queries direct users to contact@adomantra.com or the Contact page.`;
-
+- For contact/sales queries direct users to connect@adomantra.com or the Contact page.`;
   /* ─────────────────────────────────────────
      1. INJECT CSS
   ───────────────────────────────────────── */
   const style = document.createElement('style');
   style.id = 'adomantra-chatbot-css';
-  style.textContent = `
-  /* ── Variables ── */
-  #ado-chatbot-root {
-    --ado-white: #ffffff;
-    --ado-black: #111111;
-    --ado-accent: #111111;
-    --ado-gray-light: #f4f4f5;
-    --ado-gray-border: #e4e4e7;
-    --ado-text-muted: #71717a;
-    --ado-green: #22c55e;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  }
-
-  /* ── FAB Button ── */
-  #ado-chat-fab {
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-    z-index: 99999;
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    background: #111111;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 8px 28px rgba(0,0,0,0.22);
-    color: #fff;
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
-    outline: none;
-  }
-  #ado-chat-fab:hover {
-    transform: scale(1.1);
-    box-shadow: 0 12px 36px rgba(0,0,0,0.3);
-  }
-  #ado-chat-fab i {
-    font-size: 22px;
-    position: absolute;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-  #ado-chat-fab .ado-icon-chat  { opacity: 1; transform: rotate(0deg) scale(1); }
-  #ado-chat-fab .ado-icon-close { opacity: 0; transform: rotate(-90deg) scale(0.6); }
-  #ado-chat-fab.open .ado-icon-chat  { opacity: 0; transform: rotate(90deg) scale(0.6); }
-  #ado-chat-fab.open .ado-icon-close { opacity: 1; transform: rotate(0deg) scale(1); }
-
-  /* Pulse ring */
-  #ado-chat-fab::before {
-    content: '';
-    position: absolute;
-    inset: -5px;
-    border-radius: 50%;
-    border: 2px solid rgba(17,17,17,0.3);
-    animation: ado-pulse 2.4s ease-out infinite;
-    pointer-events: none;
-  }
-  @keyframes ado-pulse {
-    0%   { transform: scale(1);   opacity: 0.7; }
-    70%  { transform: scale(1.45); opacity: 0; }
-    100% { transform: scale(1.45); opacity: 0; }
-  }
-
-  /* ── Chat Window ── */
-  #ado-chat-window {
-    position: fixed;
-    bottom: 102px;
-    right: 28px;
-    z-index: 99998;
-    width: 380px;
-    max-height: 600px;
-    height: 80vh;
-    border-radius: 16px;
-    background: var(--ado-white);
-    border: 1px solid var(--ado-gray-border);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.12), 0 4px 16px rgba(0,0,0,0.06);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(16px) scale(0.97);
-    transform-origin: bottom right;
-    transition: opacity 0.28s ease, transform 0.28s cubic-bezier(0.34,1.2,0.64,1);
-  }
-  #ado-chat-window.visible {
-    opacity: 1;
-    pointer-events: all;
-    transform: translateY(0) scale(1);
-  }
-
-  /* Header */
-  .ado-chat-header {
-    padding: 14px 18px;
-    border-bottom: 1px solid var(--ado-gray-border);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-shrink: 0;
-    background: var(--ado-white);
-  }
-  .ado-chat-header-avatar {
-    width: 38px;
-    height: 38px;
-    background: var(--ado-gray-light);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 17px;
-    color: var(--ado-black);
-    flex-shrink: 0;
-  }
-  .ado-chat-header-info { flex: 1; min-width: 0; }
-  .ado-chat-header-info h4 {
-    margin: 0;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--ado-black);
-    line-height: 1.3;
-  }
-  .ado-chat-header-info span {
-    font-size: 11.5px;
-    color: var(--ado-text-muted);
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    margin-top: 1px;
-  }
-  .ado-online-dot {
-    width: 7px;
-    height: 7px;
-    background: var(--ado-green);
-    border-radius: 50%;
-    display: inline-block;
-    animation: ado-blink 1.8s ease infinite;
-  }
-  @keyframes ado-blink { 0%,100%{opacity:1} 50%{opacity:0.35} }
-
-  /* Messages scroll area */
-  .ado-chat-messages {
-    flex: 1;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: #d4d4d8 transparent;
-  }
-  .ado-chat-messages::-webkit-scrollbar { width: 4px; }
-  .ado-chat-messages::-webkit-scrollbar-thumb { background: #d4d4d8; border-radius: 4px; }
-
-  /* Welcome area */
-  .ado-welcome-area { padding: 18px; }
-  .ado-welcome-area h3 {
-    margin: 0 0 4px;
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--ado-black);
-  }
-  .ado-welcome-area > p {
-    font-size: 13px;
-    color: var(--ado-text-muted);
-    margin: 0 0 16px;
-  }
-
-  /* Feature cards grid */
-  .ado-features-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    margin-bottom: 18px;
-  }
-  .ado-feature-item {
-    padding: 12px;
-    border: 1px solid var(--ado-gray-border);
-    border-radius: 10px;
-    cursor: pointer;
-    background: var(--ado-white);
-    text-align: left;
-    transition: border-color 0.18s, background 0.18s;
-  }
-  .ado-feature-item:hover {
-    border-color: var(--ado-black);
-    background: var(--ado-gray-light);
-  }
-  .ado-feature-item i {
-    display: block;
-    margin-bottom: 6px;
-    font-size: 16px;
-    color: var(--ado-black);
-  }
-  .ado-feature-item span {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--ado-black);
-    display: block;
-  }
-
-  /* Suggested questions */
-  .ado-section-title {
-    font-size: 10.5px;
-    font-weight: 700;
-    color: var(--ado-text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    margin: 0 0 8px;
-  }
-  .ado-question-prompt {
-    width: 100%;
-    text-align: left;
-    padding: 10px 13px;
-    background: var(--ado-gray-light);
-    border: 1px solid transparent;
-    border-radius: 8px;
-    font-size: 13px;
-    color: var(--ado-black);
-    margin-bottom: 7px;
-    cursor: pointer;
-    transition: border-color 0.18s, background 0.18s;
-    font-family: inherit;
-  }
-  .ado-question-prompt:hover {
-    background: var(--ado-white);
-    border-color: var(--ado-black);
-  }
-
-  /* Chat conversation bubbles */
-  .ado-conversation { padding: 12px 16px; display: flex; flex-direction: column; gap: 10px; }
-
-  .ado-msg {
-    display: flex;
-    gap: 8px;
-    animation: ado-msg-in 0.28s cubic-bezier(0.34,1.2,0.64,1) both;
-  }
-  @keyframes ado-msg-in {
-    from { opacity: 0; transform: translateY(8px) scale(0.96); }
-    to   { opacity: 1; transform: translateY(0) scale(1); }
-  }
-  .ado-msg.bot  { align-items: flex-end; }
-  .ado-msg.user { flex-direction: row-reverse; align-items: flex-end; }
-
-  .ado-bot-mini {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: var(--ado-gray-light);
-    border: 1px solid var(--ado-gray-border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    color: var(--ado-black);
-    flex-shrink: 0;
-  }
-
-  .ado-bubble {
-    max-width: 80%;
-    padding: 10px 13px;
-    border-radius: 14px;
-    font-size: 13.5px;
-    line-height: 1.55;
-    word-break: break-word;
-    font-family: inherit;
-  }
-  .ado-msg.bot  .ado-bubble {
-    background: var(--ado-gray-light);
-    color: var(--ado-black);
-    border-bottom-left-radius: 3px;
-  }
-  .ado-msg.user .ado-bubble {
-    background: var(--ado-black);
-    color: #fff;
-    border-bottom-right-radius: 3px;
-  }
-
-  /* Typing indicator */
-  .ado-typing-dots {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    padding: 11px 14px;
-    background: var(--ado-gray-light);
-    border-radius: 14px;
-    border-bottom-left-radius: 3px;
-    width: fit-content;
-  }
-  .ado-typing-dots span {
-    width: 6px;
-    height: 6px;
-    background: #a1a1aa;
-    border-radius: 50%;
-    animation: ado-bounce 1.2s ease infinite;
-  }
-  .ado-typing-dots span:nth-child(2) { animation-delay: 0.18s; }
-  .ado-typing-dots span:nth-child(3) { animation-delay: 0.36s; }
-  @keyframes ado-bounce {
-    0%,80%,100% { transform: translateY(0); }
-    40% { transform: translateY(-5px); }
-  }
-
-  /* Input area */
-  .ado-chat-input-area {
-    padding: 12px 14px;
-    border-top: 1px solid var(--ado-gray-border);
-    display: flex;
-    gap: 8px;
-    align-items: flex-end;
-    background: var(--ado-white);
-    flex-shrink: 0;
-  }
-  #ado-chat-input {
-    flex: 1;
-    border: 1px solid var(--ado-gray-border);
-    border-radius: 10px;
-    padding: 9px 12px;
-    font-size: 13.5px;
-    font-family: inherit;
-    resize: none;
-    outline: none;
-    line-height: 1.45;
-    max-height: 90px;
-    min-height: 38px;
-    background: var(--ado-gray-light);
-    color: var(--ado-black);
-    transition: border-color 0.18s, background 0.18s;
-  }
-  #ado-chat-input:focus {
-    border-color: var(--ado-black);
-    background: var(--ado-white);
-  }
-  #ado-chat-input::placeholder { color: #a1a1aa; }
-
-  #ado-chat-send {
-    background: var(--ado-black);
-    color: #fff;
-    border: none;
-    width: 38px;
-    height: 38px;
-    border-radius: 10px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    font-size: 14px;
-    transition: opacity 0.18s, transform 0.18s;
-  }
-  #ado-chat-send:hover   { opacity: 0.82; transform: scale(1.05); }
-  #ado-chat-send:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
-
-  /* Footer */
-  .ado-chat-footer {
-    text-align: center;
-    padding: 7px;
-    font-size: 10.5px;
-    color: var(--ado-text-muted);
-    border-top: 1px solid var(--ado-gray-border);
-    flex-shrink: 0;
-    background: var(--ado-white);
-  }
-  .ado-chat-footer a {
-    color: var(--ado-black);
-    text-decoration: none;
-    font-weight: 600;
-  }
-  .ado-chat-footer a:hover { text-decoration: underline; }
-
-  /* Mobile */
-  @media (max-width: 440px) {
-    #ado-chat-window { width: calc(100vw - 18px); right: 9px; bottom: 96px; }
-    #ado-chat-fab    { right: 18px; bottom: 22px; }
-  }
-  `;
   document.head.appendChild(style);
 
   /* ─────────────────────────────────────────
-     2. INJECT HTML  (single injection only)
+     2. DYNAMIC GREETING based on IST time
+  ───────────────────────────────────────── */
+  function getGreeting() {
+    // Use IST (UTC+5:30) for correct greeting regardless of user timezone
+    const now = new Date();
+    const istOffset = 5.5 * 60 * 60 * 1000;
+    const istTime = new Date(now.getTime() + (now.getTimezoneOffset() * 60 * 1000) + istOffset);
+    const hour = istTime.getHours();
+
+    if (hour >= 5 && hour < 12) return { text: 'Good morning', emoji: '☀️' };
+    if (hour >= 12 && hour < 17) return { text: 'Good afternoon', emoji: '🌤️' };
+    if (hour >= 17 && hour < 21) return { text: 'Good evening', emoji: '🌇' };
+    return { text: 'Hello', emoji: '🌙' };
+  }
+
+  const { text: greetingText, emoji: greetingEmoji } = getGreeting();
+
+  /* ─────────────────────────────────────────
+     3. INJECT HTML
   ───────────────────────────────────────── */
   const root = document.createElement('div');
   root.id = 'ado-chatbot-root';
@@ -490,8 +135,8 @@ Rules:
 
         <!-- Welcome / Home view -->
         <div class="ado-welcome-area" id="ado-welcome-area">
-          <h3>Hi! How can we help? 👋</h3>
-          <p>Choose a category or ask your own question below.</p>
+          <h3>Hi, ${greetingText}! ${greetingEmoji}</h3>
+          <p>What may I help you with today?</p>
 
           <div class="ado-features-grid">
             <button class="ado-feature-item" data-q="What services does Adomantra offer?">
@@ -539,7 +184,7 @@ Rules:
   document.body.appendChild(root);
 
   /* ─────────────────────────────────────────
-     3. REFERENCES
+     4. REFERENCES
   ───────────────────────────────────────── */
   const fab = document.getElementById('ado-chat-fab');
   const chatWindow = document.getElementById('ado-chat-window');
@@ -554,7 +199,7 @@ Rules:
   let isLoading = false;
 
   /* ─────────────────────────────────────────
-     4. TOGGLE
+     5. TOGGLE
   ───────────────────────────────────────── */
   fab.addEventListener('click', () => {
     isOpen = !isOpen;
@@ -564,7 +209,7 @@ Rules:
   });
 
   /* ─────────────────────────────────────────
-     5. QUICK-QUESTION HANDLERS (event delegation)
+     6. QUICK-QUESTION HANDLERS (event delegation)
   ───────────────────────────────────────── */
   root.addEventListener('click', (e) => {
     const btn = e.target.closest('[data-q]');
@@ -574,7 +219,7 @@ Rules:
   });
 
   /* ─────────────────────────────────────────
-     6. RENDER HELPERS
+     7. RENDER HELPERS
   ───────────────────────────────────────── */
   function addMessage(role, text) {
     // Hide welcome on first real message
@@ -627,7 +272,134 @@ Rules:
   }
 
   /* ─────────────────────────────────────────
-     7. SEND MESSAGE
+     8. CONTACT FORM — shown inside chat
+  ───────────────────────────────────────── */
+  let contactFormShown = false; // prevent duplicate forms
+
+  function showContactForm() {
+    if (contactFormShown) return;
+    contactFormShown = true;
+
+    const formId = 'ado-chat-contact-form-' + Date.now();
+    const msg = document.createElement('div');
+    msg.className = 'ado-msg bot';
+    msg.id = 'ado-contact-form-msg';
+    msg.innerHTML = `
+      <div class="ado-bot-mini"><i class="fa-solid fa-robot"></i></div>
+      <div class="ado-bubble ado-form-bubble">
+        <div class="ado-form-title">
+          <i class="fa-solid fa-address-card"></i>
+          Share your details &amp; we'll reach out!
+        </div>
+        <form id="${formId}" autocomplete="off">
+          <div class="ado-form-field">
+            <i class="fa-solid fa-user ado-field-icon"></i>
+            <input type="text" name="name" placeholder="Your Name" required />
+          </div>
+          <div class="ado-form-field">
+            <i class="fa-solid fa-envelope ado-field-icon"></i>
+            <input type="email" name="email" placeholder="Your Email" required />
+          </div>
+          <div class="ado-form-field">
+            <i class="fa-solid fa-phone ado-field-icon"></i>
+            <input type="tel" name="phone" placeholder="Your Phone (with country code)" required />
+          </div>
+          <div class="ado-form-field">
+            <i class="fa-solid fa-comment ado-field-icon"></i>
+            <input type="text" name="message" placeholder="What can we help you with?" />
+          </div>
+          <button type="submit" class="ado-form-submit">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    `;
+    conversation.appendChild(msg);
+    scrollToBottom();
+
+    document.getElementById(formId).addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = new FormData(e.target);
+      const name = data.get('name') || '';
+      const email = data.get('email') || '';
+      const phone = data.get('phone') || '';
+      const message = data.get('message') || '';
+
+      // Replace form with confirmation
+      msg.innerHTML = `
+        <div class="ado-bot-mini"><i class="fa-solid fa-robot"></i></div>
+        <div class="ado-bubble ado-form-bubble ado-form-success">
+          <i class="fa-solid fa-circle-check ado-success-icon"></i>
+          <strong>Thank you, ${escapeHtml(name)}!</strong><br>
+          Our team will contact you shortly at <em>${escapeHtml(email)}</em>.
+        </div>
+      `;
+
+      // If phone number provided, offer WhatsApp/SMS options
+      const cleanPhone = phone.replace(/[\s\-()]/g, '');
+      if (cleanPhone.length >= 10) {
+        setTimeout(() => {
+          showWhatsAppPrompt(cleanPhone, name);
+        }, 600);
+      }
+
+      history.push({ role: 'assistant', content: `Thank you, ${name}! Our team will contact you shortly.` });
+    });
+  }
+
+  /* ─────────────────────────────────────────
+     9. WHATSAPP / SMS PROMPT
+        — shown when a phone number is detected
+  ───────────────────────────────────────── */
+  function showWhatsAppPrompt(rawPhone, name) {
+    // Normalise: strip leading zeros and add country code if missing
+    let phone = rawPhone.replace(/\D/g, '');
+    if (phone.startsWith('0')) phone = phone.substring(1);
+    if (!phone.startsWith('91') && phone.length === 10) phone = '91' + phone; // default to India
+
+    const prefilledMsg = encodeURIComponent(
+      `Hi Adomantra! I'm ${name || 'a potential client'} and I'd like to know more about your services.`
+    );
+    const waLink = `https://wa.me/${phone}?text=${prefilledMsg}`;
+    const smsLink = `sms:${rawPhone}?body=${prefilledMsg}`;
+
+    const prompt = document.createElement('div');
+    prompt.className = 'ado-msg bot';
+    prompt.innerHTML = `
+      <div class="ado-bot-mini"><i class="fa-solid fa-robot"></i></div>
+      <div class="ado-bubble ado-wa-bubble">
+        <p style="margin:0 0 10px;font-size:13px;">
+          <i class="fa-solid fa-mobile-screen" style="color:#25D366;margin-right:5px;"></i>
+          Want us to reach out to <strong>${escapeHtml(rawPhone)}</strong> right now?
+        </p>
+        <div class="ado-wa-actions">
+          <a href="${waLink}" target="_blank" rel="noopener" class="ado-wa-btn ado-wa-green">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
+          <a href="${smsLink}" class="ado-wa-btn ado-wa-blue">
+            <i class="fa-solid fa-sms"></i> SMS
+          </a>
+        </div>
+        <p style="margin:8px 0 0;font-size:11px;color:#888;">
+          Tapping opens your messaging app — no data is sent automatically.
+        </p>
+      </div>
+    `;
+    conversation.appendChild(prompt);
+    scrollToBottom();
+  }
+
+  /* ─────────────────────────────────────────
+     10. PHONE DETECTION — mid-conversation
+  ───────────────────────────────────────── */
+  function extractPhone(text) {
+    // Matches: +91-9876543210, 09876543210, 9876543210, +1 800 555 0199, etc.
+    const match = text.match(/(?:\+?\d{1,3}[\s\-]?)?(?:\(?\d{2,4}\)?[\s\-]?)?\d{6,10}/);
+    return match ? match[0].replace(/[\s\-()]/g, '') : null;
+  }
+
+  /* ─────────────────────────────────────────
+     11. SEND MESSAGE
   ───────────────────────────────────────── */
   async function sendMessage(userText) {
     userText = (userText || '').trim();
@@ -644,12 +416,15 @@ Rules:
 
     showTyping();
 
+    // Intent detection
+    const isContactIntent = /\b(contact|connect|reach|call me|get in touch|talk to|speak|sales|quote|enquire|inquiry|demo)\b/i.test(userText);
+    const detectedPhone = extractPhone(userText);
+
     try {
       const res = await fetch(GROQ_API_URL, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${GROQ_API_KEY}`
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
           model: MODEL,
@@ -676,6 +451,24 @@ Rules:
       addMessage('bot', reply);
       history.push({ role: 'assistant', content: reply });
 
+      // ── Post-reply actions ──
+      if (detectedPhone) {
+        // User dropped their number mid-chat → offer WhatsApp/SMS immediately
+        setTimeout(() => {
+          const ack = `Got your number! Would you like our team to reach out to you on WhatsApp or SMS?`;
+          addMessage('bot', ack);
+          history.push({ role: 'assistant', content: ack });
+          showWhatsAppPrompt(detectedPhone, '');
+        }, 600);
+
+      } else if (isContactIntent && !contactFormShown) {
+        // User asked to connect → slide in the contact form
+        setTimeout(() => {
+          addMessage('bot', 'Sure! Please fill in a few quick details and our team will get back to you shortly. 👇');
+          showContactForm();
+        }, 600);
+      }
+
     } catch (err) {
       removeTyping();
       addMessage('bot', '⚠️ Something went wrong. Please check your connection and try again.');
@@ -688,7 +481,7 @@ Rules:
   }
 
   /* ─────────────────────────────────────────
-     8. INPUT EVENT LISTENERS
+     12. INPUT EVENT LISTENERS
   ───────────────────────────────────────── */
   sendBtn.addEventListener('click', () => sendMessage(inputEl.value));
 

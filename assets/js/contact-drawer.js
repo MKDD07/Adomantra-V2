@@ -1,36 +1,1210 @@
-(function ($) {
-    "use strict";
+<!DOCTYPE html>
+<html lang="en">
 
-    $(document).ready(function () {
-        const $drawer = $(".contact-drawer");
-        const $overlay = $(".contact-drawer-overlay");
-        const $triggers = $(".contact-drawer-trigger");
-        const $closeBtn = $("#closeDrawer");
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        function openDrawer() {
-            $drawer.addClass("active");
-            $overlay.addClass("active");
-            $("body").addClass("no-scroll");
-        }
+  <!-- Primary SEO Meta -->
+  <title>Award-Winning Internet Marketing & Digital Advertising Agency | Adomantra</title>
+  <meta name="description"
+    content="Adomantra is an award-winning digital advertising agency offering comprehensive internet marketing services and affordable lead generation solutions for your online success." />
+  <meta name="robots" content="index,follow" />
 
-        function closeDrawer() {
-            $drawer.removeClass("active");
-            $overlay.removeClass("active");
-            $("body").removeClass("no-scroll");
-        }
+  <!-- Geo Tags -->
+  <meta name="geo.region" content="IN-DL" />
+  <meta name="geo.placename" content="Delhi" />
+  <meta name="geo.position" content="28.6640433,77.1597451" />
+  <meta name="ICBM" content="28.6640433,77.1597451" />
 
-        $triggers.on("click", function (e) {
-            e.preventDefault();
-            openDrawer();
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.adomantra.com/" />
+  <meta property="og:site_name" content="Adomantra" />
+  <meta property="og:locale" content="en-US" />
+  <meta property="og:title" content="Adomantra: Internet Marketing & Award-Winning Digital Agency" />
+  <meta property="og:description"
+    content="Adomantra is an award-winning Online Advertising Agency offering all your Digital marketing needs — SEO, PPC, Social Media Optimization, and quality lead generation at low costs." />
+  <meta property="og:image" content="https://www.adomantra.com/asstes/img/og-logo.jpg" />
+  <meta property="og:image:width" content="400" />
+  <meta property="og:image:height" content="300" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@adomantra1" />
+  <meta name="twitter:creator" content="@adomantra" />
+  <meta name="twitter:url" content="https://www.adomantra.com/" />
+  <meta name="twitter:title" content="Adomantra: Internet Marketing & Award-Winning Digital Agency" />
+  <meta name="twitter:description"
+    content="Adomantra is an award-winning Online Advertising Agency offering all your Digital marketing needs — SEO, PPC, Social Media Optimization, and quality lead generation at low costs." />
+  <meta name="twitter:image" content="https://www.adomantra.com/asstes/img/og-logo.jpg" />
+
+  <!-- Google Site Verification -->
+  <meta name="google-site-verification" content="nQN8v_WR6lnJRTibiLrqRDVkgXLPbUnhHYbyk4eYeHk" />
+  <meta name="google-site-verification" content="fLOhlLQurumAYiESmpQgGUc_ewbqAkqPtTX9QXYHxIo" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.adomantra.com/" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://www.adomantra.com/public/uploads/favicon.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/all.min.css">
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "Adomantra Digital India Pvt Ltd",
+    "alternateName": "Adomantra",
+    "url": "https://www.adomantra.com/",
+    "logo": "https://www.adomantra.com/asstes/img/logo.webp",
+    "image": "https://www.adomantra.com/asstes/img/logo.webp",
+    "description": "Adomantra is an award-winning digital advertising agency offering comprehensive internet marketing services and affordable lead generation solutions for your online success.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3rd Floor, Tower-1, Plot No. 48, Rama Rd, Industrial Area, Najafgarh Road Industrial Area",
+      "addressLocality": "New Delhi",
+      "addressRegion": "Delhi",
+      "postalCode": "110015",
+      "addressCountry": "IN",
+      "telephone": "+91-9650706427",
+      "email": "connect@adomantra.com"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 28.6640433,
+      "longitude": 77.1597451
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.4",
+      "reviewCount": "52"
+    },
+    "openingHours": "Mo,Tu,We,Th,Fr 09:30-18:30",
+    "sameAs": [
+      "https://www.facebook.com/adomantra",
+      "https://x.com/adomantra1",
+      "https://in.linkedin.com/company/adomantra",
+      "https://www.instagram.com/adomantra/"
+    ]
+  }
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-NZWQR2DC');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Dependencies CSS Files (Trexa Template) -->
+  <link rel="stylesheet" href="assets/vandor/bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/vandor/fontawesome/fontawesome-pro.min.css" />
+  <link rel="stylesheet" href="assets/vandor/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/vandor/menu/meanmenu.min.css" />
+  <link rel="stylesheet" href="assets/vandor/popup/magnific-popup.css" />
+  <link rel="stylesheet" href="assets/vandor/nice-select/nice-select.css" />
+  <link rel="stylesheet" href="assets/vandor/wow/animate.css" />
+  <link rel="stylesheet" href="assets/vandor/odometer/odometer-theme-default.css" />
+  <link rel="stylesheet" href="assets/css/additional_codes.css" />
+
+  <!-- Template Main CSS File -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <div class="loader-wrap">
+    <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+      <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+    </svg>
+
+    <div class="loader-wrap-heading">
+      <div class="load-text">
+        <img src="assets/imgs/logo/logo-white.svg">
+      </div>
+    </div>
+  </div>
+
+  <!-- Sroll to top -->
+  <div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+    </svg>
+  </div>
+
+  <!-- side toggle start -->
+  <aside class="fix">
+    <div class="side-info">
+      <div class="side-info-content">
+        <div class="offset-widget offset-header">
+          <div class="offset-logo">
+            <a href="index.html">
+              <img class="show-light" src="assets/imgs/logo/logo.svg" alt="Adomantra Logo" />
+            </a>
+          </div>
+          <button id="side-info-close" class="side-info-close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <div class="mobile-menu d-xl-none fix"></div>
+
+        <div class="offset-button">
+          <a href="contact.html" class="rr-btn" target="_blank">
+            <span class="btn-wrap">
+              <span class="text-one">Let's Talk</span>
+              <span class="text-two">Let's Talk</span>
+            </span>
+          </a>
+        </div>
+        <div class="offset-widget-box">
+          <h2 class="title">Contact Us</h2>
+          <div class="contact-meta">
+            <div class="contact-item">
+              <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
+              <span class="text">Plot No. 48, Tower 1, 3rd Floor, Rama Road, New Delhi, 110015</span>
+            </div>
+
+            <div class="contact-item">
+              <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+              <span class="text"><a href="mailto:connect@adomantra.com">connect@adomantra.com</a></span>
+            </div>
+            <div class="contact-item">
+
+              <span class="icon"><i class="fa-solid fa-phone"></i></span>
+              <span class="text">
+                <a href="tel:+919650706427">+91 965 070 6427</a>
+                <a href="tel:+919311669643">+91 931 166 9643</a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="offset-social-box" style="margin-top: 30px;">
+        <h3 class="social-title" style="font-size: 18px; margin-bottom: 15px;">Follow Us</h3>
+        <div class="social-links" style="display: fl; gap: 15px;">
+          <a href="https://www.facebook.com/Adomantra/" target="_blank" title="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="https://twitter.com/adomantra" target="_blank" title="Twitter/X">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/adomantra-digital-india-pvt-ltd/" target="_blank" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="https://www.instagram.com/adomantra/" target="_blank" title="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/@adomantra" target="_blank" title="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </aside>
+  <div class="offcanvas-overlay"></div>
+  <!-- side toggle end -->
+
+  <div class="has-smooth" id="has_smooth"></div>
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <div id="announcementBar" class="announcement-bar-wrapper py-3" style="background-color: var(--primary-color);">
+        <div class="container rr-container-1800">
+          <div class="row f-aic">
+            <div class="col-lg-4 col-md-4 d-none d-md-block">
+              <div class="header-contact-info d-fl f-aic gap-3">
+                <a href="mailto:info@adomantra.com" class="text-white text-decoration-none small">
+                  <i class="fa-solid fa-envelope-open-text me-2"></i>info@adomantra.com
+                </a>
+                <a href="tel:+911234567890" class="text-white text-decoration-none small">
+                  <i class="fa-solid fa-phone-volume me-2"></i>+91 123 456 7890
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-12">
+              <div class="swiper announcement-swiper" style="height: 24px; overflow: hidden;">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide text-center">
+                    <span class="badge bg-danger me-2 fw-light">NEW</span>
+                    <a href="#" class="text-white text-decoration-none small">DV360 vs Amazon DSP Guide 2026</a>
+                  </div>
+                  <div class="swiper-slide text-center">
+                    <span class="badge bg-danger me-2 fw-light">HOT</span>
+                    <a href="#" class="text-white text-decoration-none small">Digital Strategy for Hospitals</a>
+                  </div>
+                  <div class="swiper-slide text-center">
+                    <span class="badge bg-success me-2">LIVE</span>
+                    <a href="#" class="text-white text-decoration-none small">Claim Your Free Digital Audit
+                      Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 d-none d-md-block">
+              <div class="header-social-links d-fl f-jce gap-3">
+                <a href="#" class="text-white small transition-3ms"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="text-white small transition-3ms"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="text-white small transition-3ms"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="text-white small transition-3ms"><i class="fa-brands fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Header area start -->
+      <header class="header-area-2 bg-white rounded-corner">
+        <div class="header-main">
+          <div class="container rr-container-1800">
+            <div class="header-area-2__inner">
+              <div class="header__logo">
+                <a href="index.html">
+                  <img src="assets/imgs/logo/logo.svg" class="normal-logo light-logo" alt="Site Logo">
+                  <img src="assets/imgs/logo/logo-white.svg" class="dark-logo" alt="Site Logo">
+                </a>
+              </div>
+              <div class="header__nav pos-center">
+                <nav class="main-menu">
+                  <ul class="navigation clearfix">
+                    <li><a href="https://www.adomantra.com/portfolio">Portfolio</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li class="menu-item-has-children">
+                      <a href="https://www.adomantra.com/insights">Insights</a>
+                      <ul class="dp-menu">
+                        <li class="menu-item-has-children">
+                          <a href="blog.html">Blog Post</a>
+                          <ul class="dp-menu">
+                            <li><a href="https://www.adomantra.com/blog/dv360-vs-the-trade-desk-vs-amazon-dsp">DV360 vs
+                                The Trade Desk vs Amazon DSP</a></li>
+                            <li><a href="https://www.adomantra.com/blog/what-is-real-time-bidding-rtb-guide">What is RTB
+                                — Real-Time Bidding Guide</a></li>
+                            <li><a
+                                href="https://www.adomantra.com/blog/digital-marketing-for-educational-institutes">Digital
+                                Marketing for Educational Institutes</a></li>
+                            <li><a href="https://www.adomantra.com/blog/near-me-searches-for-hospitals-and-clinic">"Near
+                                Me" Searches for Hospitals &amp; Clinics</a></li>
+                          </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                          <a href="https://www.adomantra.com/case-study">Case Studies</a>
+                          <ul class="dp-menu">
+                            <li><a href="https://www.adomantra.com/case-study-detail/malabar-jewellery"
+                                target="_blank">Malabar Jewellery</a></li>
+                            <li><a href="https://www.adomantra.com/case-study-detail/food-delivery" target="_blank">Food
+                                Delivery</a></li>
+                            <li><a href="https://www.adomantra.com/case-study-detail/ola-app-amp-play"
+                                target="_blank">Ola App &amp; Play</a></li>
+                            <li><a href="https://www.adomantra.com/case-study-detail/real-estate" target="_blank">Real
+                                Estate</a></li>
+                          </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                          <a href="https://www.adomantra.com/press-release">Press Release</a>
+                          <ul class="dp-menu">
+                            <li><a rel="nofollow"
+                                href="https://www.financialexpress.com/business/brandwagon-adomantra-digital-ropes-in-vikas-pandey-as-marketing-and-business-head-3083667/">Vikas
+                                Pandey as Marketing Head</a></li>
+                            <li><a rel="nofollow"
+                                href="https://www.business-standard.com/article/news-ani/mass-personalisation-key-to-gain-wallet-share-in-online-video-advertising-in-2018-117112800401_1.html">Video
+                                Advertising</a></li>
+                            <li><a rel="nofollow"
+                                href="https://www.business-standard.com/article/news-ani/national-e-governance-division-empanels-adomantra-as-digital-media-agency-116101300336_1.html">National
+                                E-Governance Division</a></li>
+                          </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                          <a href="https://www.adomantra.com/whats-new">What's New</a>
+                          <ul class="dp-menu">
+                            <li><a
+                                href="https://www.adomantra.com/whats-new/discover-how-companies-are-balancing-personalized-marketing-with-user-privacy-concerns">Personalized
+                                Marketing &amp; Privacy</a></li>
+                            <li><a
+                                href="https://www.adomantra.com/whats-new/the-growing-popularity-of-short-form-video-content">Short-form
+                                Video Content</a></li>
+                            <li><a
+                                href="https://www.adomantra.com/whats-new/increasing-importance-of-optimizing-content-for-voice-search">Optimizing
+                                for Voice Search</a></li>
+                            <li><a
+                                href="https://www.adomantra.com/whats-new/keeping-up-with-the-latest-updates-on-seo-and-algorithm-changes">SEO
+                                &amp; Algorithm Updates</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="header__button d-fl f-aic gap-3">
+                <a href="contact.html" class="rr-btn">
+                  <span class="btn-wrap">
+                    <span class="text-one">Let’s Talk</span>
+                    <span class="text-two">Let’s Talk</span>
+                  </span>
+                </a>
+                <div class="header__navicon">
+                  <button class="side-toggle"><i class="fa fa-bars"></i></button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Header area end -->
+      <!--===== Breadcrumb  Section   S T A R T =====-->
+      <div class="page-title-area-inner pr section-spacing">
+        <div class="page-title-wrapper">
+          <h2 class="page-title fade-anim original-black fit-text" id="blurText">Our <span
+              style="color: var(--primary-color);">Services</span> </h2>
+          <div class="gsap">
+            <span class="gsap-example">
+              <img src="assets/imgs/service/faq_01.webp"></span>
+          </div>
+        </div>
+      </div>
+      <div class="line-new-design"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-12">
+            <div class="service-section-3__top">
+              <div class="section-heading__wrap_3">
+                <h4 class="section__subtitle"><span></span>our services</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 d-block d-lg-none"></div>
+          <div class="col-lg-9 col-12">
+            <h2 class="fs-1 original-black split-text-reveal">At adomantra, we offer complete digital solutions
+              including website development, SEO, branding, and performance marketing.</h2>
+          </div>
+        </div>
+      </div>
+      <div class="line-new-design"></div>
+      <!-- Project area start -->
+      <div class="section-spacing project-area7-dynamic">
+        <div class="container container-1600">
+          <div class="f-ais" id="dynamic-project-grid">
+            <!-- Dynamic services will be injected here -->
+          </div>
+        </div>
+      </div>
+      <!-- Project area end -->
+      <!-- client area start  -->
+      <section class="client-area">
+        <div class="container large">
+          <div class="client-area-inner section-spacing-top"
+            style="background: url('assets/imgs/service/icons/bg_image.png') no-repeat center / contain;">
+            <div class="section-content">
+              <div class="section-title-wrapper">
+                <div class="title-wrapper">
+                  <span class="section__subtitle wow fadeInUp mb-4" data-wow-delay=".2s"><span></span>Will Change</span>
+                  <h2 class="section-title word-anim original-black split-text-reveal">
+                    <span>Client:</span>
+                    Helping brands
+                    to grow
+                    and say their success stories to
+                    the world.
+                  </h2>
+                </div>
+              </div>
+              <div class="text-wrapper fade-anim">
+                <p class="text ">We’re a great team of creatives with a strongest capabilities to helping progressive
+                  fields achieve their goals. With the best talent on every project done successfully</p>
+              </div>
+            </div>
+
+            <div class="client-capsule-wrapper-box" data-t-throwable-scene="true">
+              <div class="client-capsule-wrapper">
+                <p data-t-throwable-el="">
+                  <span class="client-box">
+                    <img src="assets\imgs\service\icons\service_icn.png" alt="image">
+                  </span>
+                </p>
+                <p data-t-throwable-el="">
+                  <span class="client-box">
+                    <img src="assets\imgs\service\icons\service_icn-1.png" alt="image">
+                  </span>
+                </p>
+                <p data-t-throwable-el="">
+                  <span class="client-box bg-theme">
+                    <img src="assets\imgs\service\icons\service_icn-2.png" alt="image">
+                  </span>
+                </p>
+                <p data-t-throwable-el="">
+                  <span class="client-box">
+                    <img src="assets\imgs\service\icons\service_icn-3.png" alt="image">
+                  </span>
+                </p>
+                <p data-t-throwable-el="">
+                  <span class="client-box">
+                    <img src="assets\imgs\service\icons\service_icn-4.png" alt="image">
+                  </span>
+                </p>
+                <p data-t-throwable-el="">
+                  <span class="client-box bg-theme">
+                    <img src="assets\imgs\service\icons\service_icn-5.png" alt="image">
+                  </span>
+                </p>
+                <p data-t-throwable-el="">
+                  <span class="client-box bg-theme">
+                    <img src="assets\imgs\service\icons\service_icn-6.png" alt="image">
+                  </span>
+                </p>
+                <p data-t-throwable-el="">
+                  <span class="client-box">
+                    <img src="assets\imgs\service\icons\service_icn-7.png" alt="image">
+                  </span>
+                </p>
+                <p data-t-throwable-el="">
+                  <span class="client-box bg-theme">
+                    <img src="assets\imgs\service\icons\service_icn-8.png" alt="image">
+                  </span>
+                </p>
+                <p data-t-throwable-el="">
+                  <span class="client-box">
+                    <img src="assets\imgs\service\icons\service_icn-9.png" alt="image">
+                  </span>
+                </p>
+                <p data-t-throwable-el="">
+                  <span class="client-box bg-theme">
+                    <img src="assets\imgs\service\icons\service_icn-10.png" alt="image">
+                  </span>
+                </p>
+                <p data-t-throwable-el="">
+                  <span class="client-box">
+                    <img src="assets\imgs\service\icons\service_icn-11.png" alt="image">
+                  </span>
+                </p>
+                <p data-t-throwable-el="">
+                  <span class="client-box">
+                    <img src="assets\imgs\service\icons\service_icn-12.png" alt="image">
+                  </span>
+                </p>
+                <p data-t-throwable-el="">
+                  <span class="client-box">
+                    <img src="assets\imgs\service\icons\service_icn-13.png" alt="image">
+                  </span>
+                </p>
+                <p data-t-throwable-el="">
+                  <span class="client-box">
+                    <img src="assets\imgs\service\icons\service_icn-14.png" alt="image">
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div class="lines-wrapper">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- service area start  -->
+      <section class="service-area">
+        <div class="container large">
+          <div class="service-area-inner section-spacing">
+            <div class="section-header">
+              <div class="section-title-wrapper fade-anim">
+                <div class="title-wrapper">
+                  <span class="section__subtitle wow fadeInUp mb-4" data-wow-delay=".2s"><span></span>Toward
+                    Future</span>
+                  <h2 class="choose-us__title original-black">
+                    Advanced Capabilities
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div class="services-wrapper-box">
+              <div class="services-wrapper-1">
+
+                <div class="service-box fade-anim">
+                  <div class="count">
+                    <span class="number fs-2">CORE</span>
+                  </div>
+                  <div class="content">
+                    <h3 class="title"><a href="service-details.html">Precision Media</a></h3>
+                    <ul class="service-list">
+                      <li><a href="service-details.html">Programmatic Ecosystems</a></li>
+                      <li><a href="service-details.html">Premium Inventory Access</a></li>
+                      <li><a href="service-details.html">DV360 & Search Ads 360</a></li>
+                      <li><a href="service-details.html">Real-time Bidding (RTB)</a></li>
+                      <li><a href="service-details.html">Cross-Channel Sync</a></li>
+                    </ul>
+                  </div>
+                  <div class="thumb">
+                    <img class="grow" src="https://images.pexels.com/photos/30366457/pexels-photo-30366457.jpeg"
+                      alt="Tech Core">
+                  </div>
+                </div>
+
+                <div class="service-box fade-anim">
+                  <div class="count">
+                    <span class="number fs-2">SYNC</span>
+                  </div>
+                  <div class="content">
+                    <h3 class="title"><a href="service-details.html">Connected TV</a></h3>
+                    <ul class="service-list">
+                      <li><a href="service-details.html">OTT Content Integration</a></li>
+                      <li><a href="service-details.html">Interactive Video Ads</a></li>
+                      <li><a href="service-details.html">Big Screen Attribution</a></li>
+                      <li><a href="service-details.html">Household Targeting</a></li>
+                      <li><a href="service-details.html">Live Stream Placements</a></li>
+                    </ul>
+                  </div>
+                  <div class="thumb">
+                    <img class="grow" src="https://images.pexels.com/photos/14699396/pexels-photo-14699396.jpeg"
+                      alt="Connected TV">
+                  </div>
+                </div>
+
+                <div class="service-box fade-anim">
+                  <div class="count">
+                    <span class="number fs-2">DATA</span>
+                  </div>
+                  <div class="content">
+                    <h3 class="title"><a href="service-details.html">Intelligence</a></h3>
+                    <ul class="service-list">
+                      <li><a href="service-details.html">Predictive Modeling</a></li>
+                      <li><a href="service-details.html">Audience Segmentation</a></li>
+                      <li><a href="service-details.html">First-Party Data Strategy</a></li>
+                      <li><a href="service-details.html">Privacy-First Tracking</a></li>
+                      <li><a href="service-details.html">ROI Forecasting</a></li>
+                    </ul>
+                  </div>
+                  <div class="thumb">
+                    <img class="grow" src="https://images.pexels.com/photos/5473956/pexels-photo-5473956.jpeg"
+                      alt="Data Intelligence">
+                  </div>
+                </div>
+
+                <div class="service-box fade-anim">
+                  <div class="count">
+                    <span class="number fs-2">EDGE</span>
+                  </div>
+                  <div class="content">
+                    <h3 class="title"><a href="service-details.html">Creative Innovation</a></h3>
+                    <ul class="service-list">
+                      <li><a href="service-details.html">Dynamic Creative (DCO)</a></li>
+                      <li><a href="service-details.html">Augmented Experiences</a></li>
+                      <li><a href="service-details.html">Short-form Video Engine</a></li>
+                      <li><a href="service-details.html">Voice-Enabled Marketing</a></li>
+                      <li><a href="service-details.html">AI Copy & Asset Gen</a></li>
+                    </ul>
+                  </div>
+                  <div class="thumb">
+                    <img class="grow" src="https://images.pexels.com/photos/36765702/pexels-photo-36765702.jpeg"
+                      alt="Innovation Edge">
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- service area end  -->
+      <!-- client area end  -->
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const { Engine, Render, Runner, Bodies, Composite, Mouse, MouseConstraint } = Matter;
+
+          const container = document.querySelector('#gravity-container');
+          const items = document.querySelectorAll('[data-t-throwable-el]');
+
+          const engine = Engine.create();
+          const world = engine.world;
+
+          // Create Invisible Boundaries
+          const ground = Bodies.rectangle(container.offsetWidth / 2, container.offsetHeight + 50, container.offsetWidth, 100, { isStatic: true });
+          const leftWall = Bodies.rectangle(-50, container.offsetHeight / 2, 100, container.offsetHeight, { isStatic: true });
+          const rightWall = Bodies.rectangle(container.offsetWidth + 50, container.offsetHeight / 2, 100, container.offsetHeight, { isStatic: true });
+          const ceiling = Bodies.rectangle(container.offsetWidth / 2, -2000, container.offsetWidth, 100, { isStatic: true });
+
+          Composite.add(world, [ground, leftWall, rightWall, ceiling]);
+
+          // Map Elements to Bodies
+          const itemBodies = Array.from(items).map((el) => {
+            const rect = el.getBoundingClientRect();
+            const width = el.offsetWidth;
+            const height = el.offsetHeight;
+
+            // Randomize entry position above the frame
+            const x = Math.random() * (container.offsetWidth - width) + width / 2;
+            const y = Math.random() * -1500 - 100; // Drops from varying heights
+
+            const body = Bodies.rectangle(x, y, width, height, {
+              restitution: 0.5, // Bounciness
+              friction: 0.1,
+              chamfer: { radius: height / 2 } // Matches pill shape for realistic rolling
+            });
+
+            el.style.visibility = 'visible';
+            return { body, element: el };
+          });
+
+          Composite.add(world, itemBodies.map(ib => ib.body));
+
+          // Add Mouse interactivity
+          const mouse = Mouse.create(container);
+          const mouseConstraint = MouseConstraint.create(engine, {
+            mouse: mouse,
+            constraint: { stiffness: 0.2, render: { visible: false } }
+          });
+          Composite.add(world, mouseConstraint);
+
+          // Sync Loop
+          (function run() {
+            itemBodies.forEach(({ body, element }) => {
+              const { x, y } = body.position;
+              element.style.transform = `translate(${x - element.offsetWidth / 2}px, ${y - element.offsetHeight / 2}px) rotate(${body.angle}rad)`;
+            });
+            Engine.update(engine);
+            requestAnimationFrame(run);
+          })();
         });
+      </script>
 
-        $closeBtn.on("click", closeDrawer);
-        $overlay.on("click", closeDrawer);
+      <!-- funfact area start  -->
+      <section class="funfact-area fade-anim">
+        <div class="container large">
+          <div class="funfact-area-inner pin-area">
+            <div class="section-header section-spacing-top pin-element">
+              <div class="section-title-wrapper">
+                <div class="title-wrapper">
+                  <h2 class="section-title font-instrumentsans-medium word-anim original-white">
+                    Global Impact <br>
+                    —By The Numbers
+                  </h2>
+                  <p class="section-para original-white mt-3">
+                    Driving digital transformation across continents with data-led storytelling and cutting-edge ad-tech
+                    solutions.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="funfact-wrapper-box section-spacing">
+              <span class="line-1"></span>
+              <span class="line-2"></span>
+              <span class="line-3"></span>
+              <span class="line-4"></span>
+              <div class="funfact-wrapper">
 
-        // Close on ESC
-        $(document).on("keydown", function (e) {
-            if (e.key === "Escape") closeDrawer();
-        });
-    });
+                <div class="funfact-item go-visible position-relative">
+                  <span class="numbers" style="color: #90ee02;">300+</span>
+                  <p class="text">Global brands trust our vision to scale their digital presence.</p>
+                </div>
 
-})(jQuery);
+                <div class="funfact-item go-visible position-relative">
+                  <span class="numbers">10B+</span>
+                  <p class="text">Monthly impressions delivered across premium publisher networks.</p>
+                </div>
+
+                <div class="funfact-item go-visible position-relative">
+                  <span class="numbers" style="color: #90ee02;">12+</span>
+                  <p class="text">Years of pioneering innovation in the ad-tech and media landscape.</p>
+                </div>
+
+                <div class="funfact-item go-visible position-relative">
+                  <span class="numbers">50+</span>
+                  <p class="text">Countries reached through targeted, multi-channel campaigns.</p>
+                </div>
+
+                <div class="funfact-item go-visible position-relative">
+                  <span class="numbers" style="color: #90ee02;">85%</span>
+                  <p class="text">Increase in average engagement rates through AI-driven optimization.</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- funfact area end  -->
+      <section class="choose-us section-spacing overflow-hidden"
+        data-background="assets/imgs/hero/bg-section-about-us.png"
+        style="background-size: cover; background-position: center;">>
+        <div class="rr-container-1800 container">
+          <div class="row g-4 f-ais f-jcsb">
+            <div class="col-12 col-xl-5 col-md-6">
+              <span class="section__subtitle wow fadeInUp mb-4" data-wow-delay=".2s"><span></span>BEYOND
+                BOUNDARIES</span>
+              <h2 class="choose-us__title split-text-reveal original-black">
+                Elevate your brand with <br>
+                India’s leading global <br>
+                digital growth partner
+              </h2>
+              <p class="choose-us__desc original-black wow fadeInUp" data-wow-delay="0.4s">
+                Adomantra isn't just an agency; we are a global media powerhouse. From managing billions of monthly
+                impressions to crafting bespoke UI/UX experiences, we bridge the gap between complex technology and
+                human-centric marketing.
+              </p>
+              <a href="#contact" class="mk-button">
+                <span class="btn-wrap">
+                  <span class="text-one"><i class="fa-solid fa-paper-plane me-2"></i>PARTNER WITH US</span>
+                </span>
+              </a>
+            </div>
+
+            <div class="col-12 col-xl-5 col-md-6">
+              <div class="choose-acc" id="chooseAccordion">
+
+                <div class="choose-acc__item">
+                  <button class="choose-acc__header" type="button" data-bs-toggle="collapse" data-bs-target="#accOne"
+                    aria-expanded="false" aria-controls="accOne">
+                    <span class="choose-acc__label">Proprietary Ad-Tech Stack</span>
+                    <i class="fas fa-plus"></i> </button>
+                  <div id="accOne" class="collapse" data-bs-parent="#chooseAccordion">
+                    <div class="choose-acc__body">
+                      We leverage custom-built programmatic tools and AI-driven optimization to ensure your ads reach
+                      the right audience at the lowest possible cost, maximizing every dollar of your ad spend.<br> <br>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="choose-acc__item is-active">
+                  <button class="choose-acc__header" type="button" data-bs-toggle="collapse" data-bs-target="#accTwo"
+                    aria-expanded="true" aria-controls="accTwo">
+                    <span class="choose-acc__label">Unrivaled Global Footprint</span>
+                    <i class="fas fa-plus"></i> </button>
+                  <div id="accTwo" class="collapse show" data-bs-parent="#chooseAccordion">
+                    <div class="choose-acc__body">
+                      With a presence in over 50 countries and partnerships with premium global publishers, we provide
+                      the infrastructure needed to launch hyper-local campaigns on a worldwide scale.<br> <br>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="choose-acc__item">
+                  <button class="choose-acc__header" type="button" data-bs-toggle="collapse" data-bs-target="#accThree"
+                    aria-expanded="false" aria-controls="accThree">
+                    <span class="choose-acc__label">Premium Design Philosophy</span>
+                    <i class="fas fa-plus"></i> </button>
+                  <div id="accThree" class="collapse" data-bs-parent="#chooseAccordion">
+                    <div class="choose-acc__body">
+                      Our creative studio specializes in high-end, minimalist aesthetics. From "Glassmorphism" to
+                      interactive storytelling, we ensure your digital assets feel premium and convert effectively.<br>
+                      <br>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="choose-acc__item">
+                  <button class="choose-acc__header" type="button" data-bs-toggle="collapse" data-bs-target="#accFour"
+                    aria-expanded="false" aria-controls="accFour">
+                    <span class="choose-acc__label">Absolute Data Transparency</span>
+                    <i class="fas fa-plus"></i> </button>
+                  <div id="accFour" class="collapse" data-bs-parent="#chooseAccordion">
+                    <div class="choose-acc__body">
+                      No "black boxes." We provide real-time dashboards and granular reporting so you can track every
+                      click, impression, and conversion with 100% confidence in the data.<br> <br>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--===== brand-area Section    S T A R T =====-->
+      <div
+        class="position-relative d-fl f-aic justify-content-lg-end fl-column fl-lg-row gap-4 container rr-container-1800">
+        <div class="text-container col-12 col-lg-6">
+          <h2 class="split-text-reveal original-black" style="font-size: 36px; line-height: 1.4; color: #101010;">
+            Our services are designed to boost your online presence, attract the right audience, and drive consistent
+            business growth.
+          </h2>
+        </div>
+        <div class="fl-shrink-0">
+          <img src="assets/imgs/service/content_card_02.jpg" class="" style="width: 400px; mix-blend-mode: darken;">
+        </div>
+      </div>
+      <div class="identity-2 section-spacing container rr-container-1800 overflow-hidden ">
+        <div class="">
+
+          <div class="text-center text-lg-start pt-5 d-fl f-ais fl-column">
+            <span class="section__subtitle wow fadeInUp" data-wow-delay=".2s"><span></span>Our Journey</span>
+            <h2 class="title wow mt-4 mb-4 fadeInUp" data-wow-delay="0.3s">
+              The Trailblazers of Brand Revolution
+            </h2>
+            <p class="wow fadeInUp" data-wow-delay="0.4s">An ISO 9001:2015 certified leader delivering powerful
+              results
+              from bold ideas since 2012.</p>
+          </div>
+        </div>
+        <div class="brand-area6-wrapper">
+          <div class="line-new-design"></div>
+
+          <div class="swiper brand-slider6">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-1.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-2.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-3.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-4.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-5.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-6.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-7.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-8.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-9.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-10.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-11.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-12.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-13.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-14.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-15.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-16.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-17.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-18.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-19.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-20.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-21.webp" alt="brand-img">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="line-new-design"></div>
+          <div class="swiper brand-slider7">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-1.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-2.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-3.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-4.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-5.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-6.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-7.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-8.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-9.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-10.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-11.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-12.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-13.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-14.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-15.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-16.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-17.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-18.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-19.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-20.webp" alt="brand-img">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand-area6__image">
+                  <img src="assets/imgs/band/ourcustomer-21.webp" alt="brand-img">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="line-new-design"></div>
+
+        </div>
+      </div>
+      <section id="testimonials-section" class="heading-text container rr-container-1800 mb-5 wow fadeInUp"
+        data-wow-delay="0.2s">
+        <div class="row gy-5 d-fl f-jcc">
+          <div class="text-center text-lg-start pt-5 d-fl f-ais fl-column mb-5">
+            <span class="section__subtitle wow fadeInUp" data-wow-delay=".2s"><span></span>Positive
+              Feedback</span>
+            <h2 class="title wow mt-4 mb-4 fadeInUp" data-wow-delay="0.3s">Real Stories from People</h2>
+            <p class="wow fadeInUp" data-wow-delay="0.4s">See what we do and how we help businesses succeed
+              through real experiences and results.</p>
+          </div>
+        </div>
+        <div class="row gy-5 d-fl f-jcsb section-spacing position-relative">
+          <div class="col-12">
+            <div class="swiper testimonial4-slider">
+              <div class="swiper-wrapper" id="testimonial-wrapper">
+                <!-- Populated by JS -->
+              </div>
+            </div>
+            <div class="testimonial-area4__controls">
+              <div class="inner-nav-btn left" id="testimonial-prev">
+                <i class="fa-solid fa-angle-left"></i>
+              </div>
+              <div class="inner-nav-btn right" id="testimonial-next">
+                <i class="fa-solid fa-angle-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--===== Testimonials Section E N D =====-->
+      <!--===== FAQ Section S T A R T =====-->
+      <section class="container rr-container-1800 section-spacing-bottom">
+        <div class="row g-5 ">
+          <div id="services-page-faq-section" class="features-item col-12 col-lg-8 wow fadeInUp" data-wow-delay="0.2s">
+            <div class=" d-fl f-jcsb">
+              <h2 class="service-details__content-title mb-5" id="services-faq-title">Frequently Asked Questions</h2>
+              <div class="breadcrumb-image-wrapper">
+                <img src="assets/imgs/faq/faq_001.png" alt="Adomantra Digital Marketing FAQ Support"
+                  class="img-fluid custom-float" width="72">
+              </div>
+            </div>
+            <div class="accordion" id="services-faq-accordion-new"></div>
+          </div>
+          <div class="col-12 col-lg-4">
+            <div class="features-item p-4 p-md-5 h-100">
+              <div class="mb-4">
+                <h2 class="mb-2" style="color: #1a202c;">Ready to get started?</h2>
+                <p class="text-secondary small">Fill out the form below and we'll reach out within 24 hours.</p>
+              </div>
+
+              <form class="row g-3">
+                <div class="col-12">
+                  <label class="form-label">Full Name</label>
+                  <input type="text" class="form-control custom-field" placeholder="Name" required>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label">Email Address</label>
+                  <input type="email" class="form-control custom-field" placeholder="Email ID" required>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label">Phone Number</label>
+                  <input type="tel" class="form-control custom-field" placeholder="+91 999-999-9999">
+                </div>
+
+                <div class="col-12 d-fl fl-column">
+                  <label class="form-label">Service Required</label>
+                  <select class="form-select custom-field" required>
+                    <option selected disabled>Select a service</option>
+                    <option>CTV Advertising</option>
+                    <option>Performance Marketing</option>
+                    <option>SEO Services</option>
+                    <option>Social Media Marketing</option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label">Tell us about your query</label>
+                  <textarea class="form-control custom-field" rows="3" placeholder="How can we help you?"></textarea>
+                </div>
+
+                <div class="col-12 mt-4">
+                  <button type="submit" class="mk-button py-3">
+                    Get Free Consultation Now
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--===== FAQ Section E N D =====-->
+      <div data-id="footer" data-src="htm/footer.html"></div>
+
+
+    </div>
+  </div>
+
+
+  <!-- Dependencies JS Files -->
+  <script src="assets/vandor/jquery/jquery.js"></script>
+  <script src="assets/vandor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="assets/vandor/popup/jquery.magnific-popup.min.js"></script>
+  <script src="assets/vandor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vandor/gsap/gsap.min.js"></script>
+  <script src="assets/vandor/gsap/ScrollSmoother.min.js"></script>
+  <script src="assets/vandor/gsap/ScrollTrigger.min.js"></script>
+  <script src="assets/vandor/gsap/SplitText.min.js"></script>
+  <script src="assets/vandor/gsap/SplitType.js"></script>
+  <script src="assets/vandor/gsap/customEase.js"></script>
+  <script src="assets/vandor/odometer/odometer.min.js"></script>
+  <script src="assets/vandor/odometer/waypoints.min.js"></script>
+  <script src="assets/vandor/menu/jquery.meanmenu.min.js"></script>
+  <script src="assets/vandor/backtop/backToTop.js"></script>
+  <script src="assets/vandor/nice-select/nice-select.js"></script>
+  <script src="assets/vandor/wow/wow.min.js"></script>
+  <!-- Template Main JS File -->
+  <script src="assets/vandor/common-js/common.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dynamic-services.js"></script>
+  <script src="assets/js/header.js"></script>
+  <script src="assets/js/pexels_services.js"></script>
+  <script src="assets/js/mohit.js"></script>
+  <script src="assets/js/faq.js"></script>
+  <script src="assets/vandor/matter/matter.js"></script>
+  <script src="assets/vandor/matter/throwable.js"></script>
+
+
+
+</body>
+
+</html>

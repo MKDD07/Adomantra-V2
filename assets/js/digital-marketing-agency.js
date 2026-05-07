@@ -272,7 +272,7 @@ const featuresData = {
 function buildFeatureItem(item) {
   const delayAttr = item.delay ? ` data-delay="${item.delay}"` : "";
   return `
-    <div class="features-item effectFade fadeUp"${delayAttr}>
+    <div class="features-card effectFade fadeUp"${delayAttr}>
       <i class="icon ${item.icon}"></i>
       <h6 class="title fw-semibold">${item.title}</h6>
       <p class="text-secondary">${item.description}</p>
@@ -294,13 +294,13 @@ function renderFeatures() {
 
   // -- Header --
   headerEl.innerHTML = `
-    <span class="section__subtitle effectFade fadeUp" data-delay="0.2">
+    <span class="section__subtitle d-none d-md-flex effectFade fadeUp" data-delay="0.2">
       <span></span>${header.subtitle}
     </span>
-    <h2 class="title mt-4 mb-4 effectFade fadeUp" data-delay="0.3">
+    <h2 class="title heading-text mt-4 mb-4 effectFade fadeUp" data-delay="0.3">
       ${header.title}
     </h2>
-    <p class="effectFade fadeUp" data-delay="0.4">
+    <p class="w-50x effectFade fadeUp" data-delay="0.4">
       ${header.description}
     </p>`;
 

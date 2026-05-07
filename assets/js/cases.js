@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="blog__item">
-                                    <div class="blog__media rr-ov-hidden">
+                                    <div class="blog__media overflow-hidden">
                                         <a href="#"><img data-speed="0.9" src="${imgBlog1}" alt="Generative AI in Design" style="object-fit:cover;width:100%;height:100%;"></a>
                                     </div>
                                     <div class="blog__content">
@@ -247,7 +247,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                                 </div>
                             <div class="swiper-slide">
                                 <div class="blog__item">
-                                    <div class="blog__media rr-ov-hidden">
+                                    <div class="blog__media overflow-hidden">
                                         <a href="#"><img data-speed="0.9" src="${imgBlog2}" alt="AI Business Innovation" style="object-fit:cover;width:100%;height:100%;"></a>
                                     </div>
                                     <div class="blog__content">

@@ -71,6 +71,9 @@
                     allowNestedScroll: true,
                 },
                 ignoreMobileResize: true,
+                preventDefault: false,
+                smoothTouch: 0.05,
+                touchMultiplier: 1,
             });
         }
     }
@@ -212,21 +215,21 @@
 
 
     /* === Side Info  Js (index 06) === */
-    $(".side-info-close,.offcanvas-overlay").on("click", function () {
-        $(".side-info").removeClass("info-open");
+    $(".ado-sideinfo__close,.offcanvas-overlay").on("click", function () {
+        $(".ado-sideinfo").removeClass("info-open");
         $(".offcanvas-overlay").removeClass("overlay-open");
     });
-    $(".side-toggle").on("click", function () {
-        $(".side-info").addClass("info-open");
+    $(".ado-side-toggle").on("click", function () {
+        $(".ado-sideinfo").addClass("info-open");
         $(".offcanvas-overlay").addClass("overlay-open");
     });
 
-    $(window).scroll(function () {
+    /* $(window).scroll(function () {
         if ($("body").scrollTop() > 0 || $("html").scrollTop() > 0) {
-            $(".side-info").removeClass("info-open");
+            $(".ado-sideinfo").removeClass("info-open");
             $(".offcanvas-overlay").removeClass("overlay-open");
         }
-    });
+    }); */
 
     /* === Mean menu activation  Js (index 07) === */
     $('.main-menu').meanmenu({

@@ -114,10 +114,9 @@
   <link rel="stylesheet" href="assets/vandor/nice-select/nice-select.css" />
   <link rel="stylesheet" href="assets/vandor/wow/animate.css" />
   <link rel="stylesheet" href="assets/vandor/odometer/odometer-theme-default.css" />
-  <link rel="stylesheet" href="assets/css/additional_codes.css" />
 
   <!-- Template Main CSS File -->
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 
 <body>
@@ -142,76 +141,74 @@
 
   <!-- side toggle start -->
   <aside class="fix">
-    <div class="side-info">
-      <div class="side-info-content">
-        <div class="offset-widget offset-header">
-          <div class="offset-logo">
-            <a href="index.html" aria-label="Home button">
-              <img class="show-light" src="assets/imgs/logo/logo.svg" alt="Adomantra Logo"
-                aria-label="adomantra-logo" />
-            </a>
-          </div>
-          <button id="side-info-close" class="side-info-close" aria-label="Close button">
+    <div class="ado-sideinfo">
+      <div class="ado-sideinfo__panel">
+
+        <!-- HEADER -->
+        <div class="ado-sideinfo__header">
+          <a href="index.html" class="ado-sideinfo__logo">
+            <img src="assets/imgs/logo/logo.svg" alt="Adomantra Logo" />
+          </a>
+
+          <button id="side-info-close" class="ado-sideinfo__close">
             <i class="fas fa-times"></i>
           </button>
         </div>
 
-        <div class="mobile-menu d-xl-none fix"></div>
+        <!-- MENU SLOT -->
+        <div class="ado-sideinfo__menu d-xl-none fix"></div>
 
-        <div class="offset-button">
-          <a href="contact.html" class="rr-btn" target="_blank">
+        <!-- CTA -->
+        <div class="ado-sideinfo__cta">
+          <a href="javascript:void(0)" class="rr-btn contact-drawer-trigger">
             <span class="btn-wrap">
-              <span class="text-one">Let's Talk</span>
-              <span class="text-two">Let's Talk</span>
+              <span class="text-one">Let’s Talk</span>
+              <span class="text-two">Let’s Talk</span>
             </span>
           </a>
         </div>
-        <div class="offset-widget-box">
-          <h2 class="title">Contact Us</h2>
-          <div class="contact-meta">
-            <div class="contact-item">
-              <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
-              <span class="text">Plot No. 48, Tower 1, 3rd Floor, Rama Road, New Delhi, 110015</span>
+
+        <!-- CONTACT -->
+        <section class="features-item shadow-card">
+          <h3 class="ado-sideinfo__title">Contact Us</h3>
+
+          <div class="ado-contact">
+
+            <div class="ado-contact__item">
+              <i class="fa-solid fa-location-dot"></i>
+              <p>Plot No. 48, Tower 1, 3rd Floor, Rama Road, New Delhi, 110015</p>
             </div>
 
-            <div class="contact-item">
-              <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-              <span class="text"><a href="mailto:connect@adomantra.com">connect@adomantra.com</a></span>
+            <div class="ado-contact__item">
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:connect@adomantra.com">connect@adomantra.com</a>
             </div>
-            <div class="contact-item">
 
-              <span class="icon"><i class="fa-solid fa-phone"></i></span>
-              <span class="text">
+            <div class="ado-contact__item ado-contact__item--stack">
+              <i class="fa-solid fa-phone"></i>
+              <div>
                 <a href="tel:+919650706427">+91 965 070 6427</a>
                 <a href="tel:+919311669643">+91 931 166 9643</a>
-              </span>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="offset-social-box" style="margin-top: 30px;">
-        <h3 class="social-title" style="font-size: 18px; margin-bottom: 15px;">Follow Us</h3>
-        <div class="social-links" style="display: flex; gap: 15px;">
-          <a href="https://www.facebook.com/Adomantra/" target="_blank" title="Facebook">
-            <i class="fa-brands fa-facebook-f"></i>
-          </a>
-          <a href="https://twitter.com/adomantra" target="_blank" title="Twitter/X">
-            <i class="fa-brands fa-x-twitter"></i>
-          </a>
-          <a href="https://www.linkedin.com/company/adomantra-digital-india-pvt-ltd/" target="_blank" title="LinkedIn">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-          <a href="https://www.instagram.com/adomantra/" target="_blank" title="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <a href="https://www.youtube.com/@adomantra" target="_blank" title="YouTube">
-            <i class="fa-brands fa-youtube"></i>
-          </a>
-        </div>
+          </div>
+        </section>
+
+        <!-- SOCIAL -->
+        <section class="ado-sideinfo__social">
+          <h4 class="ado-sideinfo__subtitle">Follow Us</h4>
+
+          <div class="ado-social">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </section>
+
       </div>
-    </div>
-    </div>
   </aside>
   <div class="offcanvas-overlay"></div>
   <!-- side toggle end -->
@@ -222,10 +219,10 @@
     <div class="contact-drawer-close">
       <button id="closeDrawer" aria-label="Close button"><i class="fa-light fa-xmark"></i></button>
     </div>
-    <div class="contact-drawer-content">
-      <div class="features-item">
+    <div class="contact-drawer-content h-100">
+      <div class="features-card position-relative overflow-y-auto">
         <div class="mb-4">
-          <h2 class="mb-2" style="color: #1a202c; font-size: 28px;">Ready to get started?</h2>
+          <div class="mb-2 h2" style="color: #1a202c; font-size: 28px; font-weight: bold;">Ready to get started?</div>
           <p class="text-secondary small">Fill out the form below and we'll reach out within 24 hours.</p>
         </div>
 
@@ -245,7 +242,7 @@
             <input type="tel" class="form-control custom-field" placeholder="+91 999-999-9999">
           </div>
 
-          <div class="col-12 d-flex flex-column">
+          <div class="col-12  f-col">
             <label class="form-label">Service Required</label>
             <select class="form-select custom-field w-100" required>
               <option selected disabled>Select a service</option>
@@ -274,253 +271,105 @@
   </aside>
   <!-- Contact Drawer End -->
   <!-- Header area start -->
-  <header class="header-area-2 bg-white rounded-corner">
-    <div class="header-main">
-      <div class="container rr-container-1800">
-        <div class="header-area-2__inner">
-          <div class="header__logo">
-            <a href="index.html">
-              <img src="assets/imgs/logo/logo.svg" class="normal-logo light-logo" alt="Site Logo">
-              <img src="assets/imgs/logo/logo-white.svg" class="dark-logo" alt="Site Logo">
-            </a>
-          </div>
-          <div class="header__nav pos-center d-md-none d-lg-block">
-            <nav class="main-menu">
-              <ul class="navigation clearfix">
-                <li><a href="https://www.adomantra.com/portfolio">Portfolio</a></li>
-                <li><a href="service.html">Services</a></li>
-                <li class="menu-item-has-children">
-                  <a href="https://www.adomantra.com/insights">Insights</a>
-                  <ul class="dp-menu">
-                    <li class="menu-item-has-children">
-                      <a href="blog.html">Blog Post</a>
-                      <ul class="dp-menu">
-                        <li><a href="https://www.adomantra.com/blog/dv360-vs-the-trade-desk-vs-amazon-dsp">DV360 vs
-                            The Trade Desk vs Amazon DSP</a></li>
-                        <li><a href="https://www.adomantra.com/blog/what-is-real-time-bidding-rtb-guide">What is RTB
-                            — Real-Time Bidding Guide</a></li>
-                        <li><a
-                            href="https://www.adomantra.com/blog/digital-marketing-for-educational-institutes">Digital
-                            Marketing for Educational Institutes</a></li>
-                        <li><a href="https://www.adomantra.com/blog/near-me-searches-for-hospitals-and-clinic">"Near
-                            Me" Searches for Hospitals &amp; Clinics</a></li>
-                      </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                      <a href="https://www.adomantra.com/case-study">Case Studies</a>
-                      <ul class="dp-menu">
-                        <li><a href="https://www.adomantra.com/case-study-detail/malabar-jewellery"
-                            target="_blank">Malabar Jewellery</a></li>
-                        <li><a href="https://www.adomantra.com/case-study-detail/food-delivery" target="_blank">Food
-                            Delivery</a></li>
-                        <li><a href="https://www.adomantra.com/case-study-detail/ola-app-amp-play" target="_blank">Ola
-                            App &amp; Play</a></li>
-                        <li><a href="https://www.adomantra.com/case-study-detail/real-estate" target="_blank">Real
-                            Estate</a></li>
-                      </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                      <a href="https://www.adomantra.com/press-release">Press Release</a>
-                      <ul class="dp-menu">
-                        <li><a rel="nofollow"
-                            href="https://www.financialexpress.com/business/brandwagon-adomantra-digital-ropes-in-vikas-pandey-as-marketing-and-business-head-3083667/">Vikas
-                            Pandey as Marketing Head</a></li>
-                        <li><a rel="nofollow"
-                            href="https://www.business-standard.com/article/news-ani/mass-personalisation-key-to-gain-wallet-share-in-online-video-advertising-in-2018-117112800401_1.html">Video
-                            Advertising</a></li>
-                        <li><a rel="nofollow"
-                            href="https://www.business-standard.com/article/news-ani/national-e-governance-division-empanels-adomantra-as-digital-media-agency-116101300336_1.html">National
-                            E-Governance Division</a></li>
-                      </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                      <a href="https://www.adomantra.com/whats-new">What's New</a>
-                      <ul class="dp-menu">
-                        <li><a
-                            href="https://www.adomantra.com/whats-new/discover-how-companies-are-balancing-personalized-marketing-with-user-privacy-concerns">Personalized
-                            Marketing &amp; Privacy</a></li>
-                        <li><a
-                            href="https://www.adomantra.com/whats-new/the-growing-popularity-of-short-form-video-content">Short-form
-                            Video Content</a></li>
-                        <li><a
-                            href="https://www.adomantra.com/whats-new/increasing-importance-of-optimizing-content-for-voice-search">Optimizing
-                            for Voice Search</a></li>
-                        <li><a
-                            href="https://www.adomantra.com/whats-new/keeping-up-with-the-latest-updates-on-seo-and-algorithm-changes">SEO
-                            &amp; Algorithm Updates</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li><a href="team.html">Our Team</a></li>
-                <li><a href="contact.html">Contact us</a></li>
-              </ul>
-            </nav>
-          </div>
-          <div class="header__button d-flex f-aic gap-3">
-            <a href="javascript:void(0)" class="rr-btn contact-drawer-trigger">
-              <span class="btn-wrap">
-                <span class="text-one">Let’s Talk</span>
-                <span class="text-two">Let’s Talk</span>
-              </span>
-            </a>
-            <div class="header__navicon">
-              <button class="side-toggle" aria-label="Menu button"><i class="fa-light fa-bars"></i></button>
-            </div>
-          </div>
+  <header data-id="header" data-src="htm/header.html"></header>
 
-        </div>
-      </div>
-    </div>
-  </header>
   <div class="has-smooth" id="has_smooth"></div>
   <div id="smooth-wrapper">
     <div id="smooth-content">
       <!-- Header area end -->
-      <section class="hero-section-3__area mb-5">
-        <video class="bg-video position-absolute top-0 start-0 w-100 object-fit-cover" autoplay muted loop playsinline>
+      <section class="ado-hero">
+        <video class="ado-hero__bg-video" autoplay muted loop playsinline>
           <source src="https://videos.pexels.com/video-files/36392564/15433122_3840_2160_30fps.mp4" type="video/mp4">
         </video>
-        <div class="hero-section-3__wrapper">
-          <div class="container rr-container-1800 grid-box">
-            <div class="grid-box-left">
-              <div class="hero-section-3__content  d-flex">
-                <div class="hero-section-3__left wow fadeInUp d-none d-xxl-block" data-wow-delay="0.3s">
-                  <div class="hero-section-3__time wow fadeInUp" data-wow-delay="0.3s">
+        <div class="ado-hero__wrapper">
+          <div class="ado-container ado-grid">
+            <div class="ado-grid-left">
+              <div class="ado-hero__content">
+                <div class="ado-hero__showreel">
+                  <div class="ado-hero__showreel-label">
                     <span>Showreel/2025</span>
                     <span>01:20:00</span>
                   </div>
-                  <div class="hero-section-3__thumb">
-                    <video src="https://www.adomantra.com/asstes/video/firstcut.mp4" width="404" autoplay muted loop
-                      playsinline>
-                    </video>
+                  <div class="ado-hero__showreel-thumb">
+                    <video src="https://videos.pexels.com/video-files/5670949/5670949-sd_960_540_30fps.mp4" width="404"
+                      autoplay muted loop playsinline></video>
                   </div>
                 </div>
-                <div class="hero-section-3__right">
-                  <div class="hero-section-3__box-shape">
+                <div class="ado-hero__right">
+                  <div class="ado-hero__shape-bars">
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
                   </div>
-                  <p class="hero-section-3__dec rr-title-anim-2 d-md-none wow fadeInUp" data-wow-delay="0.3s">At
-                    Adomantra, we
-                    drive digital transformation — delivering
-                    cutting-edge advertising technology, media
-                    solutions, and global scale.</p>
+                  <p class="ado-hero__desc">
+                    At Adomantra, we drive digital transformation — delivering cutting-edge advertising technology,
+                    media solutions, and global scale.
+                  </p>
                 </div>
               </div>
-              <h1 class="hero-section-3__title rr-title-anim-2">Redefining Media
-                with<br> <span style="color: var(--primary-color)">Digital</span> Innovation
+              <h1 class="ado-hero__title" id="heading-slider">
+                Redefining <span class="highlight">Media</span> with<br>
+                <span class="highlight">Digital</span> Innovation
               </h1>
             </div>
-            <!--
-            <div class="grid-box-right d-block" style="max-width:500px;">
-              <div class="features-item ">
-                <div class="mb-4">
-                  <h2 class="mb-2" style="color: #1a202c;">Ready to get started?</h2>
-                  <p class="text-secondary small">Fill out the form below and we'll reach out within 24 hours.</p>
-                </div>
-
-                <form class="row g-3">
-                  <div class="col-6 col-lg-12">
-                    <label class="form-label">Full Name</label>
-                    <input type="text" class="form-control custom-field" placeholder="Name" required>
-                  </div>
-
-                  <div class="col-6 col-lg-12">
-                    <label class="form-label">Email Address</label>
-                    <input type="email" class="form-control custom-field" placeholder="Email ID" required>
-                  </div>
-
-                  <div class="col-12">
-                    <label class="form-label">Phone Number</label>
-                    <input type="tel" class="form-control custom-field" placeholder="+91 999-999-9999">
-                  </div>
-
-                  <div class="col-12 d-flex flex-column">
-                    <label class="form-label">Service Required</label>
-                    <select class="form-select custom-field w-100" required>
-                      <option selected disabled>Select a service</option>
-                      <option>CTV Advertising</option>
-                      <option>Performance Marketing</option>
-                      <option>SEO Services</option>
-                      <option>Social Media Marketing</option>
-                    </select>
-                  </div>
-                  <div class="col-12">
-                    <label class="form-label">Tell us about your query</label>
-                    <textarea class="form-control custom-field" rows="3" placeholder="How can we help you?"></textarea>
-                  </div>
-
-                  <div class="col-12 mt-4">
-                    <a href="contact.html" class="rr-btn">
-                      <span class="btn-wrap">
-                        <span class="text-one">Get Free Consultation</span>
-                        <span class="text-two">Get Free Consultation</span>
-                      </span>
-                    </a>
-                  </div>
-                </form>
-              </div>
-            </div>-->
           </div>
         </div>
       </section>
 
-      <section class="info-area-page-about">
+      <section class="heading-text section-spacing-top">
         <div class="container rr-container-1800 section-spacing-top-1920">
-          <div class="info-area-page-about-inner section-spacing-top-xxl-1920 gra">
-            <h3 class="fs-2 grc-12 rr_title_anim">Years of
-              Experience</h3>
+          <div class="heading-text-inner section-spacing-top-xxl-1920 gra">
+            <h2 class="fs-2 grc-12 roated-text rr_title_anim">Years of
+              Experience</h2>
             <div class="section-header mt-0 pt-0 fade-anim grc-12">
-              <div class="section-title-wrapper grc align-items-center">
+              <div class=" grc align-items-center">
                 <div class="subtitle-wrapper grc-4">
 
-                  <h2 class="fw-semibold fs-200 gradient-text-animated">13+</h2>
+                  <div class="fw-semibold fs-200 gradient-text-animated">13+</div>
                 </div>
-                <div class="title-wrapper split-text-reveal grc-8">
+                <div class="title-wrapper pr split-text-reveal grc-8">
                   <h2 class="">We deliver creative
-                    ideas to a crowded <r>world.</r>
+                    ideas to a <r>crowded world.</r>
 
                   </h2>
                 </div>
               </div>
             </div>
-            <div class="counter-wrapper-box container rr-container-1800 fade-anim grc-12">
+            <div class="experience-section counter-wrapper-box container rr-container-1800 fade-anim grc-12">
 
               <!-- ── Desktop grid (≥768px) ── -->
-              <div class="row g-1 justify-content-between grc-12 d-none d-lg-flex">
-                <div class="funfact-item col-2 position-relative">
+              <div class="row g-5 justify-content-between grc-lg grc-none">
+                <div class="features-item ado-dark  grc-2 grc-lg-4 pr">
                   <i class="fas fa-users"></i>
-                  <p class="text">Happy Clients</p>
-                  <h3 class="number t-counter">500+</h3>
+                  <p class="text grc-12">Happy Clients</p>
+                  <div class="number t-counter h3">500+</div>
                 </div>
-                <div class="funfact-item col-2 position-relative">
+                <div class="features-item ado-dark  grc-2 grc-lg-4 pr">
                   <i class="fas fa-award"></i>
                   <p class="text">Industry Expertise</p>
-                  <h3 class="number t-counter">20+</h3>
+                  <div class="number t-counter h3">20+</div>
                 </div>
-                <div class="funfact-item col-2 position-relative">
+                <div class="features-item ado-dark  grc-2 grc-lg-4 pr">
                   <i class="fas fa-bullhorn"></i>
                   <p class="text">Active Campaigns</p>
-                  <h3 class="number t-counter">400+</h3>
+                  <div class="number t-counter h3">400+</div>
                 </div>
-                <div class="funfact-item col-2 position-relative">
+                <div class="features-item ado-dark  grc-2 grc-lg-4 pr">
                   <i class="fas fa-eye"></i>
                   <p class="text">Monthly Impressions</p>
-                  <h3 class="number t-counter">100B+</h3>
+                  <div class="number t-counter h3">100B+</div>
                 </div>
-                <div class="funfact-item col-2 position-relative">
+                <div class="features-item ado-dark  grc-2 grc-lg-4 pr">
                   <i class="fas fa-mouse-pointer"></i>
                   <p class="text">Monthly Clicks</p>
-                  <h3 class="number t-counter">800M+</h3>
+                  <div class="number t-counter h3">800M+</div>
                 </div>
-                <div class="funfact-item col-2 position-relative">
+                <div class="features-item ado-dark  grc-2 grc-lg-4 pr">
                   <i class="fas fa-play-circle"></i>
                   <p class="text">Monthly Video Views</p>
-                  <h3 class="number t-counter">1B+</h3>
+                  <div class="number t-counter h3">1B+</div>
                 </div>
               </div>
 
@@ -529,45 +378,45 @@
                 <div class="swiper funfact-swiper">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <div class="funfact-item funfact-card position-relative">
+                      <div class="ffi funfact-card pr">
                         <i class="fas fa-users"></i>
                         <p class="text">Happy Clients</p>
-                        <h3 class="number t-counter">500+</h3>
+                        <div class="number t-counter h3">500+</div>
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="funfact-item funfact-card position-relative">
+                      <div class="ffi funfact-card pr">
                         <i class="fas fa-award"></i>
                         <p class="text">Industry Expertise</p>
-                        <h3 class="number t-counter">20+</h3>
+                        <div class="number t-counter h3">20+</div>
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="funfact-item funfact-card position-relative">
+                      <div class="ffi funfact-card pr">
                         <i class="fas fa-bullhorn"></i>
                         <p class="text">Active Campaigns</p>
-                        <h3 class="number t-counter">400+</h3>
+                        <div class="number t-counter h3">400+</div>
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="funfact-item funfact-card position-relative">
+                      <div class="ffi funfact-card pr">
                         <i class="fas fa-eye"></i>
                         <p class="text">Monthly Impressions</p>
-                        <h3 class="number t-counter">100B+</h3>
+                        <div class="number t-counter h3">100B+</div>
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="funfact-item funfact-card position-relative">
+                      <div class="ffi funfact-card pr">
                         <i class="fas fa-mouse-pointer"></i>
                         <p class="text">Monthly Clicks</p>
-                        <h3 class="number t-counter">800M+</h3>
+                        <div class="number t-counter h3">800M+</div>
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="funfact-item funfact-card position-relative">
+                      <div class="ffi funfact-card pr">
                         <i class="fas fa-play-circle"></i>
                         <p class="text">Monthly Video Views</p>
-                        <h3 class="number t-counter">1B+</h3>
+                        <div class="number t-counter h3">1B+</div>
                       </div>
                     </div>
                   </div>
@@ -588,10 +437,11 @@
           </div>
         </div>
       </section>
+
       <!-- hero area start  -->
       <section class="hero-area-5">
-        <div class="container crr-container-1800">
-          <div class="hero-area-5-inner section-spacing grc">
+        <div class="container rr-container-1800">
+          <div class="hero-area-5-inner section-spacing-bottom grc">
             <div class="section-content-wrapper grc-12">
               <div class="hero-video fade-anim" data-direction="left" data-delay="0.45" data-offset="100"
                 data-ease="back.out(3)">
@@ -600,11 +450,11 @@
                 </video>
               </div>
               <div class="section-content">
-                <div class="section-title-wrapper flex-column flex-md-row">
+                <div class=" f-col fl-md-row">
                   <div class="title-wrapper original-black fade-anim">
-                    <h1 class="section-title original-black split-text-reveal">
-                      <r>Reaching</r> <br>the unimaginable with bold results
-                    </h1>
+                    <h2 class="section-title original-black split-text-reveal">
+                      Reaching <br>the unimaginable with bold results
+                    </h2>
                   </div>
                 </div>
                 <div class="text-btn-wrapper fade-anim" data-delay="0.60">
@@ -631,14 +481,17 @@
 
         </div>
       </section>
-      <section class="identity-2 section-spacing-bottom container rr-container-1800 rr-ov-hidden ">
+      <section class="heading-text section-spacing-bottom container rr-container-1800 ovh ">
         <div class="">
 
-          <div class="text-center text-lg-start section-spacing-top d-flex align-items-end  flex-column">
-            <span class="section__subtitle wow fadeInUp" data-wow-delay=".2s"><span></span>Elite Partnerships</span>
-            <h2 class="title wow mt-4 mb-4 fadeInUp" data-wow-delay="0.3s">Where <r>Innovation</r>Meets Trust
+          <div class="text-right fl f-aie f-col section-spacing-bottom">
+            <span class="section__subtitle d-none d-md-flex wow fadeInUp" data-wow-delay=".2s"><span></span>Elite
+              Partnerships</span>
+
+            <h2 class="title wow mt-4 mb-4 fadeInUp" data-wow-delay="0.3s">Where Innovation <r>Meets Trust</r>
             </h2>
-            <p class="wow fadeInUp" data-wow-delay="0.4s">We partner with leading platforms to craft refined,
+            <p class="d-none d-md-block wow fadeInUp" data-wow-delay="0.4s">We partner with leading platforms to craft
+              refined,
               high-performance digital experiences that position your brand at the forefront of innovation and
               excellence.
             </p>
@@ -646,7 +499,6 @@
         </div>
 
         <div class="brand-area6-wrapper">
-          <div class="line-new-design"></div>
 
           <div class="swiper brand-slider6">
             <div class="swiper-wrapper">
@@ -725,38 +577,38 @@
 
       <!--===== achievement Section    S T A R T =====-->
       <section class="container rr-container-1800 ">
-        <div class="features-item rr-ov-hidden section-spacing"
+        <div class="features-card ovh"
           style="background-image: url('assets/imgs/home-6/achievement/achievement-bg.jpg'); background-size: cover; background-position: center;">
 
           <div class="container">
-            <div class="achievement-area6-wrapper rr-ov-hidden d-flex justify-content-between flex-wrap gap-5">
+            <div class="achievement-area6-wrapper ovh fl justify-content-between f-wrap">
 
               <div class="achievement-area6__items">
                 <div class="achievement-area6__items-year">
                   <span class="odometer" data-count="2012" data-format="d">0</span>
                 </div>
-                <h5 class="achievement-area6__items-title original-white">Year of establishment</h5>
+                <div class="achievement-area6__items-title original-white h5">Year of establishment</div>
                 <p class="achievement-area6__items-subtitle">More than 13 years in the field</p>
                 <div class="achievement-area6__items-thumb">
                 </div>
               </div>
               <div class="achievement-area6__items">
                 <div class="achievement-area6__items-year"><span class="odometer" data-count="299">0</span></div>
-                <h5 class="achievement-area6__items-title original-white">Projects are launched</h5>
+                <div class="achievement-area6__items-title original-white h5">Projects are launched</div>
                 <p class="achievement-area6__items-subtitle">A lot of projects are done</p>
                 <div class="achievement-area6__items-thumb">
                 </div>
               </div>
               <div class="achievement-area6__items">
                 <div class="achievement-area6__items-year"><span class="odometer" data-count="169">0</span></div>
-                <h5 class="achievement-area6__items-title original-white">Clients are satisfied</h5>
+                <div class="achievement-area6__items-title original-white h5">Clients are satisfied</div>
                 <p class="achievement-area6__items-subtitle">These people love us</p>
                 <div class="achievement-area6__items-thumb">
                 </div>
               </div>
               <div class="achievement-area6__items">
                 <div class="achievement-area6__items-year"><span class="odometer" data-count="13">0</span></div>
-                <h5 class="achievement-area6__items-title original-white">Projects in work</h5>
+                <div class="achievement-area6__items-title original-white h5">Projects in work</div>
                 <p class="achievement-area6__items-subtitle">What we do right now</p>
                 <div class="achievement-area6__items-thumb">
                 </div>
@@ -765,128 +617,6 @@
           </div>
         </div>
       </section>
-      <!-- 
-      <section class="service-area-5">
-        <div class="container rr-container-1800">
-          <div class="service-area-5-inner section-spacing-top ">
-            <div class="section-header fade-anim">
-
-            </div>
-            <div class="grc position-relative">
-              <div class="grc-5">
-                <div class="subtitle-wrapper sticky-top-100">
-                  <span class="section__subtitle effectFade fadeUp">
-                    <span></span>
-                    Services
-                  </span>
-                  <div class="title-wrapper tt_title_anim">
-                    <h2 class="title mt-4 mb-4 effectFade fadeUp ">
-                      <r><span class="r-text clr-gold">Services</span></r>
-                      we provide
-                    </h2>
-                  </div>
-                  <div class="text-wrapper fade-anim">
-                    <p class="info-text">We are here to build solid and courageous brands<br> that can leave a strong
-                      mark
-                      on
-                      the
-                      world.</p>
-                  </div>
-                </div>
-
-              </div>
-
-              <div class="services-wrapper-5 grc-6">
-                <a href="service-details.html">
-                  <div class="service-box fade-anim grc-6">
-                    <div class="count">
-                      <span class="number"><i class="fa-solid fa-bullseye"></i></span>
-                    </div>
-                    <div class="content">
-                      <h3 class="title">Programmatic Advertising</h3>
-                      <p class="text">Leveraging data-driven AI to automate media buying and reach the right audience in
-                        real-time.</p>
-                    </div>
-                    <div class="thumb">
-                      <img class="pexels-api-load" data-pexels-query="digital advertising technology"
-                        data-pexels-random="true" src="assets/imgs/cards/card-image.webp"
-                        alt="Programmatic Advertising">
-                    </div>
-                  </div>
-                </a>
-
-                <a href="service-details.html">
-                  <div class="service-box fade-anim span-6">
-                    <div class="count">
-                      <span class="number"><i class="fa-solid fa-tv"></i></span>
-                    </div>
-                    <div class="content">
-                      <h3 class="title">CTV Advertising</h3>
-                      <p class="text">Premium Connected TV solutions that bring high-impact storytelling to the biggest
-                        screen in the house.</p>
-                    </div>
-                    <div class="thumb">
-                      <img class="pexels-api-load" data-pexels-query="smart tv lounge" data-pexels-random="true"
-                        src="assets/imgs/project/image-48.webp" alt="CTV Advertising">
-                    </div>
-                  </div>
-                </a>
-
-                <a href="service-details.html">
-                  <div class="service-box fade-anim span-6">
-                    <div class="count">
-                      <span class="number"><i class="fa-solid fa-chart-line"></i></span>
-                    </div>
-                    <div class="content">
-                      <h3 class="title">Performance Marketing</h3>
-                      <p class="text">Focused on ROI-driven campaigns including SEO, PPC, and social media to scale your
-                        business growth.</p>
-                    </div>
-                    <div class="thumb">
-                      <img class="pexels-api-load" data-pexels-query="business growth chart" data-pexels-random="true"
-                        src="assets/imgs/project/image-49.webp" alt="Performance Marketing">
-                    </div>
-                  </div>
-                </a>
-
-                <a href="service-details.html">
-                  <div class="service-box fade-anim span-6">
-                    <div class="count">
-                      <span class="number"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
-                    </div>
-                    <div class="content">
-                      <h3 class="title">Rich Media Innovations</h3>
-                      <p class="text">Engaging users through interactive ad formats, AR, and creative storytelling that
-                        goes beyond static banners.</p>
-                    </div>
-                    <div class="thumb">
-                      <img class="pexels-api-load" data-pexels-query="creative digital design" data-pexels-random="true"
-                        src="assets/imgs/project/image-50.webp" alt="Rich Media">
-                    </div>
-                  </div>
-                </a>
-
-                <a href="service-details.html">
-                  <div class="service-box fade-anim span-6">
-                    <div class="count">
-                      <span class="number"><i class="fa-solid fa-code"></i></span>
-                    </div>
-                    <div class="content">
-                      <h3 class="title">Development Solutions</h3>
-                      <p class="text">Customized portal and mobile application development tailored to enhance user
-                        experience and conversions.</p>
-                    </div>
-                    <div class="thumb">
-                      <img class="pexels-api-load" data-pexels-query="clean web development" data-pexels-random="true"
-                        src="assets/imgs/service/services-card/service_0005.jpg" alt="Development">
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
       <section class="section-spacing project-area7-dynamic">
         <div class="container container-1800">
           <span class="section__subtitle  mb-4 effectFade fadeUp">
@@ -898,13 +628,13 @@
           </div>
         </div>
       </section>
-      <section class="text-slider-area section-spacing rr-ov-hidden">
+      <section class="text-slider-area section-spacing ovh">
         <div class="text-slider-box">
           <div class="swiper text-slide__active">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="text-slider-content">
-                  <h4 class="text">Innovating digital advertising to reach the unimaginable</h4>
+                  <div class="text h4">Innovating digital advertising to reach the unimaginable</div>
                 </div>
               </div>
             </div>
@@ -916,12 +646,134 @@
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="text-slider-content">
-                  <h4 class="text">Pioneering programmatic and CTV solutions for global brands</h4>
+                  <div class="text h4">Pioneering programmatic and CTV solutions for global brands</div>
                 </div>
               </div>
               <div class="swiper-slide">
                 <div class="text-slider-content">
-                  <h4 class="text">Data-driven strategies turning bold ideas into powerful results</h4>
+                  <div class="text h4">Data-driven strategies turning bold ideas into powerful results</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="parallax-slider-wrapper">
+        <div class="parallax-slider">
+          <div class="parallax-slider-inner">
+            <div class="parallax-slider-item">
+              <a href="portfolio-details.html">
+                <img class="image" data-cursor-text="Drag" data-cursor-text-red
+                  src="assets/imgs/slider/protfolio-6.webp" alt="image">
+              </a>
+
+              <div class="content">
+                <h3 class="title"><a href="portfolio-details.html">Redox Digital Agency HTML
+                    Template</a>
+                </h3>
+                <div class="meta">
+                  <span class="tag">WordPress, Themeforest</span>
+                  <span class="date">(2025)</span>
+                </div>
+              </div>
+            </div>
+            <div class="parallax-slider-item">
+              <a href="portfolio-details.html">
+                <img class="image" data-cursor-text="Drag" data-cursor-text-red
+                  src="assets/imgs/slider/protfolio-7.webp" alt="image">
+              </a>
+
+              <div class="content">
+                <h3 class="title"><a href="portfolio-details.html">Al Khobar Uptown</a></h3>
+                <div class="meta">
+                  <span class="tag">Visual Identity, Branding</span>
+                  <span class="date">(2021)</span>
+                </div>
+              </div>
+            </div>
+            <div class="parallax-slider-item">
+              <a href="portfolio-details.html">
+                <img class="image" data-cursor-text="Drag" data-cursor-text-red
+                  src="assets/imgs/slider/protfolio-8.webp" alt="image">
+              </a>
+
+              <div class="content">
+                <h3 class="title"><a href="portfolio-details.html">Save Me Saudia</a></h3>
+                <div class="meta">
+                  <span class="tag">Communication, Social Media</span>
+                  <span class="date">(2020)</span>
+                </div>
+              </div>
+            </div>
+            <div class="parallax-slider-item">
+              <a href="portfolio-details.html">
+                <img class="image" data-cursor-text="Drag" data-cursor-text-red
+                  src="assets/imgs/slider/protfolio-9.webp" alt="image">
+              </a>
+
+              <div class="content">
+                <h3 class="title"><a href="portfolio-details.html">Lambax Nanak</a></h3>
+                <div class="meta">
+                  <span class="tag">Strategy, Visual Identity, Re-branding</span>
+                  <span class="date">(2022)</span>
+                </div>
+              </div>
+            </div>
+            <div class="parallax-slider-item">
+              <a href="portfolio-details.html">
+                <img class="image" data-cursor-text="Drag" data-cursor-text-red
+                  src="assets/imgs/slider/protfolio-6.webp" alt="image">
+              </a>
+
+              <div class="content">
+                <h3 class="title"><a href="portfolio-details.html">Redox Digital Agency HTML
+                    Template</a>
+                </h3>
+                <div class="meta">
+                  <span class="tag">WordPress, Themeforest</span>
+                  <span class="date">(2025)</span>
+                </div>
+              </div>
+            </div>
+            <div class="parallax-slider-item">
+              <a href="portfolio-details.html">
+                <img class="image" data-cursor-text="Drag" data-cursor-text-red
+                  src="assets/imgs/slider/protfolio-7.webp" alt="image">
+              </a>
+
+              <div class="content">
+                <h3 class="title"><a href="portfolio-details.html">Al Khobar Uptown</a></h3>
+                <div class="meta">
+                  <span class="tag">Visual Identity, Branding</span>
+                  <span class="date">(2021)</span>
+                </div>
+              </div>
+            </div>
+            <div class="parallax-slider-item">
+              <a href="portfolio-details.html">
+                <img class="image" data-cursor-text="Drag" data-cursor-text-red
+                  src="assets/imgs/slider/protfolio-8.webp" alt="image">
+              </a>
+
+              <div class="content">
+                <h3 class="title"><a href="portfolio-details.html">Save Me Saudia</a></h3>
+                <div class="meta">
+                  <span class="tag">Communication, Social Media</span>
+                  <span class="date">(2020)</span>
+                </div>
+              </div>
+            </div>
+            <div class="parallax-slider-item">
+              <a href="portfolio-details.html">
+                <img class="image" data-cursor-text="Drag" data-cursor-text-red
+                  src="assets/imgs/slider/protfolio-9.webp" alt="image">
+              </a>
+
+              <div class="content">
+                <h3 class="title"><a href="portfolio-details.html">Lambax Nanak</a></h3>
+                <div class="meta">
+                  <span class="tag">Strategy, Visual Identity, Re-branding</span>
+                  <span class="date">(2022)</span>
                 </div>
               </div>
             </div>
@@ -929,19 +781,19 @@
         </div>
       </section>
       <!-- hero area end  -->
-      <section class="section-features flat-spacing pt-0 rr-overflow-hidden">
+      <section class="heading-text flat-spacing pt-0 rr-ovh">
         <div class="container rr-container-1800">
-          <div class="section-spacing" id="features-header">
+          <div class="section-spacing fl f-col" id="features-header">
             <!-- Populated by renderFeatures() in digital-marketing-agency.js -->
           </div>
         </div>
-        <div class="position-relative">
+        <div class="pr">
           <div class="container z-5">
             <div class="features-wrap justify-content-between">
               <div class="features-col col-left lg-mb-24" id="features-col-left">
                 <!-- Populated by renderFeatures() in digital-marketing-agency.js -->
               </div>
-              <div class="features-center flex-shrink">
+              <div class="features-center features-card fl-shrink">
                 <img src="assets/imgs/logo_block.svg" alt="" style="width: 140px;">
               </div>
               <div class="features-col col-right" id="features-col-right">
@@ -952,7 +804,7 @@
           <div class="side-line-main d-none d-lg-block wow fadeIn">
             <div class="container">
               <div class="row">
-                <div class="col-lg-4 mx-auto">
+                <div class="col-center-fixed mx-auto">
                   <div class="side-line-wrap">
                     <div class="link-break-line left">
                       <div class="link-break-line">
@@ -977,21 +829,24 @@
       </section>
 
       <!-- ── Fade Image Reveal Section ── -->
-      <section id="fade-reveal-section" class="fade-reveal-area section-spacing-top">
+      <section id="fade-reveal-section" class="heading-text section-spacing-top">
         <div class="container rr-container-1800">
           <div class="row">
-            <div class="col-lg-4 d-flex justify-content-center align-items-center">
+            <div class="col-lg-4 fl justify-content-center align-items-center">
               <div class="reveal-text-container w-100">
                 <div class="reveal-step active" data-index="0">
-                  <h2 class="title mt-3">Strategic Vision</h2>
+                  <h2 class="title heading=text mt-3">Strategic <r>Vision</r>
+                  </h2>
                   <p class="mt-4">We analyze your brand's unique footprint to create a digital roadmap.</p>
                 </div>
                 <div class="reveal-step" data-index="1">
-                  <h2 class="title mt-3">Creative Excellence</h2>
+                  <h2 class="title mt-3">Creative <r>Excellence</r>
+                  </h2>
                   <p class="mt-4">Our team blends artistic intuition with data-driven insights.</p>
                 </div>
                 <div class="reveal-step" data-index="2">
-                  <h2 class="title mt-3">Driving Success</h2>
+                  <h2 class="title mt-3">Driving <r>Success</r>
+                  </h2>
                   <p class="mt-4">We focus on the metrics that matter, scaling your reach and conversion.</p>
                 </div>
               </div>
@@ -1014,7 +869,7 @@
         </div>
       </section>
       <!-- approach area start  -->
-      <section class="approach-area-container rr-ov-hidden">
+      <section class="approach-area-container ovh">
         <div class="container large">
           <div class="approach-area-inner">
             <div class="approach-wrapper-box">
@@ -1052,8 +907,8 @@
               </div>
               <div class="title-wrapper fade-anim" data-direction="right">
                 <h2 class="section-title original-black black rr_title_anim">Whether you’re
-                  a <span>startup</span>
-                  or <span>industry star</span>, we’re here
+                  a startup
+                  or industry star, we’re here
                   to scale your brand through
                   data-driven strategy and
                   digital excellence</h2>
@@ -1066,36 +921,33 @@
           </div>
           <div class="grc">
             <div class="grc-3">
-              <div class="subtitle-wrapper fade-anim" data-direction="left">
-                <span class="section-subtitle">Approach, expertise <br>
-                  and values</span>
+              <div class="subtitle-wrapper mt-4 fade-anim" data-direction="left">
+                <span class="section-subtitle">Approach<br>expertise <br>
+                  values</span>
               </div>
             </div>
             <div class="approach-wrapper grc-9">
               <div class="approach-box">
-                <span class="number">01</span>
-                <h3 class="title">Audit & Market Analysis</h3>
-                <p class="text">We begin by evaluating your current digital footprint and conducting a deep SWOT
+                <h3 class="title grc-3">Audit & Market Analysis</h3>
+                <p class="text grc-3">We begin by evaluating your current digital footprint and conducting a deep SWOT
                   analysis
                   to pinpoint high-growth opportunities within your industry landscape.</p>
               </div>
               <div class="approach-box">
-                <span class="number">02</span>
-                <h3 class="title">Strategic Blueprinting</h3>
-                <p class="text">Our experts craft a bespoke roadmap, setting clear KPIs and defining success metrics
+                <h3 class="title grc-3">Strategic Blueprinting</h3>
+                <p class="text grc-3">Our experts craft a bespoke roadmap, setting clear KPIs and defining success
+                  metrics
                   that
                   align your brand vision with measurable business outcomes.</p>
               </div>
               <div class="approach-box">
-                <span class="number">03</span>
-                <h3 class="title">Multi-Channel Execution</h3>
-                <p class="text">From SEO and Programmatic Ads to Generative Engine Optimization (GEO), we deploy
+                <h3 class="title grc-3">Multi-Channel Execution</h3>
+                <p class="text grc-3">From SEO and Programmatic Ads to Generative Engine Optimization (GEO), we deploy
                   integrated campaigns that build authority and drive real-world conversions.</p>
               </div>
               <div class="approach-box">
-                <span class="number">04</span>
-                <h3 class="title">Optimization & Scaling</h3>
-                <p class="text">Using real-time data insights and A/B testing, we refine your digital ecosystem to
+                <h3 class="title grc-3">Optimization & Scaling</h3>
+                <p class="text grc-3">Using real-time data insights and A/B testing, we refine your digital ecosystem to
                   streamline processes, maximize ROI, and achieve sustainable long-term growth.</p>
               </div>
             </div>
@@ -1109,10 +961,10 @@
 
           <div class="grc-5 text-content-box">
             <div class="reveal-text">
-              <span class="section__subtitle effectFade fadeUp"><span></span>Our Philosophy</span>
+              <span class="section__subtitle d-none d-md-flex effectFade fadeUp"><span></span>Our Philosophy</span>
               <h2 class="title mt-4 mb-4 effectFade fadeUp ">We don’t just talk the talk</h2>
               </h2>
-              <p class="lead-text">
+              <p class="lead-text d-none d-md-block">
                 With a strong portfolio of successful projects across industries, we’ve consistently delivered impactful
                 results for some of the biggest names worldwide.
               </p>
@@ -1142,22 +994,22 @@
           </div>
         </div>
         <!--===== brand-area Section    S T A R T =====-->
-        <div class="position-relative grc align-items-center">
+        <div class="pr grc align-items-center">
           <div class="grc-2"></div>
           <div class="text-container grc-6">
-            <h2 class="split-text-reveal original-black">
+            <h2 class="split-text-reveal d-none d-md-block original-black">
               Our services are designed to boost your online presence, attract the right audience, and drive consistent
               business growth.
             </h2>
           </div>
-          <div class="grc-3 flex-shrink-0">
+          <div class="grc-3 d-none d-md-block fl-shrink-0">
             <img src="assets/imgs/service/content_card_02.jpg" class=""
               alt="World class services and integrated solutions"
               aria-label="World class services and integrated solutions" style="width: 400px; mix-blend-mode: darken;">
           </div>
         </div>
-        <div class="position-relative footer-info-strip grc">
-          <div class="position-absolute top-0 end-0 overflow-hidden grc-6">
+        <div class="pr footer-info-strip features-card grc">
+          <div class="position-absolute top-0 end-0 mt-3 ovh grc-6">
             <svg width="176" height="160" viewBox="0 0 176 160" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="125.086" cy="50" r="50" fill="#f1f1f152" />
               <circle cx="30" cy="129.967" r="30" fill="#f1f1f152" />
@@ -1166,7 +1018,7 @@
             </span>
           </div>
           <div class="grc-4">
-            <h3 class="footer-heading original-white">World Class Services & Integrated Solutions</h3>
+            <h3 class="footer-heading">World Class Services & Integrated Solutions</h3>
           </div>
           <div class="grc-8 grc info-inner-grid">
             <div class="grc-6">
@@ -1210,17 +1062,17 @@
         </div>
       </section>
 
-      <section class="fun-fact-area container rr-container-1800 section-spacing-bottom">
+      <section class="heading-text fun-fact-area container rr-container-1800 section-spacing-bottom">
         <div class="">
           <div class="service-6-section-header">
-            <div class="section-title-wrapper fade-anim">
+            <div class=" fade-anim">
               <div class="title-wrapper">
-                <h2 class="title">Case <r>Studies</r>
+                <h2 class="title mt-4 mb-5 effectFade fadeUp">Case <r>Studies</r>
                 </h2>
               </div>
             </div>
           </div>
-          <div class="fun-fact-area-inner fade-anim">
+          <div class="heading-text-inner fade-anim">
             <div class="fun-fact-wrapper horizontal-scroll-wrapper">
               <!-- Project 1: Real Estate -->
               <div class="fun-fact__item">
@@ -1229,11 +1081,11 @@
                     src="assets/ad-imgs/service/fun-fact-r-1.webp" alt="Real Estate">
                 </div>
               </div>
-              <div class="fun-fact__item has--card">
-                <div class="content">
-                  <h6><span>Real Estate</span>
+              <div class="fun-fact__item has--card features-card">
+                <div class="content fl justify-content-between f-col h-100">
+                  <h3 class="h6"><span>Real Estate</span>
                     High-ROI Programmatic
-                    Advertising</h6>
+                    Advertising</h3>
                   <a href="https://www.adomantra.com/case-study"><span>( + )</span>Case Study <i
                       class="fa-regular fa-arrow-right"></i></a>
                 </div>
@@ -1246,11 +1098,11 @@
                     src="assets/ad-imgs/service/fun-fact-r-2.webp" alt="Ola App & Play">
                 </div>
               </div>
-              <div class="fun-fact__item has--card">
-                <div class="content d-flex justify-content-between flex-column h-100">
-                  <h6><span>Ola App & Play</span>
+              <div class="fun-fact__item has--card features-card">
+                <div class="content fl justify-content-between f-col h-100">
+                  <h3 class="h6"><span>Ola App & Play</span>
                     Scaling User Acquisition
-                    and Engagement</h6>
+                    and Engagement</h3>
                   <a href="https://www.adomantra.com/case-study"><span>( + )</span>Case Study <i
                       class="fa-regular fa-arrow-right"></i></a>
                 </div>
@@ -1263,11 +1115,11 @@
                     src="assets/ad-imgs/service/fun-fact-r-3.webp" alt="Malabar Jewellery">
                 </div>
               </div>
-              <div class="fun-fact__item has--card">
-                <div class="content d-flex justify-content-between flex-column h-100">
-                  <h6><span>Malabar Jewellery</span>
+              <div class="fun-fact__item has--card features-card">
+                <div class="content fl justify-content-between f-col h-100">
+                  <h3 class="h6"><span>Malabar Jewellery</span>
                     Luxury Brand Positioning
-                    and Authority</h6>
+                    and Authority</h3>
                   <a href="https://www.adomantra.com/case-study"><span>( + )</span>Case Study <i
                       class="fa-regular fa-arrow-right"></i></a>
                 </div>
@@ -1280,11 +1132,11 @@
                     src="assets/ad-imgs/service/fun-fact-r-1.webp" alt="Food Delivery">
                 </div>
               </div>
-              <div class="fun-fact__item has--card">
-                <div class="content d-flex justify-content-between flex-column h-100">
-                  <h6><span>Food Delivery</span>
+              <div class="fun-fact__item has--card features-card">
+                <div class="content fl justify-content-between f-col h-100">
+                  <h3 class="h6"><span>Food Delivery</span>
                     Scaling Hyper-Local
-                    Digital Campaigns</h6>
+                    Digital Campaigns</h3>
                   <a href="https://www.adomantra.com/case-study"><span>( + )</span>Case Study <i
                       class="fa-regular fa-arrow-right"></i></a>
                 </div>
@@ -1297,11 +1149,11 @@
                     src="assets/ad-imgs/service/fun-fact-r-2.webp" alt="Kaya Clinic">
                 </div>
               </div>
-              <div class="fun-fact__item has--card">
-                <div class="content d-flex justify-content-between flex-column h-100">
-                  <h6><span>Kaya Clinic</span>
+              <div class="fun-fact__item has--card features-card">
+                <div class="content fl justify-content-between f-col h-100">
+                  <h3 class="h6"><span>Kaya Clinic</span>
                     AI-Driven Content for
-                    Higher Consultations</h6>
+                    Higher Consultations</h3>
                   <a href="https://www.adomantra.com/case-study"><span>( + )</span>Case Study <i
                       class="fa-regular fa-arrow-right"></i></a>
                 </div>
@@ -1314,11 +1166,11 @@
                     src="assets/ad-imgs/service/fun-fact-r-3.webp" alt="BST Competitive Classes">
                 </div>
               </div>
-              <div class="fun-fact__item has--card">
-                <div class="content d-flex justify-content-between flex-column h-100">
-                  <h6><span>BST Competitive Classes</span>
+              <div class="fun-fact__item has--card features-card">
+                <div class="content fl justify-content-between f-col h-100">
+                  <h3 class="h6"><span>BST Competitive Classes</span>
                     Tripling Student Signups
-                    via Video Strategy</h6>
+                    via Video Strategy</h3>
                   <a href="https://www.adomantra.com/case-study"><span>( + )</span>Case Study <i
                       class="fa-regular fa-arrow-right"></i></a>
                 </div>
@@ -1327,30 +1179,35 @@
           </div>
         </div>
       </section>
-      <section id="testimonials-section" class="container rr-container-1800 mb-5 wow fadeInUp" data-wow-delay="0.2s">
-        <div class="row gy-5 d-flex justify-content-center">
-          <div class="text-center text-lg-start pt-5 d-flex align-items-start flex-column mb-5">
-            <span class="section__subtitle wow fadeInUp" data-wow-delay=".2s"><span></span>Positive
+      <section id="testimonials-section" class="heading-text container rr-container-1800 mb-5 wow fadeInUp"
+        data-wow-delay="0.2s">
+        <div class="row gy-5 fl justify-content-center">
+          <div class="text-center text-lg-start fl align-items-start f-col mb-5">
+            <span class="section__subtitle d-none d-md-flex wow fadeInUp" data-wow-delay=".2s"><span></span>Positive
               Feedback</span>
-            <h2 class="title wow mt-4 mb-4 fadeInUp" data-wow-delay="0.3s">Real Stories from <r>People</r>
-            </h2>
-            <p class="wow fadeInUp" data-wow-delay="0.4s">See what we do and how we help businesses succeed
+            <div class="fl justify-content-between w-100">
+              <h2 class="title text-right wow mt-4 mb-4 fadeInUp" data-wow-delay="0.3s">Real Stories from <r>People</r>
+              </h2>
+              <div class="testimonial-area4__controls d-none d-md-flex">
+                <div class="inner-nav-btn left" id="testimonial-prev">
+                  <i class="fa-solid fa-angle-left"></i>
+                </div>
+                <div class="inner-nav-btn right" id="testimonial-next">
+                  <i class="fa-solid fa-angle-right"></i>
+                </div>
+              </div>
+            </div>
+            <p class="d-none d-md-block wow fadeInUp" data-wow-delay="0.4s">See what we do and how we help businesses
+              succeed
               through real experiences and results.</p>
           </div>
+
         </div>
-        <div class="row gy-5 d-flex justify-content-between position-relative">
+        <div class="fl f-jcb pr">
           <div class="col-12">
             <div class="swiper testimonial4-slider">
               <div class="swiper-wrapper" id="testimonial-wrapper">
                 <!-- Populated by JS -->
-              </div>
-            </div>
-            <div class="testimonial-area4__controls">
-              <div class="inner-nav-btn left" id="testimonial-prev">
-                <i class="fa-solid fa-angle-left"></i>
-              </div>
-              <div class="inner-nav-btn right" id="testimonial-next">
-                <i class="fa-solid fa-angle-right"></i>
               </div>
             </div>
           </div>
@@ -1361,17 +1218,20 @@
       <section class="about-area-6 section-spacing-bottom">
         <div class="container rr-container-1800">
           <div class="about-area-6-inner gra">
-            <div class="about-6-thumb-1 grc-5 grr-2 d-flex align-items-end" data-speed="1.1">
+            <div class="about-6-thumb-1 grc-5 grr-2 fl ac-end" data-speed="1.1">
               <img src="assets/ad-imgs/gallery/gallery-s-6.webp" class="pexels-api-load round"
                 data-pexels-query="global business achievement trophy" data-pexels-random="true" data-pexels-width="780"
                 data-pexels-height="990" alt="Adomantra Awards">
             </div>
             <div class="about-6-section-header grc-7">
-              <div class="section-title-wrapper fade-anim">
-                <div class="title-wrapper section-spacing-bottom" data-speed="1.3">
-                  <h2 class="section-title-6 split-text-reveal">Awards <r>&</r> <br>
-                    Recognition</h2>
-                  <p class="meta-text ml-100">Empowering brands through innovation. We are a leading global marketing
+              <div class=" fade-anim">
+                <div class="title-wrapper pb-0 pb-md-4 mt-3" data-speed="1.3">
+                  <h2 class="section-title-6 mb-0 mb-md-4 split-text-reveal">
+                    <r>Awards</r> & <br>
+                    Recognition
+                  </h2>
+                  <p class="meta-text d-none d-md-block ml-100">Empowering brands through innovation. We are a leading
+                    global marketing
                     technology
                     company specializing in digital transformation and creative excellence.</p>
                 </div>
@@ -1380,15 +1240,19 @@
             <div class="about-6-section-content grc-4 fade-anim">
 
               <div class="text-wrapper section-spacing-top ml-100">
-                <p class="meta-text">Globally <br>
-                  Acclaimed</p>
-                <p class="text">Adomantra has been consistently recognized for excellence in the digital ecosystem. From
+                <p class="meta-text pr">
+                  <r>Globally <br>
+                    Acclaimed</r>
+                </p>
+                <p class="text mx-3">Adomantra has been consistently recognized for excellence in the digital
+                  ecosystem.
+                  From
                   being named the 'Best Digital Marketing Agency' to receiving accolades for 'Innovation in Video
                   Advertising,' our journey is defined by delivering measurable impact for global enterprises and
                   visionaries.</p>
               </div>
             </div>
-            <div class="about-6-thumb-2 grc-3 d-flex justify-content-end mt-5" data-speed="0.9">
+            <div class="about-6-thumb-2 grc-3 fl justify-content-end mt-5 d-none d-md-block" data-speed="0.9">
               <img src="assets/ad-imgs/gallery/gallery-s-7.webp" class="pexels-api-load"
                 data-pexels-query="prestige gold award" data-pexels-random="true" data-pexels-width="265"
                 data-pexels-height="353" alt="Recognition Icon">
@@ -1398,13 +1262,13 @@
       </section>
 
       <!-- about area end  -->
-      <section class="blog journals">
+      <section class="blog heading-text">
         <div class="blog__inner">
           <div class="container rr-container-1800">
-            <div class="service-section__info align-items-center">
+            <div class="service-section__info fl f-aic f-jcsb mb-5">
               <h2 class="title wow fadeInUp" data-wow-delay="0.3s">Our Journal & <r>Thoughts</r>
               </h2>
-              <a href="#" class="rr-btn fadeInUp small" data-wow-delay="0.3s">
+              <a href="#" class="rr-btn fadeInUp small d-md-flex d-none" data-wow-delay="0.3s">
                 <span class="btn-wrap">
                   <span class="text-one">VIEW JOURNALS</span>
                   <span class="text-two">VIEW JOURNALS</span>
@@ -1417,7 +1281,7 @@
                   <!-- Dynamic slides injected by news_config.js -->
                   <div class="swiper-slide">
                     <div class="blog__item blog__item--skeleton">
-                      <div class="blog__media rr-ov-hidden w-100">
+                      <div class="blog__media ovh w-100">
                         <div class="blog-skeleton-img"></div>
                       </div>
                       <div class="blog__content">
@@ -1437,10 +1301,6 @@
           </div>
         </div>
       </section>
-
-      <!-- ══════════════════════════════════════════════════════
-       ADOMANTRA TEAM — GSAP Horizontal Scroll Strip (600 px)
-  ══════════════════════════════════════════════════════ -->
       <section id="ado-hscroll-section" class="ado-hs-section">
         <div id="ado-hscroll-pin" class="ado-hs-pin">
           <!-- Scroll hint -->
@@ -1453,7 +1313,7 @@
           </div>
 
           <!-- Horizontal track — GSAP translates this -->
-          <div id="ado-hscroll-track" class="ado-hs-track">
+          <div id="ado-hscroll-track" class="ado-hs-track mb-5">
             <!-- Skeleton placeholders (delay set inline — only dynamic value) -->
             <div class=" ado-hs-skeleton ado-hs-card--lg" style="animation-delay:0s;"></div>
             <div class="ado-hs-skeleton ado-hs-card--sm" style="animation-delay:.08s;"></div>
@@ -1469,13 +1329,16 @@
             <div class="ado-hs-skeleton ado-hs-card--sm" style="animation-delay:.88s;"></div>
           </div>
         </div>
+        <h2 class="text-center mt-5">Our <r>Team</r>
+        </h2>
       </section>
       <!--===== FAQ Section S T A R T =====-->
       <section class="container rr-container-1800 section-spacing-bottom">
         <div class="grc">
-          <div id="services-page-faq-section" class="features-item grc-8 wow fadeInUp" data-wow-delay="0.2s">
-            <div class=" d-flex justify-content-between">
-              <h2 class="service-details__content-title mb-5" id="services-faq-title">Frequently Asked Questions</h2>
+          <div id="services-page-faq-section" class="features-card grc-8 wow fadeInUp" data-wow-delay="0.2s">
+            <div class=" fl justify-content-between heading-text">
+              <h2 class="mb-5 pr split-text-reveal" id="services-faq-title">Frequently Asked <r>Questions</r>
+              </h2>
               <div class="breadcrumb-image-wrapper">
                 <img src="assets/imgs/faq/faq_001.png" alt="Adomantra Digital Marketing FAQ Support"
                   class="img-fluid custom-float" width="72">
@@ -1484,31 +1347,28 @@
             <div class="accordion" id="services-faq-accordion-new"></div>
           </div>
           <div class="grc-4">
-            <div class="features-item p-4 p-md-5 h-100">
+            <div class="padding-32 grc-4 pst h-100 features-card">
               <div class="mb-4">
-                <h2 class="mb-2" style="color: #1a202c;">Ready to get started?</h2>
+                <h2 class="mb-2 title wow fadeUp">Ready to get started?
+                </h2>
                 <p class="text-secondary small">Fill out the form below and we'll reach out within 24 hours.</p>
               </div>
 
-              <form class="row g-3">
-                <div class="col-12">
-                  <label class="form-label">Full Name</label>
+              <form class="grc">
+                <div class="grc-12 mb-4">
                   <input type="text" class="form-control custom-field" placeholder="Name" required>
                 </div>
 
-                <div class="col-12">
-                  <label class="form-label">Email Address</label>
+                <div class="grc-12 mb-4">
                   <input type="email" class="form-control custom-field" placeholder="Email ID" required>
                 </div>
 
-                <div class="col-12">
-                  <label class="form-label">Phone Number</label>
+                <div class="grc-12 mb-4">
                   <input type="tel" class="form-control custom-field" placeholder="+91 999-999-9999">
                 </div>
 
-                <div class="col-12 d-flex flex-column">
-                  <label class="form-label">Service Required</label>
-                  <select class="form-select custom-field" required>
+                <div class="grc-12 mb-4">
+                  <select class="form-select custom-field w-100" required>
                     <option selected disabled>Select a service</option>
                     <option>CTV Advertising</option>
                     <option>Performance Marketing</option>
@@ -1516,15 +1376,22 @@
                     <option>Social Media Marketing</option>
                   </select>
                 </div>
-
-                <div class="col-12">
-                  <label class="form-label">Tell us about your query</label>
-                  <textarea class="form-control custom-field" rows="3" placeholder="How can we help you?"></textarea>
+                <div class="grc-12 mb-4">
+                  <textarea class="form-control custom-field" style="height: 100%;" rows="3"
+                    placeholder="How can we help you?"></textarea>
                 </div>
-
-                <div class="col-12 mt-4">
-                  <button type="submit" class="mk-button py-3">
-                    Get Free Consultation Now
+                <div class="form-check d-flex align-items-center gap-2 mb-3 grc-12">
+                  <input class="form-check-input" type="checkbox" id="consentCheck" required="">
+                  <label class="checkbox-label" for="consentCheck">
+                    I agree to opt-in to adomantra's mailing list.*
+                  </label>
+                </div>
+                <div class="grc-12 mt-4">
+                  <button type="submit" class="rr-btn w-100 border-0">
+                    <span class="btn-wrap">
+                      <span class="text-one">Get Free Consultation</span>
+                      <span class="text-two">Get Free Consultation</span>
+                    </span>
                   </button>
                 </div>
               </form>
@@ -1553,6 +1420,7 @@
   <script src="assets/vandor/gsap/ScrollSmoother.min.js"></script>
   <script src="assets/vandor/gsap/ScrollTrigger.min.js"></script>
   <script src="assets/vandor/gsap/SplitText.min.js"></script>
+  <script src="assets/js/ScrambleTextPlugin3.min.js"></script>
   <script src="assets/vandor/gsap/SplitType.js"></script>
   <script src="assets/vandor/gsap/customEase.js"></script>
   <script src="assets/vandor/odometer/odometer.min.js"></script>
@@ -1634,16 +1502,8 @@
   <!-- ── Index Blog Section: Dynamic news feed via news_config.js ── -->
   <script>
     (async function initIndexBlog() {
-      var PEXELS_KEY = 'y6WP5reQNH7abdL2uzdLTyV8pq0kMmF3CHf7ZNkiHo98DXIvORUOBSfi';
-      var W = 406, H = 592;
-
-      // Fetch a single portrait thumbnail from Pexels
-      async function fetchPortraitThumb(query) {
-        try {
           var safeQ = encodeURIComponent(query.split(' ').slice(0, 3).join(' '));
-          var res = await fetch('https://api.pexels.com/v1/search?query=' + safeQ + '&per_page=1&orientation=portrait', {
-            headers: { Authorization: PEXELS_KEY }
-          });
+          var res = await fetch('/api/pexels?query=' + safeQ + '&per_page=1&orientation=portrait');
           var data = await res.json();
           if (data.photos && data.photos.length > 0) {
             var p = data.photos[0];
@@ -1652,9 +1512,7 @@
         } catch (e) { }
         // Fallback: generic brand shot
         try {
-          var r2 = await fetch('https://api.pexels.com/v1/search?query=digital+marketing&per_page=1&orientation=portrait', {
-            headers: { Authorization: PEXELS_KEY }
-          });
+          var r2 = await fetch('/api/pexels?query=digital+marketing&per_page=1&orientation=portrait');
           var d2 = await r2.json();
           if (d2.photos && d2.photos.length > 0) return d2.photos[0].src['large'];
         } catch (e2) { }
@@ -1682,17 +1540,17 @@
 
         return '<div class="swiper-slide">' +
           '<div class="blog__item">' +
-          '<div class="blog__media w-100 rr-ov-hidden">' +
+          '<div class="blog__media fl">' +
           '<a href="' + externalHref + '" target="_blank" rel="noopener">' +
           '<img data-speed="0.9" src="' + imgSrc + '" alt="' + article.title.replace(/"/g, '&quot;') + '" ' +
-          'width="' + W + '" height="' + H + '" loading="lazy" style="width:' + W + 'px;min-width:' + W + 'px;max-width:' + W + 'px;height:' + H + 'px;min-height:' + H + 'px;max-height:' + H + 'px;object-fit:cover;">' +
+          'loading="lazy">' +
           '</a>' +
           '</div>' +
           '<div class="blog__content">' +
           '<div class="blog__top">' +
           '<span>' + pubDate + '</span>' +
-          '<h2 class="title"><a href="' + externalHref + '" target="_blank" rel="noopener">' + article.title + '</a></h2>' +
-          (excerpt ? '<p class="decs">' + excerpt + '</p>' : '') +
+          '<h2 class="title grc-1"><a href="' + externalHref + '" target="_blank" rel="noopener">' + article.title + '</a></h2>' +
+          (excerpt ? '<p class="decs d-none d-md-block">' + excerpt + '</p>' : '') +
           '</div>' +
           '<div class="blog__bottom">' +
           '<a href="' + detailHref + '">Read the Full Article</a>' +
@@ -1859,9 +1717,8 @@
       async function fetchPhotos() {
         var results = await Promise.all(QUERIES.map(function (q, i) {
           return fetch(
-            'https://api.pexels.com/v1/search?query=' + encodeURIComponent(q) +
-            '&per_page=1&page=' + (i + 1) + '&orientation=portrait',
-            { headers: { Authorization: PEXELS_KEY } }
+            '/api/pexels?query=' + encodeURIComponent(q) +
+            '&per_page=1&page=' + (i + 1) + '&orientation=portrait'
           ).then(function (r) { return r.json(); }).catch(function () { return null; });
         }));
         return results.map(function (d) {
@@ -1944,7 +1801,33 @@
       }
     })();
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
 
+  <script>
+    gsap.registerPlugin(TextPlugin);
+
+    const texts = [
+      'Redefining <span class="highlight">Media</span> with<br> <span class="highlight">Digital</span> Innovation',
+      'Transforming <span class="highlight">Media</span> with<br> <span class="highlight">Digital</span> Innovation',
+      'Reimagining <span class="highlight">Media</span> with<br> <span class="highlight">Digital</span> Innovation',
+      'Redefining <span class="highlight">Media</span> through<br> <span class="highlight">Digital</span> Innovation'
+    ];
+
+    let i = 0;
+
+    function changeText() {
+      i = (i + 1) % texts.length;
+
+      gsap.to("#heading-slider", {
+        duration: 1.5,
+        innerHTML: texts[i], // IMPORTANT for spans
+        ease: "none"
+      });
+    }
+
+    setInterval(changeText, 10000);
+  </script>
 </body>
 
 </html>

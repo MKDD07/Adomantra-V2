@@ -38,4 +38,7 @@ document.addEventListener("DOMContentLoaded", async () => {
    */
   const activeIds = Object.keys(componentList);
   await Promise.all(activeIds.map(id => loadComponent(id)));
+
+  // Dispatch event so other scripts know components are ready
+  document.dispatchEvent(new CustomEvent('componentsLoaded'));
 });

@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       return `
-                <div class="features-item p-0 project-area7__card section-item rr-ov-hidden wow fadeInUp" data-wow-delay="${0.2 * index}s" style="border-radius: 32px; background: white;">
+                <div class="features-item p-0 project-area7__card section-item overflow-hidden wow fadeInUp" data-wow-delay="${0.2 * index}s" style="border-radius: 32px; background: white;">
                     <div class="project-area7__card-content" style="padding: 30px;">
                         <div class="project-area7__card-year" style="color: var(--primary); font-weight: 600;">${year}</div>
                         <a href="${url}" class="project-area7__card-title original-black" style="font-size: 32px; letter-spacing: -0.05em; display: block; margin: 10px 0;">${title}</a>
