@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function () {
  */
 const initFeaturesAnimations = () => {
   if (typeof gsap !== "undefined") {
-    gsap.registerPlugin(ScrollTrigger);
+    if (typeof ScrollTrigger !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
     document.querySelectorAll(".effectFade").forEach((el) => {
       let fromVars = { autoAlpha: 0 };
